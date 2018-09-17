@@ -1,39 +1,27 @@
-# time-util
+#安装使用
 
-#### 项目介绍
-{**以下是码云平台说明，您可以替换为您的项目简介**
-码云是开源中国推出的基于 Git 的代码托管平台（同时支持 SVN）。专为开发者提供稳定、高效、安全的云端软件开发协作平台
-无论是个人、团队、或是企业，都能够用码云实现代码托管、项目管理、协作开发。企业项目请看 [https://gitee.com/enterprises](https://gitee.com/enterprises)}
+切换分支到master
+node 版本 8.9.4 及以上
+安装yarn
+`npm install yarn`
+项目初始化
+`yarn install`
 
-#### 软件架构
-软件架构说明
-
-
-#### 安装教程
-
-1. xxxx
-2. xxxx
-3. xxxx
-
-#### 使用说明
-
-1. xxxx
-2. xxxx
-3. xxxx
-
-#### 参与贡献
-
-1. Fork 本项目
-2. 新建 Feat_xxx 分支
-3. 提交代码
-4. 新建 Pull Request
+打开package_config，把不需要的方法进行注释。然后终端执行`webpack || npm run start`即可；
+最终输出文件为`/dist/Utils.js`  输出变量名为 `Utils`;
+    注意：`Utils.js`文件相当于一个第三方插件，对外暴露`Utils`对象。正常怎么使用三方插件，就怎么使用Utils;
+    demo位置`src/index.html`
 
 
-#### 码云特技
+#添加功能方法
+拉取新分支，分支以扩展方法命名;
+统一添加至modules目录，`文件名以功能方法命名`。
+如添加获取URL参数方法，文件则命名为getURLParams.js；
+统一使用`es6语法`，使用export输了功能；
+完成后需要在package_config.js文件里把你的方法添加到modlues列表里，并进行说明；
+提交代码，找负责人审核代码，合并至master分支
 
-1. 使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2. 码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3. 你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4. [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5. 码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6. 码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+
+
+
+
