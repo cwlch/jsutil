@@ -4,7 +4,7 @@ module.exports = {
     themeConfig: {
         nav: [
           { text: '首页', link: '/' },
-          { text: '教程', link: '/guide/' },
+          { text: 'Guide', link: '/guide/' },
           { text: 'api', link: '/api/' },
           { text: 'External', link: 'https://google.com' },
         ]

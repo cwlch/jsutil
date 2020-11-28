@@ -1,0 +1,46 @@
+/*
+ * @Author: ch 
+ * @Date: 2020-09-28 11:13:28 
+ * @Last Modified by: ch
+ * @Last Modified time: 2020-09-28 11:41:40
+ * 
+ * 
+ * 
+ */
+
+ /**
+  * 金额大写转换
+  * @param n 金额
+  * @param h 金额为负时的前缀
+  */
+const toCapitalMoney = (n:number,h:string)=>{
+    const fraction:string[] = ['角', '分'],
+        digit:string[] = [
+            '零', '壹', '贰', '叁', '肆',
+            '伍', '陆', '柒', '捌', '玖'
+        ],
+        unit:string[][] = [
+            ['元', '万', '亿'],
+            ['', '拾', '佰', '仟']
+        ];
+    h = n < 0 ? (h || ''):'';
+    n = Math.abs(n);
+    let s = '';
+    for (let i = 0; i < fraction.length; i++) {
+        s += (digit[Math.floor(n * 10 * Math.pow(10, i)) % 10] + fraction[i]).replace(/零./, '');
+    }
+    s = s || '整';
+    n = Math.floor(n);
+    for (let i = 0; i < unit[0].length && n > 0; i++) {
+        let p = '';
+        for (let j = 0; j < unit[1].length && n > 0; j++) {
+            p = digit[n % 10] + unit[1][j] + p;
+            n = Math.floor(n / 10);
+        }
+        s = p.replace(/(零.)*零$/, '').replace(/^$/, '零') + unit[0][i] + s;
+    }
+    return h + s.replace(/(零.)*零元/, '元')
+        .replace(/(零.)+/g, '零')
+        .replace(/^整$/, '零元整');
+}
+export default toCapitalMoney;
