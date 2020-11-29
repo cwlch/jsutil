@@ -12,10 +12,10 @@ import getVarType from './get-varType';
  * @param {number | string} money 金额数据
  * @returns {string} 金额格式数据
  */
-const formatMoney = (money:number | string): string =>{
+const formatMoney = (money:number | string): string|number =>{
     const moneyType = getVarType(money);
     if(moneyType === 'null' || moneyType === 'undfined'){
-        return '--';
+        return money;
     }
     const strMonery:string =  parseFloat(money as string).toFixed(2).toString(),
         intNum:any = parseInt(strMonery).toString(),

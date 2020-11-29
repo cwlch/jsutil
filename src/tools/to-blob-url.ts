@@ -9,6 +9,7 @@
  /**
   * 二进制文件流转换成可访问的URL
   * @param blob 
+  * @return Promise
   */
 const blobToURL = (blob:any):any =>{
     return new Promise((res,rej)=>{
