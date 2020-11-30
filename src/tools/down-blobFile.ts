@@ -2,9 +2,9 @@
  * @Author: ch 
  * @Date: 2020-06-19 11:18:42 
  * @Last Modified by: ch
- * @Last Modified time: 2020-06-19 11:34:56
+ * @Last Modified time: 2020-11-30 15:13:35
  */
-import getUaInfo from './get-userAgentInfo';
+import getUaInfo from './get-uaInfo';
 
 const downBlobFile = (blob:string,fileName:string):void => {
 	const ua:any = getUaInfo(),

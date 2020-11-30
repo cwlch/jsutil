@@ -7,6 +7,14 @@ module.exports = {
           { text: 'Guide', link: '/guide/' },
           { text: 'api', link: '/api/' },
           { text: 'External', link: 'https://google.com' },
+        ],
+        sidebar:[
+          '/api/is',
+          '/api/get',
+          '/api/set',
+          '/api/to',
+          '/api/format',
+          '/api/ohter',
         ]
       }
   } 

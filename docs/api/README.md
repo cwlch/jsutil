@@ -16,4 +16,4 @@ isEmpty([]); //true
 
 ```javascript
 isPhone('13000000000')
-```s
+```
