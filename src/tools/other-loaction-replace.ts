@@ -1,8 +1,8 @@
 /*
  * @Author: ch 
  * @Date: 2020-06-02 14:45:38 
- * @Last Modified by:   ch 
- * @Last Modified time: 2020-06-02 14:45:38 
+ * @Last Modified by: ch
+ * @Last Modified time: 2020-12-01 17:26:16
  */
 const locationReplace = (url:string):void =>{
     if(window.history.replaceState){

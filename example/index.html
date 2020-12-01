@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <title>jTools示例代码</title>
+        <meta charset="utf8">
+        <script src="../lib/jtools.all.js"></script>
+        <!-- 校验类 -->
+        <script>        
+            const a = '',
+                b = null,
+                c = undefined,
+                d = [],
+                e = {},
+                f = 0;
+            console.log('jTools.isEmpty(b)',jTools.isEmpty(b)); //true
+            console.log('jTools.isEmpty(c)',jTools.isEmpty(c)); //true
+            console.log('jTools.isEmpty(d)',jTools.isEmpty(d)); //true
+            console.log('jTools.isEmpty(e)',jTools.isEmpty(e)); //true
+            console.log('jTools.isEmpty(f)',jTools.isEmpty(f)); //false
+            
+            
+
+            console.log('jTools.isName("欧阳张三")',jTools.isName('欧阳张三')); //true
+            console.log('jTools.isName("Jason Statham")',jTools.isName('Jason Statham')); //true
+            
+            
+            console.log('jTools.isPhone(13202023232)',jTools.isPhone('13202023232')); //true
+            console.log('jTools.isPhone(19982023232)',jTools.isPhone(19982023232)); //true
+            console.log('jTools.isPhone(12882023232);',jTools.isPhone(12882023232)); //false
+            
+
+            console.log('jTools.isTel("0731-1231456")',jTools.isTel('0731-1231456')); //true
+            
+
+            console.log("jTools.isEmail('cwl_ch@163.com')",jTools.isEmail('cwl_ch@163.com')); //true
+            console.log("jTools.isEmail('cwl-_ch@gjke-compay.vip.cn')",jTools.isEmail('cwl-_ch@gjke-compay.vip.cn')); //true
+            console.log("jTools.isEmail('cC.wl-_ch@gjke-我是.中文.vipcn')",jTools.isEmail('cC.wl-_ch@gjke-我是.中文.vipcn')); //true
+            console.log("jTools.isEmail('cC.wl-_ch@vipcn')",jTools.isEmail('cC.wl-_ch@vipcn')); //false
+            
+
+            console.log("jTools.isIdCard('430529202002025271')",jTools.isIdCard('430529202002025271')); //false 非正确身份证，可以使用自己身份证改一个数字试试。)
+            
+
+            console.log("jTools.isMoney('111.11')",jTools.isMoney(111.11)); //true
+            console.log("jTools.isMoney('0.11')",jTools.isMoney(0.11)); //true
+            console.log("jTools.isMoney('0.00')",jTools.isMoney(0.00)); //true
+            console.log("jTools.isMoney('0')",jTools.isMoney(0)); //true
+            console.log("jTools.isMoney('1111111111111.11')",jTools.isMoney(1111111111111.11)); //true  
+            console.log("jTools.isMoney('11111111111111')",jTools.isMoney(11111111111111)); //false  
+            console.log("jTools.isMoney('111.111')",jTools.isMoney(111.111)); //false 
+            console.log("jTools.isMoney('111.111')",jTools.isMoney(111.111)); //false 
+            console.log("jTools.isMoney('0.000')",jTools.isMoney('0.000')); //false 
+        </script>
+
+
+        <!-- 设置类 -->
+        <script>        
+            // 需要有服务载体            
+            // 30分钟后失效
+            const expires =    30 * 60 * 1000
+            jTools.setCookie('myCookieName','30分钟后失效',{expires:expires});
+            
+        
+              
+            // 需要有服务载体
+            jTools.setLocalStorage('localStorage',{a:'a',b:'b'});
+            jTools.setLocalStorage('localStorage2','localStorage2');
+        
+        
+            
+            // 需要有服务载体
+            jTools.setSessionStorage('sessionStorage',{a:'a',b:'b'});
+            jTools.setSessionStorage('sessionStorage2','sessionStorage2');
+        </script>
+
+         <!-- 获取类 -->
+         <script>        
+            // 需要有服务载体            
+            jTools.getCookie('myCookieName');
+            
+        
+              
+            // 需要有服务载体
+            jTools.getLocalStorage('localStorage');
+            jTools.getLocalStorage('localStorage2');
+        
+        
+            
+            // 需要有服务载体
+            jTools.getSessionStorage('sessionStorage');
+            jTools.getSessionStorage('sessionStorage2');
+        </script>
+    </head>
+    <body>
+        <h1>请打开控制台查看代码执行结果</h1>
+    </body>
+
+</html>

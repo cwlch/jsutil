@@ -10,11 +10,11 @@ module.exports = {
         ],
         sidebar:[
           '/api/is',
-          '/api/get',
           '/api/set',
-          '/api/to',
+          '/api/get',
           '/api/format',
           '/api/ohter',
-        ]
+        ],
+        displayAllHeaders : true
       }
   } 

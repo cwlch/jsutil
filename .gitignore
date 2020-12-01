@@ -2,5 +2,5 @@
 node_modules/
 .history/
 *.lock
-docs/.vuepress/dist/
+docs/.vuepress/dist/*
 package-lock.json
