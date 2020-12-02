@@ -2,7 +2,7 @@
  * @Author: ch 
  * @Date: 2020-06-01 14:09:49 
  * @Last Modified by: ch
- * @Last Modified time: 2020-09-07 11:12:22
+ * @Last Modified time: 2020-12-02 10:13:14
  */
 import getVarType from './get-varType';
 'use strict'
@@ -12,10 +12,10 @@ import getVarType from './get-varType';
  * @param {number | string} money 金额数据
  * @returns {string} 金额格式数据
  */
-const formatMoney = (money:number | string): string|number =>{
+const formatMoney = (money:number | string): string|number|null =>{
     const moneyType = getVarType(money);
-    if(moneyType === 'null' || moneyType === 'undfined'){
-        return money;
+    if(money === '' || moneyType === 'null' || moneyType === 'undefined'){
+        return null;
     }
     const strMonery:string =  parseFloat(money as string).toFixed(2).toString(),
         intNum:any = parseInt(strMonery).toString(),

@@ -1,97 +1,207 @@
 <html>
-    <head>
-        <title>jTools示例代码</title>
-        <meta charset="utf8">
-        <script src="../lib/jtools.all.js"></script>
-        <!-- 校验类 -->
-        <script>        
-            const a = '',
-                b = null,
-                c = undefined,
-                d = [],
-                e = {},
-                f = 0;
-            console.log('jTools.isEmpty(b)',jTools.isEmpty(b)); //true
-            console.log('jTools.isEmpty(c)',jTools.isEmpty(c)); //true
-            console.log('jTools.isEmpty(d)',jTools.isEmpty(d)); //true
-            console.log('jTools.isEmpty(e)',jTools.isEmpty(e)); //true
-            console.log('jTools.isEmpty(f)',jTools.isEmpty(f)); //false
-            
-            
 
-            console.log('jTools.isName("欧阳张三")',jTools.isName('欧阳张三')); //true
-            console.log('jTools.isName("Jason Statham")',jTools.isName('Jason Statham')); //true
-            
-            
-            console.log('jTools.isPhone(13202023232)',jTools.isPhone('13202023232')); //true
-            console.log('jTools.isPhone(19982023232)',jTools.isPhone(19982023232)); //true
-            console.log('jTools.isPhone(12882023232);',jTools.isPhone(12882023232)); //false
-            
+<head>
+    <title>jTools示例代码</title>
+    <meta charset="utf8">
+    <script src="../lib/jtools.all.js"></script>
+</head>
 
-            console.log('jTools.isTel("0731-1231456")',jTools.isTel('0731-1231456')); //true
-            
+<body>
+    <h1>请打开控制台查看代码执行结果</h1>
+    <br>
+    <br>
+    <h2>二进制文件流操作演示</h2>
+    <input type="file" id="input">
+    <img id="img" width="100" height="100" alt="上传图片预览处"/>
+    <button id='btn'>下载刚上传的图片</button>
+    <script>
+        const $img = document.querySelector('#img');
+        const $input =  document.querySelector('#input')
+        const $btn =  document.querySelector('#btn')
+        $input.addEventListener('change',(e)=>{
+            // 主要要代码主要要代码主要要代码
+            const blobFile = e.target.files[0]; //拿到二进制文件流
+            const urlObject = jTools.formatBlobUrl(blobFile); //生成URL对象            
+            $img.setAttribute('src',urlObject.url) //给img标签赋值，预览效果生效
+        })
 
-            console.log("jTools.isEmail('cwl_ch@163.com')",jTools.isEmail('cwl_ch@163.com')); //true
-            console.log("jTools.isEmail('cwl-_ch@gjke-compay.vip.cn')",jTools.isEmail('cwl-_ch@gjke-compay.vip.cn')); //true
-            console.log("jTools.isEmail('cC.wl-_ch@gjke-我是.中文.vipcn')",jTools.isEmail('cC.wl-_ch@gjke-我是.中文.vipcn')); //true
-            console.log("jTools.isEmail('cC.wl-_ch@vipcn')",jTools.isEmail('cC.wl-_ch@vipcn')); //false
-            
-
-            console.log("jTools.isIdCard('430529202002025271')",jTools.isIdCard('430529202002025271')); //false 非正确身份证，可以使用自己身份证改一个数字试试。)
-            
-
-            console.log("jTools.isMoney('111.11')",jTools.isMoney(111.11)); //true
-            console.log("jTools.isMoney('0.11')",jTools.isMoney(0.11)); //true
-            console.log("jTools.isMoney('0.00')",jTools.isMoney(0.00)); //true
-            console.log("jTools.isMoney('0')",jTools.isMoney(0)); //true
-            console.log("jTools.isMoney('1111111111111.11')",jTools.isMoney(1111111111111.11)); //true  
-            console.log("jTools.isMoney('11111111111111')",jTools.isMoney(11111111111111)); //false  
-            console.log("jTools.isMoney('111.111')",jTools.isMoney(111.111)); //false 
-            console.log("jTools.isMoney('111.111')",jTools.isMoney(111.111)); //false 
-            console.log("jTools.isMoney('0.000')",jTools.isMoney('0.000')); //false 
-        </script>
+        $btn.addEventListener('click',(e)=>{
+            // 下载二进制文件流到本地
+            jTools.downBlobFile($input.files[0])
+        })
+    </script>
+</body>
+<!-- 校验类 -->
+<script>
+    const a = '',
+        b = null,
+        c = undefined,
+        d = [],
+        e = {},
+        f = 0;
+    console.log('jTools.isEmpty(b)', jTools.isEmpty(b)); //true
+    console.log('jTools.isEmpty(c)', jTools.isEmpty(c)); //true
+    console.log('jTools.isEmpty(d)', jTools.isEmpty(d)); //true
+    console.log('jTools.isEmpty(e)', jTools.isEmpty(e)); //true
+    console.log('jTools.isEmpty(f)', jTools.isEmpty(f)); //false
 
 
-        <!-- 设置类 -->
-        <script>        
-            // 需要有服务载体            
-            // 30分钟后失效
-            const expires =    30 * 60 * 1000
-            jTools.setCookie('myCookieName','30分钟后失效',{expires:expires});
-            
+
+    console.log('jTools.isName("欧阳张三")', jTools.isName('欧阳张三')); //true
+    console.log('jTools.isName("Jason Statham")', jTools.isName('Jason Statham')); //true
+
+
+    console.log('jTools.isPhone(13202023232)', jTools.isPhone('13202023232')); //true
+    console.log('jTools.isPhone(19982023232)', jTools.isPhone(19982023232)); //true
+    console.log('jTools.isPhone(12882023232);', jTools.isPhone(12882023232)); //false
+
+
+    console.log('jTools.isTel("0731-1231456")', jTools.isTel('0731-1231456')); //true
+
+
+    console.log("jTools.isEmail('cwl_ch@163.com')", jTools.isEmail('cwl_ch@163.com')); //true
+    console.log("jTools.isEmail('cwl-_ch@gjke-compay.vip.cn')", jTools.isEmail('cwl-_ch@gjke-compay.vip.cn')); //true
+    console.log("jTools.isEmail('cC.wl-_ch@gjke-我是.中文.vipcn')", jTools.isEmail('cC.wl-_ch@gjke-我是.中文.vipcn')); //true
+    console.log("jTools.isEmail('cC.wl-_ch@vipcn')", jTools.isEmail('cC.wl-_ch@vipcn')); //false
+
+
+    console.log("jTools.isIdCard('430529202002025271')", jTools.isIdCard('430529202002025271')); //false 非正确身份证，可以使用自己身份证改一个数字试试。)
+
+
+    console.log("jTools.isMoney('111.11')", jTools.isMoney(111.11)); //true
+    console.log("jTools.isMoney('0.11')", jTools.isMoney(0.11)); //true
+    console.log("jTools.isMoney('0.00')", jTools.isMoney(0.00)); //true
+    console.log("jTools.isMoney('0')", jTools.isMoney(0)); //true
+    console.log("jTools.isMoney('1111111111111.11')", jTools.isMoney(1111111111111.11)); //true  
+    console.log("jTools.isMoney('11111111111111')", jTools.isMoney(11111111111111)); //false  
+    console.log("jTools.isMoney('111.111')", jTools.isMoney(111.111)); //false 
+    console.log("jTools.isMoney('111.111')", jTools.isMoney(111.111)); //false 
+    console.log("jTools.isMoney('0.000')", jTools.isMoney('0.000')); //false 
+</script>
+
+
+<!-- 设置类 -->
+<script>
+    // 需要有服务载体            
+    // 30分钟后失效
+    const expires = 30 * 60 * 1000
+    jTools.setCookie('myCookieName', '30分钟后失效', { expires: expires });
+
+
+
+    // 需要有服务载体
+    jTools.setLocalStorage('localStorage', { a: 'a', b: 'b' });
+    jTools.setLocalStorage('localStorage2', 'localStorage2');
+
+
+
+    // 需要有服务载体
+    jTools.setSessionStorage('sessionStorage', { a: 'a', b: 'b' });
+    jTools.setSessionStorage('sessionStorage2', 'sessionStorage2');
+</script>
+
+<!-- 获取类 -->
+<script>
+    // 需要有服务载体            
+    jTools.getCookie('myCookieName');
+
+
+
+    // 需要有服务载体
+    jTools.getLocalStorage('localStorage');
+    jTools.getLocalStorage('localStorage2');
+
+
+
+    // 需要有服务载体
+    jTools.getSessionStorage('sessionStorage');
+    jTools.getSessionStorage('sessionStorage2');
+</script>
+
+
+<!-- 格式化类 -->
+<script>
+    console.log("jTools.formatDate()", jTools.formatDate());
+    console.log("jTools.formatDate('2020年12月2日3时3分20秒','yyyy-mm-dd hh:ii:ss')", jTools.formatDate('2020年12月2日3时3分20秒', 'yyyy-mm-dd hh:ii:ss'));
+    console.log("jTools.formatDate(1606918942000,'yyyy-mm-dd hh:ii:ss')", jTools.formatDate(1606918942000, 'yyyy-mm-dd hh:ii:ss'));
+    console.log("jTools.formatDate('2020-12-02')", jTools.formatDate('2020-12-02'));
+
+
+    console.log("jTools.formatMoney(1000000)", jTools.formatMoney(1000000))
+    console.log("jTools.formatMoney(1000)", jTools.formatMoney(1000))
+    console.log("jTools.formatMoney()", jTools.formatMoney())
+    console.log("jTools.formatMoney()", jTools.formatMoney(''))
+    console.log("jTools.formatMoney(null)", jTools.formatMoney(null))
+
+
+
+
+    console.log("jTools.formatJsonSearch({a:'a1',b:'b1',c:'哈哈'})", jTools.formatJsonSearch({ a: 'a1', b: 'b1', c: '哈哈' }))
+
+    console.log("jTools.formatJsonSearch({a:'a1',b:'b1',c:'哈哈'},'&')", jTools.formatJsonSearch({ a: 'a1', b: 'b1', c: '哈哈' }, '&'))
+
+
+    console.log("jTools.formatSearchJson('?a=a1&b=b1&c=%E5%93%88%E5%93%88')", jTools.formatSearchJson('?a=a1&b=b1&c=%E5%93%88%E5%93%88'))
+
+    console.log("jTools.formatSearchJson('a=a1&b=b1&c=%E5%93%88%E5%93%88')", jTools.formatSearchJson('a=a1&b=b1&c=%E5%93%88%E5%93%88'))
+    console.log("jTools.formatSearchJson('&a=a1&b=b1&c=%E5%93%88%E5%93%88')", jTools.formatSearchJson('&a=a1&b=b1&c=%E5%93%88%E5%93%88'))
+
+
+    console.log("jTools.formatMoneyNumCapital(200)",jTools.formatMoneyNumCapital(200))
+    console.log("jTools.formatMoneyNumCapital(200.00)",jTools.formatMoneyNumCapital(200.00))
+    console.log("jTools.formatMoneyNumCapital(200.012)",jTools.formatMoneyNumCapital(200.012))
+    console.log("jTools.formatMoneyNumCapital(-200.012,'欠')",jTools.formatMoneyNumCapital(-200.012,'欠'))
+    console.log("jTools.formatMoneyNumCapital(-200.012)",jTools.formatMoneyNumCapital(-200.012))
+</script>
+
+<!-- 其他类 -->
+<script>
+    let myA = {
+        'name' : 'a',
+        'arr' : [{arr1:'arr1'},{arr2:'arr2'},{arr3:'arr3'},{arr4:'arr4'}],
+        'obj' : {
+            obj1 : 'obj1',
+            obj2 : {
+                obj21 : 'obj21',
+                obj22 : 'obj22'
+            },
+            fn (){
+                alert('a')
+            }
+        }
         
-              
-            // 需要有服务载体
-            jTools.setLocalStorage('localStorage',{a:'a',b:'b'});
-            jTools.setLocalStorage('localStorage2','localStorage2');
-        
-        
-            
-            // 需要有服务载体
-            jTools.setSessionStorage('sessionStorage',{a:'a',b:'b'});
-            jTools.setSessionStorage('sessionStorage2','sessionStorage2');
-        </script>
+    }
+    let copayA = {
+        name : 'copay-a',
+        age : 'copay-age',
+        arr : [{arr1 : 'copay-arr1'},{arr22:'copay-arr22'},'copay-arr3'],
+        obj : {
+            obj2 : {
+                obj22 : 'copy-obj22'
+            },
+            fn(){
+                alert('copy-a')
+            }
+        }
+    }
+    // demo一 深拷贝 
+    myA.obj.fn();
+    jTools.extend(myA,copayA);
+    myA.obj.fn();
+    console.log('myA:',myA,'-----copayA:',copayA);
 
-         <!-- 获取类 -->
-         <script>        
-            // 需要有服务载体            
-            jTools.getCookie('myCookieName');
-            
-        
-              
-            // 需要有服务载体
-            jTools.getLocalStorage('localStorage');
-            jTools.getLocalStorage('localStorage2');
-        
-        
-            
-            // 需要有服务载体
-            jTools.getSessionStorage('sessionStorage');
-            jTools.getSessionStorage('sessionStorage2');
-        </script>
-    </head>
-    <body>
-        <h1>请打开控制台查看代码执行结果</h1>
-    </body>
+    // demo二 浅拷贝 每次只测试一种demo
+    // myA.obj.fn();
+    // jTools.extend(myA,copayA,false);
+    // myA.obj.fn();
+    // console.log('myA:',myA,'-----copayA:',copayA);
+    
+    // demo三 不改变原有的对象
+    // myA.obj.fn();
+    // const newObj = jTools.extend({},myA,copayA);
+    // myA.obj.fn();
+    // newObj.obj.fn()
+    // console.log('newObj:',newObj, '------myA:',myA,'-----copayA:',copayA);
+</script>
 
 </html>

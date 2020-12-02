@@ -2,7 +2,7 @@
  * @Author: ch 
  * @Date: 2020-11-07 16:41:04 
  * @Last Modified by: ch
- * @Last Modified time: 2020-12-01 17:15:33
+ * @Last Modified time: 2020-12-02 15:31:19
  */
 import isEmpty from './tools/is-empty';
 import isName from './tools/is-name';
@@ -23,14 +23,14 @@ import formatBlobUrl from './tools/format-blob-url';
 import formatJsonSearch from './tools/format-json-search';
 import formatSearchJson from './tools/format-search-json';
 import formatMoneyNumCapital from './tools/format-moneyNum-capital';
-import fromatDate from './tools/format-date';
-import fromatMoney from './tools/format-money';
+import formatDate from './tools/format-date';
+import formatMoney from './tools/format-money';
 import loadScript from './tools/other-load-script';
-import loadScriptAwait from './tools/ohter-load-scriptAwait';
+import loadScriptAwait from './tools/other-load-scriptAwait';
 import creatUUID from './tools/other-creat-uuid';
 import extend from './tools/other-extend';
 import fillZero from './tools/other-fillZero';
-import downBlobFile from './tools/ohter-down-blobFile';
+import downBlobFile from './tools/other-down-blobFile';
 import loactionReplace from './tools/other-loaction-replace';
 export default {
     // 验证是否为空
@@ -64,9 +64,9 @@ export default {
     // 获取userAgent信息
     getUAInfo,
     // 格式化时间
-    fromatDate,
+    formatDate,
     // 格式化金额，添加千分符
-    fromatMoney,
+    formatMoney,
     // 二进制文件流转可访问URL
     formatBlobUrl,
     // JSON转URLSearch格式串
