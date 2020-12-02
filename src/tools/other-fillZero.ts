@@ -12,7 +12,7 @@
 
 const fillZero = (num:number|string):number|string => {
     let res:number|string = num;
-    if(num < 10){
+    if(num < 10 && num >= 0 && num.toString().indexOf('.') < 0){
         res = `0${num}`;
     }
     return res;
