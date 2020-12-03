@@ -2,7 +2,7 @@
  * @Author: ch 
  * @Date: 2020-11-07 16:41:04 
  * @Last Modified by: ch
- * @Last Modified time: 2020-12-03 17:21:56
+ * @Last Modified time: 2020-12-03 17:30:11
  */
 import isEmpty from './tools/is-empty';
 import isName from './tools/is-name';
@@ -32,7 +32,7 @@ import extend from './tools/other-extend';
 import fillZero from './tools/other-fillZero';
 import downBlobFile from './tools/other-down-blobFile';
 import loactionReplace from './tools/other-loaction-replace';
-export default {
+export {
     // 验证是否为空
     isEmpty,
     // 验证姓名格式
