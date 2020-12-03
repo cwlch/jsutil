@@ -2,7 +2,7 @@
   "name": "js-util-all",
   "version": "0.0.0",
   "description": "js工具类",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "rm -rf lib & tsc & rollup lib/index.js --file lib/jsUtil.all.js --format umd --name 'jsUtil' & vuepress build docs",
     "dev": "vuepress dev docs",
