@@ -1,9 +1,9 @@
 <html>
 
 <head>
-    <title>jTools示例代码</title>
+    <title>jsUtil示例代码</title>
     <meta charset="utf8">
-    <script src="../lib/jtools.all.js"></script>
+    <script src="../lib/jsUtil.all.js"></script>
 </head>
 
 <body>
@@ -21,13 +21,13 @@
         $input.addEventListener('change',(e)=>{
             // 主要要代码主要要代码主要要代码
             const blobFile = e.target.files[0]; //拿到二进制文件流
-            const urlObject = jTools.formatBlobUrl(blobFile); //生成URL对象            
+            const urlObject = jsUtil.formatBlobUrl(blobFile); //生成URL对象            
             $img.setAttribute('src',urlObject.url) //给img标签赋值，预览效果生效
         })
 
         $btn.addEventListener('click',(e)=>{
             // 下载二进制文件流到本地
-            jTools.downBlobFile($input.files[0])
+            jsUtil.downBlobFile($input.files[0])
         })
     </script>
 </body>
@@ -39,44 +39,44 @@
         d = [],
         e = {},
         f = 0;
-    console.log('jTools.isEmpty(b)', jTools.isEmpty(b)); //true
-    console.log('jTools.isEmpty(c)', jTools.isEmpty(c)); //true
-    console.log('jTools.isEmpty(d)', jTools.isEmpty(d)); //true
-    console.log('jTools.isEmpty(e)', jTools.isEmpty(e)); //true
-    console.log('jTools.isEmpty(f)', jTools.isEmpty(f)); //false
+    console.log('jsUtil.isEmpty(b)', jsUtil.isEmpty(b)); //true
+    console.log('jsUtil.isEmpty(c)', jsUtil.isEmpty(c)); //true
+    console.log('jsUtil.isEmpty(d)', jsUtil.isEmpty(d)); //true
+    console.log('jsUtil.isEmpty(e)', jsUtil.isEmpty(e)); //true
+    console.log('jsUtil.isEmpty(f)', jsUtil.isEmpty(f)); //false
 
 
 
-    console.log('jTools.isName("欧阳张三")', jTools.isName('欧阳张三')); //true
-    console.log('jTools.isName("Jason Statham")', jTools.isName('Jason Statham')); //true
+    console.log('jsUtil.isName("欧阳张三")', jsUtil.isName('欧阳张三')); //true
+    console.log('jsUtil.isName("Jason Statham")', jsUtil.isName('Jason Statham')); //true
 
 
-    console.log('jTools.isPhone(13202023232)', jTools.isPhone('13202023232')); //true
-    console.log('jTools.isPhone(19982023232)', jTools.isPhone(19982023232)); //true
-    console.log('jTools.isPhone(12882023232);', jTools.isPhone(12882023232)); //false
+    console.log('jsUtil.isPhone(13202023232)', jsUtil.isPhone('13202023232')); //true
+    console.log('jsUtil.isPhone(19982023232)', jsUtil.isPhone(19982023232)); //true
+    console.log('jsUtil.isPhone(12882023232);', jsUtil.isPhone(12882023232)); //false
 
 
-    console.log('jTools.isTel("0731-1231456")', jTools.isTel('0731-1231456')); //true
+    console.log('jsUtil.isTel("0731-1231456")', jsUtil.isTel('0731-1231456')); //true
 
 
-    console.log("jTools.isEmail('cwl_ch@163.com')", jTools.isEmail('cwl_ch@163.com')); //true
-    console.log("jTools.isEmail('cwl-_ch@gjke-compay.vip.cn')", jTools.isEmail('cwl-_ch@gjke-compay.vip.cn')); //true
-    console.log("jTools.isEmail('cC.wl-_ch@gjke-我是.中文.vipcn')", jTools.isEmail('cC.wl-_ch@gjke-我是.中文.vipcn')); //true
-    console.log("jTools.isEmail('cC.wl-_ch@vipcn')", jTools.isEmail('cC.wl-_ch@vipcn')); //false
+    console.log("jsUtil.isEmail('cwl_ch@163.com')", jsUtil.isEmail('cwl_ch@163.com')); //true
+    console.log("jsUtil.isEmail('cwl-_ch@gjke-compay.vip.cn')", jsUtil.isEmail('cwl-_ch@gjke-compay.vip.cn')); //true
+    console.log("jsUtil.isEmail('cC.wl-_ch@gjke-我是.中文.vipcn')", jsUtil.isEmail('cC.wl-_ch@gjke-我是.中文.vipcn')); //true
+    console.log("jsUtil.isEmail('cC.wl-_ch@vipcn')", jsUtil.isEmail('cC.wl-_ch@vipcn')); //false
 
 
-    console.log("jTools.isIdCard('430529202002025271')", jTools.isIdCard('430529202002025271')); //false 非正确身份证，可以使用自己身份证改一个数字试试。)
+    console.log("jsUtil.isIdCard('430529202002025271')", jsUtil.isIdCard('430529202002025271')); //false 非正确身份证，可以使用自己身份证改一个数字试试。)
 
 
-    console.log("jTools.isMoney('111.11')", jTools.isMoney(111.11)); //true
-    console.log("jTools.isMoney('0.11')", jTools.isMoney(0.11)); //true
-    console.log("jTools.isMoney('0.00')", jTools.isMoney(0.00)); //true
-    console.log("jTools.isMoney('0')", jTools.isMoney(0)); //true
-    console.log("jTools.isMoney('1111111111111.11')", jTools.isMoney(1111111111111.11)); //true  
-    console.log("jTools.isMoney('11111111111111')", jTools.isMoney(11111111111111)); //false  
-    console.log("jTools.isMoney('111.111')", jTools.isMoney(111.111)); //false 
-    console.log("jTools.isMoney('111.111')", jTools.isMoney(111.111)); //false 
-    console.log("jTools.isMoney('0.000')", jTools.isMoney('0.000')); //false 
+    console.log("jsUtil.isMoney('111.11')", jsUtil.isMoney(111.11)); //true
+    console.log("jsUtil.isMoney('0.11')", jsUtil.isMoney(0.11)); //true
+    console.log("jsUtil.isMoney('0.00')", jsUtil.isMoney(0.00)); //true
+    console.log("jsUtil.isMoney('0')", jsUtil.isMoney(0)); //true
+    console.log("jsUtil.isMoney('1111111111111.11')", jsUtil.isMoney(1111111111111.11)); //true  
+    console.log("jsUtil.isMoney('11111111111111')", jsUtil.isMoney(11111111111111)); //false  
+    console.log("jsUtil.isMoney('111.111')", jsUtil.isMoney(111.111)); //false 
+    console.log("jsUtil.isMoney('111.111')", jsUtil.isMoney(111.111)); //false 
+    console.log("jsUtil.isMoney('0.000')", jsUtil.isMoney('0.000')); //false 
 </script>
 
 
@@ -85,73 +85,73 @@
     // 需要有服务载体            
     // 30分钟后失效
     const expires = 30 * 60 * 1000
-    jTools.setCookie('myCookieName', '30分钟后失效', { expires: expires });
+    jsUtil.setCookie('myCookieName', '30分钟后失效', { expires: expires });
 
 
 
     // 需要有服务载体
-    jTools.setLocalStorage('localStorage', { a: 'a', b: 'b' });
-    jTools.setLocalStorage('localStorage2', 'localStorage2');
+    jsUtil.setLocalStorage('localStorage', { a: 'a', b: 'b' });
+    jsUtil.setLocalStorage('localStorage2', 'localStorage2');
 
 
 
     // 需要有服务载体
-    jTools.setSessionStorage('sessionStorage', { a: 'a', b: 'b' });
-    jTools.setSessionStorage('sessionStorage2', 'sessionStorage2');
+    jsUtil.setSessionStorage('sessionStorage', { a: 'a', b: 'b' });
+    jsUtil.setSessionStorage('sessionStorage2', 'sessionStorage2');
 </script>
 
 <!-- 获取类 -->
 <script>
     // 需要有服务载体            
-    jTools.getCookie('myCookieName');
+    jsUtil.getCookie('myCookieName');
 
 
 
     // 需要有服务载体
-    jTools.getLocalStorage('localStorage');
-    jTools.getLocalStorage('localStorage2');
+    jsUtil.getLocalStorage('localStorage');
+    jsUtil.getLocalStorage('localStorage2');
 
 
 
     // 需要有服务载体
-    jTools.getSessionStorage('sessionStorage');
-    jTools.getSessionStorage('sessionStorage2');
+    jsUtil.getSessionStorage('sessionStorage');
+    jsUtil.getSessionStorage('sessionStorage2');
 </script>
 
 
 <!-- 格式化类 -->
 <script>
-    console.log("jTools.formatDate()", jTools.formatDate());
-    console.log("jTools.formatDate('2020年12月2日3时3分20秒','yyyy-mm-dd hh:ii:ss')", jTools.formatDate('2020年12月2日3时3分20秒', 'yyyy-mm-dd hh:ii:ss'));
-    console.log("jTools.formatDate(1606918942000,'yyyy-mm-dd hh:ii:ss')", jTools.formatDate(1606918942000, 'yyyy-mm-dd hh:ii:ss'));
-    console.log("jTools.formatDate('2020-12-02')", jTools.formatDate('2020-12-02'));
+    console.log("jsUtil.formatDate()", jsUtil.formatDate());
+    console.log("jsUtil.formatDate('2020年12月2日3时3分20秒','yyyy-mm-dd hh:ii:ss')", jsUtil.formatDate('2020年12月2日3时3分20秒', 'yyyy-mm-dd hh:ii:ss'));
+    console.log("jsUtil.formatDate(1606918942000,'yyyy-mm-dd hh:ii:ss')", jsUtil.formatDate(1606918942000, 'yyyy-mm-dd hh:ii:ss'));
+    console.log("jsUtil.formatDate('2020-12-02')", jsUtil.formatDate('2020-12-02'));
 
 
-    console.log("jTools.formatMoney(1000000)", jTools.formatMoney(1000000))
-    console.log("jTools.formatMoney(1000)", jTools.formatMoney(1000))
-    console.log("jTools.formatMoney()", jTools.formatMoney())
-    console.log("jTools.formatMoney()", jTools.formatMoney(''))
-    console.log("jTools.formatMoney(null)", jTools.formatMoney(null))
+    console.log("jsUtil.formatMoney(1000000)", jsUtil.formatMoney(1000000))
+    console.log("jsUtil.formatMoney(1000)", jsUtil.formatMoney(1000))
+    console.log("jsUtil.formatMoney()", jsUtil.formatMoney())
+    console.log("jsUtil.formatMoney()", jsUtil.formatMoney(''))
+    console.log("jsUtil.formatMoney(null)", jsUtil.formatMoney(null))
 
 
 
 
-    console.log("jTools.formatJsonSearch({a:'a1',b:'b1',c:'哈哈'})", jTools.formatJsonSearch({ a: 'a1', b: 'b1', c: '哈哈' }))
+    console.log("jsUtil.formatJsonSearch({a:'a1',b:'b1',c:'哈哈'})", jsUtil.formatJsonSearch({ a: 'a1', b: 'b1', c: '哈哈' }))
 
-    console.log("jTools.formatJsonSearch({a:'a1',b:'b1',c:'哈哈'},'&')", jTools.formatJsonSearch({ a: 'a1', b: 'b1', c: '哈哈' }, '&'))
-
-
-    console.log("jTools.formatSearchJson('?a=a1&b=b1&c=%E5%93%88%E5%93%88')", jTools.formatSearchJson('?a=a1&b=b1&c=%E5%93%88%E5%93%88'))
-
-    console.log("jTools.formatSearchJson('a=a1&b=b1&c=%E5%93%88%E5%93%88')", jTools.formatSearchJson('a=a1&b=b1&c=%E5%93%88%E5%93%88'))
-    console.log("jTools.formatSearchJson('&a=a1&b=b1&c=%E5%93%88%E5%93%88')", jTools.formatSearchJson('&a=a1&b=b1&c=%E5%93%88%E5%93%88'))
+    console.log("jsUtil.formatJsonSearch({a:'a1',b:'b1',c:'哈哈'},'&')", jsUtil.formatJsonSearch({ a: 'a1', b: 'b1', c: '哈哈' }, '&'))
 
 
-    console.log("jTools.formatMoneyNumCapital(200)",jTools.formatMoneyNumCapital(200))
-    console.log("jTools.formatMoneyNumCapital(200.00)",jTools.formatMoneyNumCapital(200.00))
-    console.log("jTools.formatMoneyNumCapital(200.012)",jTools.formatMoneyNumCapital(200.012))
-    console.log("jTools.formatMoneyNumCapital(-200.012,'欠')",jTools.formatMoneyNumCapital(-200.012,'欠'))
-    console.log("jTools.formatMoneyNumCapital(-200.012)",jTools.formatMoneyNumCapital(-200.012))
+    console.log("jsUtil.formatSearchJson('?a=a1&b=b1&c=%E5%93%88%E5%93%88')", jsUtil.formatSearchJson('?a=a1&b=b1&c=%E5%93%88%E5%93%88'))
+
+    console.log("jsUtil.formatSearchJson('a=a1&b=b1&c=%E5%93%88%E5%93%88')", jsUtil.formatSearchJson('a=a1&b=b1&c=%E5%93%88%E5%93%88'))
+    console.log("jsUtil.formatSearchJson('&a=a1&b=b1&c=%E5%93%88%E5%93%88')", jsUtil.formatSearchJson('&a=a1&b=b1&c=%E5%93%88%E5%93%88'))
+
+
+    console.log("jsUtil.formatMoneyNumCapital(200)",jsUtil.formatMoneyNumCapital(200))
+    console.log("jsUtil.formatMoneyNumCapital(200.00)",jsUtil.formatMoneyNumCapital(200.00))
+    console.log("jsUtil.formatMoneyNumCapital(200.012)",jsUtil.formatMoneyNumCapital(200.012))
+    console.log("jsUtil.formatMoneyNumCapital(-200.012,'欠')",jsUtil.formatMoneyNumCapital(-200.012,'欠'))
+    console.log("jsUtil.formatMoneyNumCapital(-200.012)",jsUtil.formatMoneyNumCapital(-200.012))
 </script>
 
 <!-- 其他类 -->
@@ -186,22 +186,52 @@
     }
     // demo一 深拷贝 
     myA.obj.fn();
-    jTools.extend(myA,copayA);
+    jsUtil.extend(myA,copayA);
     myA.obj.fn();
     console.log('myA:',myA,'-----copayA:',copayA);
 
     // demo二 浅拷贝 每次只测试一种demo
     // myA.obj.fn();
-    // jTools.extend(myA,copayA,false);
+    // jsUtil.extend(myA,copayA,false);
     // myA.obj.fn();
     // console.log('myA:',myA,'-----copayA:',copayA);
     
     // demo三 不改变原有的对象
     // myA.obj.fn();
-    // const newObj = jTools.extend({},myA,copayA);
+    // const newObj = jsUtil.extend({},myA,copayA);
     // myA.obj.fn();
     // newObj.obj.fn()
     // console.log('newObj:',newObj, '------myA:',myA,'-----copayA:',copayA);
+
+
+     // 加载单个JS
+    // loadScript('./a.js').then(res=>{
+    //     console.log('加载成功') //此处输出一定会在其他JS都输出完才会执行
+    // });
+    // 并联加载多个JS
+    // jsUtil.loadScript(['./a.js','./b.js','./c.js']).then(res=>{
+    //     console.log('加载成功') //此处输出一定会在其他JS都输出完才会执行
+    // }); //输出2,3,1 顺序不固定
+
+    // 串联加载多个JS
+    jsUtil.loadScriptAwait(['./a.js','./b.js','./c.js']).then(res=>{
+        console.log('加载成功22') 
+    });
+
+
+
+
+    console.log("jsUtil.fillZero(1) ",jsUtil.fillZero(1)) // 01
+    console.log("jsUtil.fillZero(0.1) ",jsUtil.fillZero(0.1))   // 0.1
+    console.log("jsUtil.fillZero(-0.1)",jsUtil.fillZero(-0.1))    // -0.1
+    console.log("jsUtil.fillZero('2') ",jsUtil.fillZero('2') ) // 02
+    console.log("jsUtil.fillZero('11')",jsUtil.fillZero('11')) // 11
+
+    console.log("jsUtil.creatUUID() ",jsUtil.creatUUID() )
+    console.log("jsUtil.creatUUID(32, 2) ",jsUtil.creatUUID(32, 2)  )
+    console.log("jsUtil.creatUUID(32, 10)",jsUtil.creatUUID(32, 10))
+    console.log("jsUtil.creatUUID(32, 16)",jsUtil.creatUUID(32, 16) )
+
 </script>
 
 </html>

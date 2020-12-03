@@ -1,67 +1,86 @@
-# jTools简介
-
-jTools是javascript工具库，主要提供一些原生js的快捷方法；
-
-# 当前版本
-1.0.0
-
 # 使用教程
-#### 安装
-```
-//npm安装 注意版本号使用最新版本 git库的标签
 
-//直接引入
 
-//文件内使用import引入或使用script标签引入
+## CDN快速开始
++ 可通过 jsutil.gykeji.com 获取到最新版本的资源，在页面上引入js即可开始使用。
++ 会暴露一个“ **jsUtil** ”全局变量
 
+```html
+<script src="http://jsutil.gykeji.com/lib/jsUtil.all.js"></script>
+<script>
+	jsUtil.isName('你的名字'); //true
+	jsUtil.isName('你的名字12'); //false
+	// jsUtil....
+</script>
 ```
-#### 文件内使用
-##### 全量引入
+## npm安装
+``` sh
+npm i js-util-all -S
 ```
-import * as Tools from 'tools';
 
-const a = '';
-Tools.isEmpty(a); // true
-Tools.isPhone(a); // false
 
+## 引入
+你可以引入整个jsUtil，或是根据需要仅引入部分方法。**建议按需引入**;
+#### 按需引入
+借助 [babel-plugin-component](https://github.com/ElementUI/babel-plugin-component)，我们可以只引入需要的方法，减少没必要代码。
+
+首先，安装 babel-plugin-component：
+``` sh
+npm install babel-plugin-component -D
 ```
-##### 按需引入
+然后，将 .babelrc文件 或package.json文件中的presets，plugins属性添加如下配置：
+```javascript
+{
+	 //这里的是2015或evn看你之前的配置是啥就是啥
+	"presets": [["es2015|| evn", { "modules": false }]]
+	"plugins": [
+    [
+      "component",
+      {
+        "libraryName": "js-util-all",
+        "styleLibraryName": "theme-chalk"
+      }
+    ]
+  ]
+}
 ```
-import {isEmpty,isPhone} from 'tools';
+接下来，你在你要用到相关方法的页面直接引入方法即可
+```javascript
+import {isEmpty,isPhone} from 'js-util-all';
 
 const a = '';
 isEmpty(a); // true
 isPhone(a); // false
-
 ```
 
-###### script标签引入
-```
-<script src='你的存放路径.tools.all.js'></srcipt>
-
-//tools.all.js会暴露出一个GT全局变量； 使用GT全局变量即可
-const a = '';
-GT.isEmpty(a); // true
-GT.isPhone(a); // false
-
-```
-
-##### webpack配置全局变量别名
-
+#### 全量引入
+如果全量引入可以在webpack中配置全局变量，也可以在使用文件中全部引入
+##### webpack中配置全局变量
 webpack.config.js
-```
+```javascript
 resolve:{
 	alias :{
-		Tools : ['XXX你的路径XXX/node_modules/tools/lib/index.js','default']
+		jsUtil : ['XXX你的路径XXX/node_modules/js-util-all/lib/index.js','default']
 	}
 }
 ```
-
 page.js
-```
+```javascript
 const a = '';
-Tools.isEmpty(a); // true
-
+jsUtil.isEmpty(a); // true
 ```
-#### API
-[查看API](https://nlossert.coding.net/p/tools/d/tools/git/tree/develop/API.md?tab=markdown)
+<br>
+
+##### 在文件中直接全量引入
+page.js
+```javascript
+import * as jsUtil from 'js-util-all';
+
+const a = '';
+jsUtil.isEmpty(a); // true
+jsUtil.isPhone(a); // false
+```
+
+
+
+

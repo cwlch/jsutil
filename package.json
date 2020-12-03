@@ -1,22 +1,22 @@
 {
-  "name": "jtools",
-  "version": "1.0.0",
+  "name": "js-util-all",
+  "version": "0.0.0",
   "description": "js工具类",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf lib & tsc & rollup lib/index.js --file lib/jtools.all.js --format umd --name 'jTools' & vuepress build docs",
+    "build": "rm -rf lib & tsc & rollup lib/index.js --file lib/jsUtil.all.js --format umd --name 'jsUtil' & vuepress build docs",
     "dev": "vuepress dev docs",
     "start": "node server.js",
     "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cwlch/jTools.git"
+    "url": "git+https://github.com/cwlch/jsUtil.git"
   },
   "author": "Ch",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/cwlch/jTools/issues"
+    "url": "https://github.com/cwlch/jsUtil/issues"
   },
   "babel": {
     "presets": [
@@ -34,7 +34,7 @@
       ".*\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest"
     }
   },
-  "homepage": "https://github.com/cwlch/jTools#readme",
+  "homepage": "https://github.com/cwlch/jsUtil#readme",
   "dependencies": {
     "marked": "^1.2.3",
     "showdown": "^1.9.1"

@@ -40,7 +40,7 @@
     }
     // demo一 深拷贝
     myA.obj.fn()  //alert 'a'
-    jTools.extend(myA,copayA);
+    jsUtil.extend(myA,copayA);
     myA.obj.fn() //alert 'copy-a'
     console.log('myA:',myA,'copayA:',copayA)
     myA = {
@@ -61,20 +61,20 @@
     
     // demo二 浅拷贝 每次只测试一种demo
     // myA.obj.fn();
-    // jTools.extend(myA,copayA,false);
+    // jsUtil.extend(myA,copayA,false);
     // myA.obj.fn();
     // console.log('myA:',myA,'-----copayA:',copayA);
     
     // demo三 如果要想不改变原有的对象，第一个参数传个空对象或空数组即可
     // myA.obj.fn();
-    // const newObj = jTools.extend({},myA,copayA);
+    // const newObj = jsUtil.extend({},myA,copayA);
     // myA.obj.fn();
     // newObj.obj.fn()
     // console.log('newObj:',newObj, '------myA:',myA,'-----copayA:',copayA);
 
     // demo四 多个对象拷贝,并且执行浅拷贝
     // myA.obj.fn();
-    // const newObj = jTools.extend({},copay1,copayn2,....,copayn+,false);
+    // const newObj = jsUtil.extend({},copay1,copayn2,....,copayn+,false);
     // myA.obj.fn();
     // newObj.obj.fn()
     // console.log('newObj:',newObj, '------myA:',myA,'-----copayA:',copayA);
@@ -160,9 +160,9 @@
 - 示例
 ```javascript
     creatUUID() // EB4479E4-CA4A-4377-AC97-5C3424CCA6EF
-    creatUUID(8, 2)  //  "10010100000011100011101010001011"
-    creatUUID(8, 10) // "82841022800573848567251899801403"
-    creatUUID(8, 16) // "F743098834031FDFCE1D8976F9769222"
+    creatUUID(32, 2)  //  "10010100000011100011101010001011"
+    creatUUID(32, 10) // "82841022800573848567251899801403"
+    creatUUID(32, 16) // "F743098834031FDFCE1D8976F9769222"
 ```
 ## downBlobFile
 ### 下载二进制流文件到本地
@@ -184,10 +184,10 @@
 
         $btn.addEventListener('click',(e)=>{
             // 下载二进制文件流到本地
-            jTools.downBlobFile($input.files[0]) 
-            jTools.downBlobFile($input.files[0],{name:'我的名字'}) 
-            jTools.downBlobFile($input.files[0],{suffix:'gif'})
-            jTools.downBlobFile($input.files[0],{name:'你的名字',suffix:'gif'})
+            jsUtil.downBlobFile($input.files[0]) 
+            jsUtil.downBlobFile($input.files[0],{name:'我的名字'}) 
+            jsUtil.downBlobFile($input.files[0],{suffix:'gif'})
+            jsUtil.downBlobFile($input.files[0],{name:'你的名字',suffix:'gif'})
         })
     </script>
 ```
