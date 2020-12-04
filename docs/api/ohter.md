@@ -135,7 +135,7 @@
 
 
 ## fillZero
-### 个位数补0
+### 小于10正整数补0
 :::tip 参数
 + number {Number | String} 数字
 :::

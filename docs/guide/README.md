@@ -34,13 +34,15 @@ npm install babel-plugin-component -D
 	 //这里的是2015或evn看你之前的配置是啥就是啥
 	"presets": [["es2015|| evn", { "modules": false }]]
 	"plugins": [
-    [
-      "component",
-      {
-        "libraryName": "js-util-all",
-        "styleLibraryName": "theme-chalk"
-      }
-    ]
+		'XXXX....',
+      [
+        "component",
+        {
+          "libraryName": "js-util-all",
+          "libDir" : "lib/tools",
+          "style": false
+        }
+      ]
   ]
 }
 ```
@@ -60,9 +62,14 @@ webpack.config.js
 ```javascript
 resolve:{
 	alias :{
-		jsUtil : ['XXX你的路径XXX/node_modules/js-util-all/lib/index.js','default']
+		jsUtil : '../node_modules/js-util-all/lib/index.js'
 	}
-}
+},
+plugins: [
+	new webpack.ProvidePlugin({
+		'jsUtil' :'jsUtil'
+	})
+]
 ```
 page.js
 ```javascript
@@ -80,6 +87,9 @@ const a = '';
 jsUtil.isEmpty(a); // true
 jsUtil.isPhone(a); // false
 ```
+:::warning 提示
+如果要全用* as方法全量引入，记住要把babel-plugin-component的配置删掉
+:::
 
 
 

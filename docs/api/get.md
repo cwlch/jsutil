@@ -46,7 +46,7 @@ getSessionStorage('mySessionStorage');
 ```
 
 ## getUAInfo
-### 设置浏览器UserAgent信息
+### 获取浏览器UserAgent信息
 ::: tip 参数
 + key {string} 存储名称
 :::
