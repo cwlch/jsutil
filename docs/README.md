@@ -15,8 +15,10 @@ features:
 footer:  copyright © 2020-present 蓝方人 湘ICP备2020020206号-1
 ---
 ## 简介
-jsUtil是通过作者平时开发积累和一些现网上零散整理的常用javascript函数的封装，方便使用。持续更新...<br>
-欢迎大家来为jsUtil添砖加瓦，**希望jsUtil能成为一个大家共同维护的共享库**。 [立即发起PR→](https://github.com/cwlch/jsUtil)  [我要留言](https://github.com/cwlch/jsUtil/issues)
+jsUtil是通过作者平时开发积累和一些现在各博客上零散整理的常用javascript函数的封装，方便使用。持续更新...<br><br>
+ [关注gitHub](https://github.com/cwlch/jsUtil)有更新立即通知<br><br>
+欢迎大家来为jsUtil添砖加瓦，**希望jsUtil能成为一个大家共同维护的共享库**。<br><br>
+ [立即发起PR→](https://github.com/cwlch/jsUtil)  [我要留言](https://github.com/cwlch/jsUtil/issues)
 ## 验证类
 [校验一个变量是否为空 、 ](/api/is.html#isempty)
 [校验是否为正常的姓名格式 、 ](/api/is.html#isname)

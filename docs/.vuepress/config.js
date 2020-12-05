@@ -18,7 +18,7 @@ module.exports = {
           { text: '教程', link: '/guide/' },
           { text: 'API', link: '/api/is/' },
           { text: 'GIT', link: 'https://github.com/cwlch/jsUtil.git' },
-          { text: 'NPM', link: 'https://www.npmjs.com/package/js-util' }
+          { text: 'NPM', link: 'https://www.npmjs.com/package/js-util-all' }
         ],
         sidebar:{
           '/guide/':[''],
