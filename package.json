@@ -34,7 +34,7 @@
       ".*\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest"
     }
   },
-  "homepage": "https://github.com/cwlch/jsUtil#readme",
+  "homepage": "http://jsutil.gykeji.com",
   "dependencies": {
     "marked": "^1.2.3",
     "showdown": "^1.9.1"
