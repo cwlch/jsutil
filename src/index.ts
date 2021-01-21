@@ -2,7 +2,7 @@
  * @Author: ch 
  * @Date: 2020-11-07 16:41:04 
  * @Last Modified by: ch
- * @Last Modified time: 2020-12-03 17:30:11
+ * @Last Modified time: 2021-01-21 09:58:33
  */
 import isEmpty from './tools/is-empty';
 import isName from './tools/is-name';
@@ -32,6 +32,7 @@ import extend from './tools/extend';
 import fillZero from './tools/fill-zero';
 import downBlobFile from './tools/down-blob-file';
 import loactionReplace from './tools/loaction-replace';
+import copyText from './tools/copy-text';
 export {
     // 验证是否为空
     isEmpty,
@@ -88,5 +89,7 @@ export {
     // 下载二进制文件流文件
     downBlobFile,
     // 浏览器replace方法
-    loactionReplace
+    loactionReplace,
+    // 文本拷贝
+    copyText
 };
