@@ -1,4 +1,4 @@
-import getVarType from './get-varType';
+import getVarType from './get-var-type';
 
 const toJsonSearch = (myJson:any,connector:string='?'):string=>{
     if(getVarType(myJson) !== 'object'){

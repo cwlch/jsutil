@@ -4,8 +4,8 @@
  * @Last Modified by: ch
  * @Last Modified time: 2020-12-03 10:00:10
  */
-import loadScript from './other-load-script';
-import getVarType from './get-varType';
+import loadScript from './load-script';
+import getVarType from './get-var-type';
 
 
 /** 

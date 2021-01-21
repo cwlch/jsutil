@@ -4,7 +4,7 @@
  * @Last Modified by: ch
  * @Last Modified time: 2020-10-27 09:40:30
  */
-import getVarType from './get-varType'
+import getVarType from './get-var-type'
 /**
  * 并联加载指定的脚本
  * 并联加载[异步]同时加载，不管上个是否加载完成，直接加载全部

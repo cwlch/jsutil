@@ -5,7 +5,7 @@
  * @Last Modified time: 2020-11-28 16:50:41
  */
 'use strict'
-import getVarType from './get-varType';
+import getVarType from './get-var-type';
 const extend = (target:any, ...args:any):object =>{
     const last:any = args[args.length-1],
         lastType:string = getVarType(last),

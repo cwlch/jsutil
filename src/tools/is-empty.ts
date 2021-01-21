@@ -9,7 +9,7 @@
 /**
  * 判断变量是否为空
  */
-import getType from './get-varType';
+import getType from './get-var-type';
 
 const isEmpty = (params:any = ''):boolean => {
     const myType:string = getType(params);

@@ -4,7 +4,7 @@
  * @Last Modified by: ch
  * @Last Modified time: 2020-12-02 10:13:14
  */
-import getVarType from './get-varType';
+import getVarType from './get-var-type';
 'use strict'
 /**
  * 
