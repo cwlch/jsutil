@@ -24,7 +24,11 @@ import formatJsonSearch from './tools/format-json-search';
 import formatSearchJson from './tools/format-search-json';
 import formatMoneyNumCapital from './tools/format-money-num-capital';
 import formatDate from './tools/format-date';
-import formatMoney from './tools/format-money';
+import formatMoneySymbol from './tools/format-money-symbol';
+import limitInt from './tools/limit-int';
+import limitIntFloat from './tools/limit-int-float';
+import limitPNInt from './tools/limit-p-n-int';
+import limitPNIntFloat from './tools/limit-p-n-int-float';
 import loadScript from './tools/load-script';
 import loadScriptAwait from './tools/load-script-await';
 import creatUUID from './tools/creat-uuid';
@@ -67,15 +71,23 @@ export {
     // 格式化时间
     formatDate,
     // 格式化金额，添加千分符
-    formatMoney,
+    formatMoneySymbol,
+    // 数字金额转中文大写
+    formatMoneyNumCapital,
     // 二进制文件流转可访问URL
     formatBlobUrl,
     // JSON转URLSearch格式串
     formatJsonSearch,
     // URLSearch串转JSON对象
     formatSearchJson,
-    // 数字金额转中文大写
-    formatMoneyNumCapital,
+    // 限制输入整数
+    limitInt,
+    // 限制输入整数和浮点数
+    limitIntFloat,
+    // 限制输入正负整数
+    limitPNInt,
+    // 限制输入正负整数及浮点数
+    limitPNIntFloat,
     // 动态加载JS 并联
     loadScript,
     // 动态加载JS 串联
@@ -91,5 +103,5 @@ export {
     // 浏览器replace方法
     loactionReplace,
     // 文本拷贝
-    copyText
+    copyText,
 };
