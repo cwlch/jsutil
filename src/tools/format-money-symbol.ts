@@ -8,11 +8,11 @@ import getVarType from './get-var-type';
 'use strict'
 /**
  * 
- * 金额格式化
+ * 金额加千位符格式化
  * @param {number | string} money 金额数据
  * @returns {string} 金额格式数据
  */
-const formatMoney = (money:number | string): string|number|null =>{
+const formatMoneySymbol = (money:number | string): string|number|null =>{
     const moneyType = getVarType(money);
     if(money === '' || moneyType === 'null' || moneyType === 'undefined'){
         return null;
@@ -30,4 +30,4 @@ const formatMoney = (money:number | string): string|number|null =>{
     }
     return str += `.${floatNum[1]}`;
 }
-export default formatMoney;
+export default formatMoneySymbol;

@@ -19,8 +19,8 @@
 
 
 
-## formatMoney
-### 金额格式化,大于等于100万时添加千位符
+## formatMoneySymbol
+### 金额加千位符格式化,大于等于100万时添加千位符
 :::tip 参数
 + money {Number | String} 金额
     - 必传参数，如果为null 或 undefined 或空串 返回null
@@ -32,11 +32,11 @@
 
 - 示例
 ```javascript
-    formatMoney(1000000) //1,000,000.00
-    formatMoney(1000) //1000.00
-    formatMoney() //null
-    formatMoney() //null
-    formatMoney(null) //null
+    formatMoneySymbol(1000000) //1,000,000.00
+    formatMoneySymbol(1000) //1000.00
+    formatMoneySymbol() //null
+    formatMoneySymbol() //null
+    formatMoneySymbol(null) //null
 ```
 ## formatJsonSearch
 ### json转URL Seach参数格式
