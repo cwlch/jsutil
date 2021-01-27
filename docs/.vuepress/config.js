@@ -27,6 +27,7 @@ module.exports = {
             'set',
             'get',
             'format',
+            'limit',
             'ohter',
           ]
         },

@@ -40,7 +40,7 @@
     }
     // demo一 深拷贝
     myA.obj.fn()  //alert 'a'
-    jsUtil.extend(myA,copayA);
+    extend(myA,copayA);
     myA.obj.fn() //alert 'copy-a'
     console.log('myA:',myA,'copayA:',copayA)
     myA = {
@@ -61,20 +61,20 @@
     
     // demo二 浅拷贝 每次只测试一种demo
     // myA.obj.fn();
-    // jsUtil.extend(myA,copayA,false);
+    // extend(myA,copayA,false);
     // myA.obj.fn();
     // console.log('myA:',myA,'-----copayA:',copayA);
     
     // demo三 如果要想不改变原有的对象，第一个参数传个空对象或空数组即可
     // myA.obj.fn();
-    // const newObj = jsUtil.extend({},myA,copayA);
+    // const newObj = extend({},myA,copayA);
     // myA.obj.fn();
     // newObj.obj.fn()
     // console.log('newObj:',newObj, '------myA:',myA,'-----copayA:',copayA);
 
     // demo四 多个对象拷贝,并且执行浅拷贝
     // myA.obj.fn();
-    // const newObj = jsUtil.extend({},copay1,copayn2,....,copayn+,false);
+    // const newObj = extend({},copay1,copayn2,....,copayn+,false);
     // myA.obj.fn();
     // newObj.obj.fn()
     // console.log('newObj:',newObj, '------myA:',myA,'-----copayA:',copayA);
@@ -150,7 +150,7 @@
     fillZero('2')  // 02
     fillZero('11') // 11
 ```
-## creatUUID
+## creatUuid
 ### 创建一个UUID
 :::tip 参数
 + len 指定长度，非必传
@@ -159,10 +159,10 @@
 
 - 示例
 ```javascript
-    creatUUID() // EB4479E4-CA4A-4377-AC97-5C3424CCA6EF
-    creatUUID(32, 2)  //  "10010100000011100011101010001011"
-    creatUUID(32, 10) // "82841022800573848567251899801403"
-    creatUUID(32, 16) // "F743098834031FDFCE1D8976F9769222"
+    creatUuid() // EB4479E4-CA4A-4377-AC97-5C3424CCA6EF
+    creatUuid(32, 2)  //  "10010100000011100011101010001011"
+    creatUuid(32, 10) // "82841022800573848567251899801403"
+    creatUuid(32, 16) // "F743098834031FDFCE1D8976F9769222"
 ```
 ## downBlobFile
 ### 下载二进制流文件到本地
@@ -179,17 +179,19 @@
     <input type="file" id="input">
     <button id='btn'>下载刚上传的图片</button>
     <script>
-        const $input =  document.querySelector('#input')
-        const $btn =  document.querySelector('#btn')
+        const $input =  document.querySelector('#input');
+        const $btn =  document.querySelector('#btn');
 
         $btn.addEventListener('click',(e)=>{
+            let myBlob = $input.files[0];
             // 下载二进制文件流到本地
-            jsUtil.downBlobFile($input.files[0]) 
-            jsUtil.downBlobFile($input.files[0],{name:'我的名字'}) 
-            jsUtil.downBlobFile($input.files[0],{suffix:'gif'})
-            jsUtil.downBlobFile($input.files[0],{name:'你的名字',suffix:'gif'})
+            downBlobFile(myBlob);
+            downBlobFile(myBlob,{name:'我的名字'});
+            downBlobFile(myBlob,{suffix:'gif'});
+            downBlobFile(myBlob,{name:'你的名字',suffix:'gif'});
         })
     </script>
+
 ```
 ## loactionReplace
 ### 添加了兼容的浏览器location.replace方法

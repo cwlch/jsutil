@@ -234,4 +234,14 @@
 
 </script>
 
+
+<!-- 限制输入框只能输入正整数 -->
+<input id='input'/>
+<script>
+const $input = document.querySelector('#input');
+$input.addEventListener('input',()=>{
+    $input.value = jsUtil.limitInt($input.value);
+})
+</script>
+
 </html>
