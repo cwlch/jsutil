@@ -1,13 +1,14 @@
 {
   "name": "js-util-all",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "js工具类",
   "main": "lib/index.js",
   "scripts": {
     "build": "rm -rf lib & tsc & rollup lib/index.js --file lib/jsUtil.all.js --format umd --name 'jsUtil' & vuepress build docs",
     "dev": "vuepress dev docs",
     "start": "node server.js",
-    "test": "jest"
+    "test": "jest",
+    "npmpush" : "npm run build & npm publish"
   },
   "repository": {
     "type": "git",

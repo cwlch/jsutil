@@ -12,7 +12,7 @@ const limitIntFloat = (val:string|number,digit:number) :number => {
     if(digit != null){
         num = num.replace(new RegExp(`^(\\d+)(\\.?)(\\d{0,${digit}}).*$`),'$1$2$3')
     }
-    return parseFloat(num);
+    return num;
 }
 
  
