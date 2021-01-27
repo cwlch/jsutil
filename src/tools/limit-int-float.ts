@@ -5,7 +5,7 @@
  */
 const limitIntFloat = (val:string|number,digit:number) :number => {
     let num:any = val.toString();
-    num = num.replace(/[\D.]/g, '');
+    num = num.replace(/[^\d\.]/g, '');
     num = num.replace('.', '$#$').replace(/\./g, '').replace('$#$', '.');    
     num = num.replace(/^0[\d]+/,'0');
     // 按照参数设置保留小数位数

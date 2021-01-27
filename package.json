@@ -1,6 +1,6 @@
 {
   "name": "js-util-all",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "js工具类",
   "main": "lib/index.js",
   "scripts": {
