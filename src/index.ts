@@ -31,7 +31,7 @@ import limitPNInt from './tools/limit-p-n-int';
 import limitPNIntFloat from './tools/limit-p-n-int-float';
 import loadScript from './tools/load-script';
 import loadScriptAwait from './tools/load-script-await';
-import creatUUID from './tools/creat-uuid';
+import creatUuid from './tools/creat-uuid';
 import extend from './tools/extend';
 import fillZero from './tools/fill-zero';
 import downBlobFile from './tools/down-blob-file';
@@ -67,7 +67,7 @@ export {
     // 获取变量类型
     getVarType,
     // 获取userAgent信息
-    getUAInfo,
+    getUaInfo,
     // 格式化时间
     formatDate,
     // 格式化金额，添加千分符
@@ -93,7 +93,7 @@ export {
     // 动态加载JS 串联
     loadScriptAwait,
     // 创建UUID
-    creatUUID,
+    creatUuid,
     // 对象拷贝
     extend,
     // 个位数补0
