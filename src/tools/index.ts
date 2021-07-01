@@ -37,7 +37,7 @@ import fillZero from './fill-zero';
 import downBlobFile from './down-blob-file';
 import loactionReplace from './loaction-replace';
 import copyText from './copy-text';
-export default {
+export {
     // 验证是否为空
     isEmpty,
     // 验证姓名格式

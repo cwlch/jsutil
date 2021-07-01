@@ -1,3 +1,3 @@
-import util from './tools/index';
+import * as util from './tools/index';
 export default util;
 export * from './tools/index';
