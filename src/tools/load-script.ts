@@ -13,28 +13,32 @@ import getVarType from './get-var-type'
  * @return Promise 
  */
 
-const loadScripts = (scripts: string | string[]) :any => {
+const loadScripts = (scripts: string | string[]) : Promise<boolean> => {
 	const scriptArr:any = getVarType(scripts) === "string" ? [scripts] : scripts,
 		HEAD = document.getElementsByTagName("head").item(0) || document.documentElement;
 	let	loaded = 0;
 	return new Promise((resolve,reject)=>{
-		for (let i:number = 0; i < scriptArr.length; i++) {
-			const scriptNode = document.createElement("script"),
-			scriptLoad = function () {			
-				if (!this.readyState || (this.readyState == "loaded" || this.readyState == "complete")) {
-					loaded++;
-					this.onload = this.onreadystatechange = null; 
-					this.parentNode.removeChild(this);
-					if (loaded == scriptArr.length) {
-						resolve();
+		try{
+			for (let i:number = 0; i < scriptArr.length; i++) {
+				const scriptNode = document.createElement("script"),
+				scriptLoad = function () {			
+					if (!this.readyState || (this.readyState == "loaded" || this.readyState == "complete")) {
+						loaded++;
+						this.onload = this.onreadystatechange = null; 
+						this.parentNode.removeChild(this);
+						if (loaded == scriptArr.length) {
+							resolve(true);
+						}
 					}
-				}
-			};
-			scriptNode.setAttribute("type", "text/javascript");
-			scriptNode.setAttribute("src", scriptArr[i]);
-			scriptNode.addEventListener('load',scriptLoad);
-			scriptNode.addEventListener('readystatechange',scriptLoad);
-			HEAD.appendChild(scriptNode);
+				};
+				scriptNode.setAttribute("type", "text/javascript");
+				scriptNode.setAttribute("src", scriptArr[i]);
+				scriptNode.addEventListener('load',scriptLoad);
+				scriptNode.addEventListener('readystatechange',scriptLoad);
+				HEAD.appendChild(scriptNode);
+			}
+		}catch(e){
+			reject(false)
 		}
 	});
 	

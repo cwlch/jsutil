@@ -16,14 +16,12 @@ import getVarType from './get-var-type';
 * @return Promise
 */
 
-const loadScriptsAwait = async (scripts:string|string[]):Promise<number> =>{
+const loadScriptsAwait = async (scripts:string|string[]):Promise<void> =>{
 	const scriptArr:any = getVarType(scripts) === "string" ? [scripts] : scripts;
-	let res:Promise<number> = await loadScript(scriptArr[0]);
-	for(let i:number = 1,item:string; i < scriptArr.length; i++){
+	for(let i:number = 0,item:string; i < scriptArr.length; i++){
 		item = scriptArr[i];
-		res = await loadScript(item);
+		await loadScript(item);
 	}
-	return res;
 };
 
 export default loadScriptsAwait;
