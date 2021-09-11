@@ -24,12 +24,22 @@ const toCapitalMoney = (n:number,h:string)=>{
             ['', '拾', '佰', '仟']
         ];
     h = n < 0 ? (h || ''):'';
+    // 小数位转换
+    let d:string[] = (n.toString().split('.')[1] || '').split(''),
+        s = '';
     n = Math.abs(n);
-    let s = '';
-    for (let i = 0; i < fraction.length; i++) {
-        s += (digit[Math.floor(n * 10 * Math.pow(10, i)) % 10] + fraction[i]).replace(/零./, '');
+    if(d.length > 0){
+        for (let i = 0; i < fraction.length; i++) {
+            // 使用字符串截取防止计算精度问题
+            s += (digit[Number(d[i])] + fraction[i]).replace(/零./, '');
+        }
     }
+    
+    // for (let i = 0; i < fraction.length; i++) {
+    //     s += (digit[Math.floor(n * 10 * Math.pow(10, i)) % 10] + fraction[i]).replace(/零./, '');
+    // }
     s = s || '整';
+    // 整数位转换
     n = Math.floor(n);
     for (let i = 0; i < unit[0].length && n > 0; i++) {
         let p = '';

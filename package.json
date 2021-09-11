@@ -7,8 +7,9 @@
   "browser": "lib/jsUtlis-umd.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "build": "rm -rf lib & tsc & rollup lib/index.js --file lib/jsUtil.all.js --format umd --name 'jsUtil' & vuepress build docs",
-    "build2": "rollup -c",
+    "build": "rollup -c & vuepress build docs",
+    "build-rollup": "rollup -c",
+    "build-vuepress": "vuepress build docs",
     "dev": "vuepress dev docs",
     "start": "node server.js",
     "test": "jest",

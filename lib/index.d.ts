@@ -15,6 +15,11 @@ declare const _default: {
     getLocalStorage: (key: string) => any;
     getVarType: (o: any) => string;
     getUaInfo: () => object;
+    getIdCardSex: (idCard: string, sexDesc?: string[]) => {
+        sex: number;
+        sexName: string;
+    };
+    getIdCardBrithDay: (idCard: string) => string;
     formatDate: (date: any, fmt?: string) => string;
     formatMoneySymbol: (money: string | number) => string | number | null;
     formatMoneyNumCapital: (n: number, h: string) => string;
@@ -33,5 +38,6 @@ declare const _default: {
     downBlobFile: (blob: any, { name, suffix }?: any) => void;
     loactionReplace: (url: string) => void;
     copyText: (str: string) => boolean;
+    toAsyncAwait: (promise: Promise<any>, fromatResult?: boolean) => Promise<any>;
 };
 export default _default;

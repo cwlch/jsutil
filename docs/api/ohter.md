@@ -203,3 +203,33 @@
     loactionReplace('./demo.html');
     loactionReplace('http://www.baiud.com');
 ```
+
+## toAsyncAwait
+### async await关键字错误处理优化方法，不再需要使用try catch和then；
+:::tip 参数
++ promise {Promise} promise对象
++ fromatResult {Boolean} 是否处理成统一格式，不处理则直接返回第一个参数。 true处理，false不处理，默认为true
+:::
+- 示例
+```javascript
+    const getInfo = async ()=> {
+		cosnt {error,resutl} = await toAsyncAwait(axios.get('http://xxxxx'));
+		if(error){
+			//错误处理
+			console.log(error);
+		}else{
+			// 正常业务逻辑处理
+			console.log(result);
+		}
+    }
+    // 一般不会这么用 
+    toAsyncAwait(axios.get('http://xxxxx'),false).then((res)=>{
+        // 正常业务
+        console.log(res);
+    }).catch(e=>{
+        //错误处理
+        console.log(e);
+    });
+
+
+```

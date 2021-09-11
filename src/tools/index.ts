@@ -19,6 +19,8 @@ import getSessionStorage from './get-session-storage';
 import getLocalStorage from './get-local-storage';
 import getVarType from './get-var-type';
 import getUaInfo from './get-ua-info';
+import getIdCardSex from './get-id-card-sex';
+import getIdCardBrithDay from './get-id-card-brith-day';
 import formatBlobUrl from './format-blob-url';
 import formatJsonSearch from './format-json-search';
 import formatSearchJson from './format-search-json';
@@ -37,6 +39,7 @@ import fillZero from './fill-zero';
 import downBlobFile from './down-blob-file';
 import loactionReplace from './loaction-replace';
 import copyText from './copy-text';
+import toAsyncAwait from './to-async-await';
 export {
     // 验证是否为空
     isEmpty,
@@ -68,6 +71,10 @@ export {
     getVarType,
     // 获取userAgent信息
     getUaInfo,
+    // 获取身份证号性别
+    getIdCardSex,
+    // 获取身份证号生日
+    getIdCardBrithDay,
     // 格式化时间
     formatDate,
     // 格式化金额，添加千分符
@@ -104,4 +111,6 @@ export {
     loactionReplace,
     // 文本拷贝
     copyText,
+    // 同步方法
+    toAsyncAwait
 };
