@@ -1,12 +1,11 @@
 /*
  * @Author: ch cwl_ch@163.com
- * @Date: 2021-06-28 16:53:29
+ * @Date: 2022-08-27 17:20:09
  * @LastEditors: ch
- * @LastEditTime: 2022-08-27 19:04:14
+ * @LastEditTime: 2022-08-27 19:10:04
  * @Description: file content
  */
-
-const calc = (symbol, number1, number2, ...args) =>{
+const calc = (symbol:string, number1:number, number2:number, ...args:number[]):number =>{
     if(!['+','-','*','/'].includes(symbol)){
         throw new Error('第一个参数请传+ - * /计算符');
     }
@@ -57,26 +56,3 @@ const calc = (symbol, number1, number2, ...args) =>{
     
     return result;
 }
-// 加  
-let a = 0.56 + 0.28 //原生 0.8400000000000001
-let b = calc('+',0.56,0.28) //0.84
-console.log(a,b)
-// 减
-let a1 = 0.3 - 0.1 //原生 0.19999999999999998
-let b1 = calc('-',0.3,0.1) //0.2
-console.log(a1,b1)
-
-// 乘
-let a2 = 0.8 * 0.51 //原生 0.40800000000000003
-let b2 = calc('*',0.8,0.51) //0.408
-console.log(a2,b2)
-
-// 除
-let a3 = 0.95 / 0.1 //原生 9.499999999999998
-let b3 = calc('/',0.95,0.1) //9.5
-console.log(a3,b3)
-
-// 多位数计算
-let a4 = 0.24 + 0.29 + 0.88 //1.4100000000000001
-let b4 = calc('+',0.24,0.29,0.88) //1.41
-console.log(a4,b4)
