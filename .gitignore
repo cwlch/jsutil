@@ -4,3 +4,5 @@ node_modules/
 *.lock
 docs/.vuepress/dist/*
 package-lock.json
+.temp
+.cache
