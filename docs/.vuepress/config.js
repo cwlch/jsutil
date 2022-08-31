@@ -1,10 +1,7 @@
 import { defaultTheme } from '@vuepress/theme-default'
+import { docsearchPlugin } from '@vuepress/plugin-docsearch'
+
 export default {
-  plugins: [
-    ['@vuepress/search', {
-      searchMaxSuggestions: 10
-    }]
-  ],
   head: [
     ['script', {}, `
         var _hmt = _hmt || [];
@@ -38,6 +35,14 @@ export default {
       ]
     },
     displayAllHeaders: true
-  })
+  }),
+  plugins: [
+    docsearchPlugin({
+      appId: 'PB5HMXOQ5M',
+      apiKey: '3c48036086bcf47c9b5f3e46dadec8c1',
+      indexName: 'jsutil',
+    }),
+  ],
+
 }
 
