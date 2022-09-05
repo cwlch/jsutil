@@ -1,6 +1,6 @@
 # （格式化|转换）类
 ## _FormatDate
-### 时间格式化
+ 时间格式化
 ::: tip 参数
 + date {String | Number | Date} 时间字符串，或毫秒数，或Date类型 
     - 非必传，需要传指定格式时则必传
@@ -21,7 +21,7 @@
 
 
 ## _FormatJsonSearch
-### json转URL Seach参数格式
+ json转URL Seach参数格式
 ::: tip 参数
 + json {Object} 需要转换的JSON对象 
 + connector {String} 连接符（第一位字符）
@@ -34,7 +34,7 @@
 ```
 
 ## _FormatSearchJson
-### URL Search参数转JSON对象
+ URL Search参数转JSON对象
 ::: tip 参数
 searchStr {String} search串
 :::
@@ -46,8 +46,8 @@ searchStr {String} search串
 ```
 
 ## _FormatBlobUrl
-### 二进制文件流转成可访问的URL
-### 常用于图片预览，[文件下载](/api/ohter.html#downblobfile)等场景
+ 二进制文件流转成可访问的URL
+ 常用于图片预览，[文件下载](/api/ohter.html#downblobfile)等场景
 ::: tip 参数
 + blob {Blob} 二进制文件流对象
 :::
@@ -72,7 +72,7 @@ searchStr {String} search串
 ```
 
 ## _FormatMoneyNumCapital
-### 数字金额转成中文大写
+ 数字金额转成中文大写
 ::: tip 参数
 + money {Number} 数字金额
 + prefix {String} 金额为负数时的前缀
@@ -87,7 +87,7 @@ searchStr {String} search串
     _FormatMoneyNumCapital(-200.012) //贰佰元壹分
 ```
 ## _FormatMoneySymbol
-### 金额加千位符格式化,大于等于100万时添加千位符
+ 金额加千位符格式化,大于等于100万时添加千位符
 :::tip 参数
 + money {Number | String} 金额
     - 必传参数，如果为null 或 undefined 或空串 返回null

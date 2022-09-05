@@ -1,6 +1,6 @@
 # 校验类
 ## _IsEmpty
-### 校验一个变量是否为空
+ 校验一个变量是否为空
 ::: tip 参数
 + val { string | number | object | array | null | undefined }  
 :::
@@ -32,7 +32,7 @@ _IsEmpty(f); //false
 
 ```
 ## _IsName
-### 校验是否为正常的姓名格式，支持中英文姓名格式；
+ 校验是否为正常的姓名格式，支持中英文姓名格式；
 
 ::: tip 参数
 + val { string }  
@@ -47,7 +47,7 @@ _IsName('欧阳张三');//true
 _IsName('Jason Statham');//true
 ```
 ## _IsPhone
-### 校验是否为手机号，支持13-9号段;
+ 校验是否为手机号，支持13-9号段;
 ::: tip 参数
 + val { number | string }  
 :::
@@ -59,7 +59,7 @@ _IsPhone(19982023232); //true
 _IsPhone(12882023232); //false
 ```
 ## _IsTel
-### 判断是否为座机号码,只支持示例中的输入格式；
+ 判断是否为座机号码,只支持示例中的输入格式；
 ::: tip 参数
 + val { string }  
 :::
@@ -70,7 +70,7 @@ _IsTel('0731-1231456'); //true
 ```
 
 ## _IsEmail
-### 校验邮箱格式是否正确;
+ 校验邮箱格式是否正确;
 ::: tip 参数
 + val { string }  
 :::
@@ -90,7 +90,7 @@ _IsEmail('cC.wl-_ch@vipcn') //false
 ```
 
 ## _IsIdCard
-### 校验身份证号是否正确
+ 校验身份证号是否正确
 ::: tip 参数
 + val { string }  
 :::
@@ -100,7 +100,7 @@ _IsIdCard('430529202002025271') //false 非正确身份证，可以使用自己�
 ```
 
 ## _IsMoney
-### 校验是否为金额格式
+ 校验是否为金额格式
 ::: tip 参数
 + val { string | number}  
 :::

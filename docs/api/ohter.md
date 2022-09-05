@@ -1,6 +1,6 @@
 # 其他类
 ## _Calc
-### 数字计算，浮点数高精度加,减,乘,除
+ 数字计算，浮点数高精度加,减,乘,除
 :::tip 参数
 + symbol {String} 计算符号字符串,支持"+，-，*，/";
 + num1 {Number | String} 计算数字1
@@ -40,8 +40,8 @@ console.log(a,b)
 
 
 ## _Extend
-### 对象拷贝，与JQ的_Extend类似（对象继承）
-### 支持(深拷贝，浅拷贝)，对象中的方法同样也会拷贝（继承）
+ 对象拷贝，与JQ的_Extend类似（对象继承）
+ 支持(深拷贝，浅拷贝)，对象中的方法同样也会拷贝（继承）
 :::tip 参数
 + target {Object | Array} 第一个对象参数，为继承者。表示后面的所有args参数都会拷贝至这个对象
 + [...args]{Object | Array} 可以为无限个对象。被继承者，后一个覆盖前一个的属性
@@ -121,7 +121,7 @@ console.log(a,b)
 ```
 
 ## _LoadScript
-### 动态加载JS（并联）如果是多个js，他会同时加载
+ 动态加载JS（并联）如果是多个js，他会同时加载
 :::tip 参数
 + scriptStr {String | Array}  js地址，单个可以直接使用字符串，多个使用数组形式； 
 :::
@@ -149,7 +149,7 @@ console.log(a,b)
     }); 
 ```
 ## _LoadScriptAwait
-### 动态加载JS（串联）如果是多个js，他会按照数组顺序一个一个的加载
+ 动态加载JS（串联）如果是多个js，他会按照数组顺序一个一个的加载
 :::tip 参数
 + scriptStr {String | Array}  js地址，单个可以直接使用字符串，多个使用数组形式； 
 :::
@@ -175,7 +175,7 @@ console.log(a,b)
 
 
 ## _FillZero
-### 小于10正整数补0
+ 小于10正整数补0
 :::tip 参数
 + number {Number | String} 数字
 :::
@@ -191,7 +191,7 @@ console.log(a,b)
     _FillZero('11') // 11
 ```
 ## _CreatUUID
-### 创建一个UUID
+ 创建一个UUID
 :::tip 参数
 + len 指定长度，非必传
 + radix 基数,非必传
@@ -205,7 +205,7 @@ console.log(a,b)
     _CreatUUID(32, 16) // "F743098834031FDFCE1D8976F9769222"
 ```
 ## _DownBlobFile
-### 下载二进制流文件到本地
+ 下载二进制流文件到本地
 :::tip 参数
 + blob {Blob} 二进制文件流对象 
 + fileOptin {Object} 下载文件配置参数
@@ -234,7 +234,7 @@ console.log(a,b)
 
 ```
 ## _LoactionReplace
-### 添加了兼容的浏览器location.replace方法
+ 添加了兼容的浏览器location.replace方法
 :::tip 参数
 + url {String} 跳转地址
 :::
@@ -245,7 +245,7 @@ console.log(a,b)
 ```
 
 ## _ToAsyncAwait
-### async await关键字错误处理优化方法，不再需要使用try catch和then；
+ async await关键字错误处理优化方法，不再需要使用try catch和then；
 :::tip 参数
 + promise {Promise} promise对象
 + fromatResult {Boolean} 是否处理成统一格式，不处理则直接返回第一个参数。 true处理，false不处理，默认为true
