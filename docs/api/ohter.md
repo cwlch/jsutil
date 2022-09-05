@@ -1,5 +1,5 @@
 # 其他类
-## calc
+## _Calc
 ### 数字计算，浮点数高精度加,减,乘,除
 :::tip 参数
 + symbol {String} 计算符号字符串,支持"+，-，*，/";
@@ -12,26 +12,26 @@
 ``` javascript
 // 加  
 let a = 0.56 + 0.28 //原生 0.8400000000000001
-let b = calc('+',0.56,0.28) //0.84
+let b = _Calc('+',0.56,0.28) //0.84
 console.log(a,b)
 // 减
 let a = 0.3 - 0.1 //原生 0.19999999999999998
-let b = calc('-',0.3,0.1) //0.2
+let b = _Calc('-',0.3,0.1) //0.2
 console.log(a,b)
 
 // 乘
 let a = 0.8 * 0.51 //原生 0.40800000000000003
-let b = calc('*',0.8,0.51) //0.408
+let b = _Calc('*',0.8,0.51) //0.408
 console.log(a,b)
 
 // 除
 let a = 0.95 / 0.1 //原生 9.499999999999998
-let b = calc('*',0.95,0.1) //9.5
+let b = _Calc('*',0.95,0.1) //9.5
 console.log(a,b)
 
 // 多位数计算
 let a = 0.24 + 0.29 + 0.88 //1.4100000000000001
-let b = calc('+',0.24,0.29,0.88) //1.41
+let b = _Calc('+',0.24,0.29,0.88) //1.41
 console.log(a,b)
 
 
@@ -39,8 +39,8 @@ console.log(a,b)
 ```
 
 
-## extend
-### 对象拷贝，与JQ的extend类似（对象继承）
+## _Extend
+### 对象拷贝，与JQ的_Extend类似（对象继承）
 ### 支持(深拷贝，浅拷贝)，对象中的方法同样也会拷贝（继承）
 :::tip 参数
 + target {Object | Array} 第一个对象参数，为继承者。表示后面的所有args参数都会拷贝至这个对象
@@ -80,7 +80,7 @@ console.log(a,b)
     }
     // demo一 深拷贝
     myA.obj.fn()  //alert 'a'
-    extend(myA,copayA);
+    _Extend(myA,copayA);
     myA.obj.fn() //alert 'copy-a'
     console.log('myA:',myA,'copayA:',copayA)
     myA = {
@@ -101,26 +101,26 @@ console.log(a,b)
     
     // demo二 浅拷贝 每次只测试一种demo
     // myA.obj.fn();
-    // extend(myA,copayA,false);
+    // _Extend(myA,copayA,false);
     // myA.obj.fn();
     // console.log('myA:',myA,'-----copayA:',copayA);
     
     // demo三 如果要想不改变原有的对象，第一个参数传个空对象或空数组即可
     // myA.obj.fn();
-    // const newObj = extend({},myA,copayA);
+    // const newObj = _Extend({},myA,copayA);
     // myA.obj.fn();
     // newObj.obj.fn()
     // console.log('newObj:',newObj, '------myA:',myA,'-----copayA:',copayA);
 
     // demo四 多个对象拷贝,并且执行浅拷贝
     // myA.obj.fn();
-    // const newObj = extend({},copay1,copayn2,....,copayn+,false);
+    // const newObj = _Extend({},copay1,copayn2,....,copayn+,false);
     // myA.obj.fn();
     // newObj.obj.fn()
     // console.log('newObj:',newObj, '------myA:',myA,'-----copayA:',copayA);
 ```
 
-## loadScript
+## _LoadScript
 ### 动态加载JS（并联）如果是多个js，他会同时加载
 :::tip 参数
 + scriptStr {String | Array}  js地址，单个可以直接使用字符串，多个使用数组形式； 
@@ -135,20 +135,20 @@ console.log(a,b)
     // c.js console.log('3')
 
     // 加载多个JS
-    loadScript(['./a.js','./b.js','./c.js']).then(res=>{
+    _LoadScript(['./a.js','./b.js','./c.js']).then(res=>{
         console.log('加载成功') //此处输出一定会在其他JS都输出完才会执行
     }); //输出2,3,1 顺序不固定
 
 
     // 加载单个JS
-    loadScript('./a.js').then(res=>{
+    _LoadScript('./a.js').then(res=>{
         console.log('加载成功') //此处输出一定会在其他JS都输出完才会执行
     }); 
-    loadScript(['./a.js']).then(res=>{
+    _LoadScript(['./a.js']).then(res=>{
         console.log('加载成功') //此处输出一定会在其他JS都输出完才会执行
     }); 
 ```
-## loadScriptAwait
+## _LoadScriptAwait
 ### 动态加载JS（串联）如果是多个js，他会按照数组顺序一个一个的加载
 :::tip 参数
 + scriptStr {String | Array}  js地址，单个可以直接使用字符串，多个使用数组形式； 
@@ -164,17 +164,17 @@ console.log(a,b)
     // c.js console.log('3')
 
     // 加载多个JS
-    loadScriptAwait(['./a.js','./b.js','./c.js']).then(res=>{
+    _LoadScriptAwait(['./a.js','./b.js','./c.js']).then(res=>{
         console.log('加载成功') 
     }); 
     //输出1，2，3，加载成功，会按照数组顺序固定输出，最后输出then方法的回调
 ```
 :::warning 建议
-如果加载单个JS建议使用 loadScript
+如果加载单个JS建议使用 _LoadScript
 :::
 
 
-## fillZero
+## _FillZero
 ### 小于10正整数补0
 :::tip 参数
 + number {Number | String} 数字
@@ -184,13 +184,13 @@ console.log(a,b)
 :::
 - 示例
 ```javascript
-    fillZero(1)    // 01
-    fillZero(0.1)    // 0.1
-    fillZero(-0.1)    // -0.1
-    fillZero('2')  // 02
-    fillZero('11') // 11
+    _FillZero(1)    // 01
+    _FillZero(0.1)    // 0.1
+    _FillZero(-0.1)    // -0.1
+    _FillZero('2')  // 02
+    _FillZero('11') // 11
 ```
-## creatUuid
+## _CreatUUID
 ### 创建一个UUID
 :::tip 参数
 + len 指定长度，非必传
@@ -199,12 +199,12 @@ console.log(a,b)
 
 - 示例
 ```javascript
-    creatUuid() // EB4479E4-CA4A-4377-AC97-5C3424CCA6EF
-    creatUuid(32, 2)  //  "10010100000011100011101010001011"
-    creatUuid(32, 10) // "82841022800573848567251899801403"
-    creatUuid(32, 16) // "F743098834031FDFCE1D8976F9769222"
+    _CreatUUID() // EB4479E4-CA4A-4377-AC97-5C3424CCA6EF
+    _CreatUUID(32, 2)  //  "10010100000011100011101010001011"
+    _CreatUUID(32, 10) // "82841022800573848567251899801403"
+    _CreatUUID(32, 16) // "F743098834031FDFCE1D8976F9769222"
 ```
-## downBlobFile
+## _DownBlobFile
 ### 下载二进制流文件到本地
 :::tip 参数
 + blob {Blob} 二进制文件流对象 
@@ -225,26 +225,26 @@ console.log(a,b)
         $btn.addEventListener('click',(e)=>{
             let myBlob = $input.files[0];
             // 下载二进制文件流到本地
-            downBlobFile(myBlob);
-            downBlobFile(myBlob,{name:'我的名字'});
-            downBlobFile(myBlob,{suffix:'gif'});
-            downBlobFile(myBlob,{name:'你的名字',suffix:'gif'});
+            _DownBlobFile(myBlob);
+            _DownBlobFile(myBlob,{name:'我的名字'});
+            _DownBlobFile(myBlob,{suffix:'gif'});
+            _DownBlobFile(myBlob,{name:'你的名字',suffix:'gif'});
         })
     </script>
 
 ```
-## loactionReplace
+## _LoactionReplace
 ### 添加了兼容的浏览器location.replace方法
 :::tip 参数
 + url {String} 跳转地址
 :::
 - 示例
 ```javascript
-    loactionReplace('./demo.html');
-    loactionReplace('http://www.baiud.com');
+    _LoactionReplace('./demo.html');
+    _LoactionReplace('http://www.baiud.com');
 ```
 
-## toAsyncAwait
+## _ToAsyncAwait
 ### async await关键字错误处理优化方法，不再需要使用try catch和then；
 :::tip 参数
 + promise {Promise} promise对象
@@ -253,7 +253,7 @@ console.log(a,b)
 - 示例
 ```javascript
     const getInfo = async ()=> {
-		cosnt {error,resutl} = await toAsyncAwait(axios.get('http://xxxxx'));
+		cosnt {error,resutl} = await _ToAsyncAwait(axios.get('http://xxxxx'));
 		if(error){
 			//错误处理
 			console.log(error);
@@ -263,7 +263,7 @@ console.log(a,b)
 		}
     }
     // 一般不会这么用 
-    toAsyncAwait(axios.get('http://xxxxx'),false).then((res)=>{
+    _ToAsyncAwait(axios.get('http://xxxxx'),false).then((res)=>{
         // 正常业务
         console.log(res);
     }).catch(e=>{

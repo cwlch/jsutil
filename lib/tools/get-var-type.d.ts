@@ -1,4 +1,3 @@
-declare const _default: (o: any) => string;
 /**
  * 获取变量类型
  * 'Null',
@@ -15,4 +14,5 @@ declare const _default: (o: any) => string;
  * @param {*} o
  * @returns string
  */
+declare const _default: (o: any) => string;
 export default _default;

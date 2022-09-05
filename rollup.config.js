@@ -10,7 +10,7 @@ export default [
   {
     input: 'src/index.ts',
     output: {
-      name: 'jsUtil',
+      name: 'jsutil',
 			file: pkg.browser,
 			format: 'umd'
     },

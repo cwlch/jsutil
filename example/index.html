@@ -1,9 +1,9 @@
 <html>
 
 <head>
-    <title>jsUtil示例代码</title>
+    <title>jsutil示例代码</title>
     <meta charset="utf8">
-    <script src="../lib/jsUtil.all.js"></script>
+    <script src="../lib/jsutil-umd.js"></script>
 </head>
 
 <body>
@@ -21,62 +21,63 @@
         $input.addEventListener('change',(e)=>{
             // 主要要代码主要要代码主要要代码
             const blobFile = e.target.files[0]; //拿到二进制文件流
-            const urlObject = jsUtil.formatBlobUrl(blobFile); //生成URL对象            
+            const urlObject = jsutil.formatBlobUrl(blobFile); //生成URL对象            
             $img.setAttribute('src',urlObject.url) //给img标签赋值，预览效果生效
         })
 
         $btn.addEventListener('click',(e)=>{
             // 下载二进制文件流到本地
-            jsUtil.downBlobFile($input.files[0])
+            jsutil.downBlobFile($input.files[0])
         })
     </script>
 </body>
 <!-- 校验类 -->
 <script>
+    console.log(jsutil)
     const a = '',
         b = null,
         c = undefined,
         d = [],
         e = {},
         f = 0;
-    console.log('jsUtil.isEmpty(b)', jsUtil.isEmpty(b)); //true
-    console.log('jsUtil.isEmpty(c)', jsUtil.isEmpty(c)); //true
-    console.log('jsUtil.isEmpty(d)', jsUtil.isEmpty(d)); //true
-    console.log('jsUtil.isEmpty(e)', jsUtil.isEmpty(e)); //true
-    console.log('jsUtil.isEmpty(f)', jsUtil.isEmpty(f)); //false
+    console.log('jsutil.isEmpty(b)', jsutil.isEmpty(b)); //true
+    console.log('jsutil.isEmpty(c)', jsutil.isEmpty(c)); //true
+    console.log('jsutil.isEmpty(d)', jsutil.isEmpty(d)); //true
+    console.log('jsutil.isEmpty(e)', jsutil.isEmpty(e)); //true
+    console.log('jsutil.isEmpty(f)', jsutil.isEmpty(f)); //false
 
 
 
-    console.log('jsUtil.isName("欧阳张三")', jsUtil.isName('欧阳张三')); //true
-    console.log('jsUtil.isName("Jason Statham")', jsUtil.isName('Jason Statham')); //true
+    console.log('jsutil.isName("欧阳张三")', jsutil.isName('欧阳张三')); //true
+    console.log('jsutil.isName("Jason Statham")', jsutil.isName('Jason Statham')); //true
 
 
-    console.log('jsUtil.isPhone(13202023232)', jsUtil.isPhone('13202023232')); //true
-    console.log('jsUtil.isPhone(19982023232)', jsUtil.isPhone(19982023232)); //true
-    console.log('jsUtil.isPhone(12882023232);', jsUtil.isPhone(12882023232)); //false
+    console.log('jsutil.isPhone(13202023232)', jsutil.isPhone('13202023232')); //true
+    console.log('jsutil.isPhone(19982023232)', jsutil.isPhone(19982023232)); //true
+    console.log('jsutil.isPhone(12882023232);', jsutil.isPhone(12882023232)); //false
 
 
-    console.log('jsUtil.isTel("0731-1231456")', jsUtil.isTel('0731-1231456')); //true
+    console.log('jsutil.isTel("0731-1231456")', jsutil.isTel('0731-1231456')); //true
 
 
-    console.log("jsUtil.isEmail('cwl_ch@163.com')", jsUtil.isEmail('cwl_ch@163.com')); //true
-    console.log("jsUtil.isEmail('cwl-_ch@gjke-compay.vip.cn')", jsUtil.isEmail('cwl-_ch@gjke-compay.vip.cn')); //true
-    console.log("jsUtil.isEmail('cC.wl-_ch@gjke-我是.中文.vipcn')", jsUtil.isEmail('cC.wl-_ch@gjke-我是.中文.vipcn')); //true
-    console.log("jsUtil.isEmail('cC.wl-_ch@vipcn')", jsUtil.isEmail('cC.wl-_ch@vipcn')); //false
+    console.log("jsutil.isEmail('cwl_ch@163.com')", jsutil.isEmail('cwl_ch@163.com')); //true
+    console.log("jsutil.isEmail('cwl-_ch@gjke-compay.vip.cn')", jsutil.isEmail('cwl-_ch@gjke-compay.vip.cn')); //true
+    console.log("jsutil.isEmail('cC.wl-_ch@gjke-我是.中文.vipcn')", jsutil.isEmail('cC.wl-_ch@gjke-我是.中文.vipcn')); //true
+    console.log("jsutil.isEmail('cC.wl-_ch@vipcn')", jsutil.isEmail('cC.wl-_ch@vipcn')); //false
 
 
-    console.log("jsUtil.isIdCard('430529202002025271')", jsUtil.isIdCard('430529202002025271')); //false 非正确身份证，可以使用自己身份证改一个数字试试。)
+    console.log("jsutil.isIdCard('430529202002025271')", jsutil.isIdCard('430529202002025271')); //false 非正确身份证，可以使用自己身份证改一个数字试试。)
 
 
-    console.log("jsUtil.isMoney('111.11')", jsUtil.isMoney(111.11)); //true
-    console.log("jsUtil.isMoney('0.11')", jsUtil.isMoney(0.11)); //true
-    console.log("jsUtil.isMoney('0.00')", jsUtil.isMoney(0.00)); //true
-    console.log("jsUtil.isMoney('0')", jsUtil.isMoney(0)); //true
-    console.log("jsUtil.isMoney('1111111111111.11')", jsUtil.isMoney(1111111111111.11)); //true  
-    console.log("jsUtil.isMoney('11111111111111')", jsUtil.isMoney(11111111111111)); //false  
-    console.log("jsUtil.isMoney('111.111')", jsUtil.isMoney(111.111)); //false 
-    console.log("jsUtil.isMoney('111.111')", jsUtil.isMoney(111.111)); //false 
-    console.log("jsUtil.isMoney('0.000')", jsUtil.isMoney('0.000')); //false 
+    console.log("jsutil.isMoney('111.11')", jsutil.isMoney(111.11)); //true
+    console.log("jsutil.isMoney('0.11')", jsutil.isMoney(0.11)); //true
+    console.log("jsutil.isMoney('0.00')", jsutil.isMoney(0.00)); //true
+    console.log("jsutil.isMoney('0')", jsutil.isMoney(0)); //true
+    console.log("jsutil.isMoney('1111111111111.11')", jsutil.isMoney(1111111111111.11)); //true  
+    console.log("jsutil.isMoney('11111111111111')", jsutil.isMoney(11111111111111)); //false  
+    console.log("jsutil.isMoney('111.111')", jsutil.isMoney(111.111)); //false 
+    console.log("jsutil.isMoney('111.111')", jsutil.isMoney(111.111)); //false 
+    console.log("jsutil.isMoney('0.000')", jsutil.isMoney('0.000')); //false 
 </script>
 
 
@@ -85,73 +86,73 @@
     // 需要有服务载体            
     // 30分钟后失效
     const expires = 30 * 60 * 1000
-    jsUtil.setCookie('myCookieName', '30分钟后失效', { expires: expires });
+    jsutil.setCookie('myCookieName', '30分钟后失效', { expires: expires });
 
 
 
     // 需要有服务载体
-    jsUtil.setLocalStorage('localStorage', { a: 'a', b: 'b' });
-    jsUtil.setLocalStorage('localStorage2', 'localStorage2');
+    jsutil.setLocalStorage('localStorage', { a: 'a', b: 'b' });
+    jsutil.setLocalStorage('localStorage2', 'localStorage2');
 
 
 
     // 需要有服务载体
-    jsUtil.setSessionStorage('sessionStorage', { a: 'a', b: 'b' });
-    jsUtil.setSessionStorage('sessionStorage2', 'sessionStorage2');
+    jsutil.setSessionStorage('sessionStorage', { a: 'a', b: 'b' });
+    jsutil.setSessionStorage('sessionStorage2', 'sessionStorage2');
 </script>
 
 <!-- 获取类 -->
 <script>
     // 需要有服务载体            
-    jsUtil.getCookie('myCookieName');
+    jsutil.getCookie('myCookieName');
 
 
 
     // 需要有服务载体
-    jsUtil.getLocalStorage('localStorage');
-    jsUtil.getLocalStorage('localStorage2');
+    jsutil.getLocalStorage('localStorage');
+    jsutil.getLocalStorage('localStorage2');
 
 
 
     // 需要有服务载体
-    jsUtil.getSessionStorage('sessionStorage');
-    jsUtil.getSessionStorage('sessionStorage2');
+    jsutil.getSessionStorage('sessionStorage');
+    jsutil.getSessionStorage('sessionStorage2');
 </script>
 
 
 <!-- 格式化类 -->
 <script>
-    console.log("jsUtil.formatDate()", jsUtil.formatDate());
-    console.log("jsUtil.formatDate('2020年12月2日3时3分20秒','yyyy-mm-dd hh:ii:ss')", jsUtil.formatDate('2020年12月2日3时3分20秒', 'yyyy-mm-dd hh:ii:ss'));
-    console.log("jsUtil.formatDate(1606918942000,'yyyy-mm-dd hh:ii:ss')", jsUtil.formatDate(1606918942000, 'yyyy-mm-dd hh:ii:ss'));
-    console.log("jsUtil.formatDate('2020-12-02')", jsUtil.formatDate('2020-12-02'));
+    console.log("jsutil.formatDate()", jsutil.formatDate());
+    console.log("jsutil.formatDate('2020年12月2日3时3分20秒','yyyy-mm-dd hh:ii:ss')", jsutil.formatDate('2020年12月2日3时3分20秒', 'yyyy-mm-dd hh:ii:ss'));
+    console.log("jsutil.formatDate(1606918942000,'yyyy-mm-dd hh:ii:ss')", jsutil.formatDate(1606918942000, 'yyyy-mm-dd hh:ii:ss'));
+    console.log("jsutil.formatDate('2020-12-02')", jsutil.formatDate('2020-12-02'));
 
 
-    console.log("jsUtil.formatMoney(1000000)", jsUtil.formatMoney(1000000))
-    console.log("jsUtil.formatMoney(1000)", jsUtil.formatMoney(1000))
-    console.log("jsUtil.formatMoney()", jsUtil.formatMoney())
-    console.log("jsUtil.formatMoney()", jsUtil.formatMoney(''))
-    console.log("jsUtil.formatMoney(null)", jsUtil.formatMoney(null))
+    console.log("jsutil.formatMoney(1000000)", jsutil.formatMoney(1000000))
+    console.log("jsutil.formatMoney(1000)", jsutil.formatMoney(1000))
+    console.log("jsutil.formatMoney()", jsutil.formatMoney())
+    console.log("jsutil.formatMoney()", jsutil.formatMoney(''))
+    console.log("jsutil.formatMoney(null)", jsutil.formatMoney(null))
 
 
 
 
-    console.log("jsUtil.formatJsonSearch({a:'a1',b:'b1',c:'哈哈'})", jsUtil.formatJsonSearch({ a: 'a1', b: 'b1', c: '哈哈' }))
+    console.log("jsutil.formatJsonSearch({a:'a1',b:'b1',c:'哈哈'})", jsutil.formatJsonSearch({ a: 'a1', b: 'b1', c: '哈哈' }))
 
-    console.log("jsUtil.formatJsonSearch({a:'a1',b:'b1',c:'哈哈'},'&')", jsUtil.formatJsonSearch({ a: 'a1', b: 'b1', c: '哈哈' }, '&'))
-
-
-    console.log("jsUtil.formatSearchJson('?a=a1&b=b1&c=%E5%93%88%E5%93%88')", jsUtil.formatSearchJson('?a=a1&b=b1&c=%E5%93%88%E5%93%88'))
-
-    console.log("jsUtil.formatSearchJson('a=a1&b=b1&c=%E5%93%88%E5%93%88')", jsUtil.formatSearchJson('a=a1&b=b1&c=%E5%93%88%E5%93%88'))
-    console.log("jsUtil.formatSearchJson('&a=a1&b=b1&c=%E5%93%88%E5%93%88')", jsUtil.formatSearchJson('&a=a1&b=b1&c=%E5%93%88%E5%93%88'))
+    console.log("jsutil.formatJsonSearch({a:'a1',b:'b1',c:'哈哈'},'&')", jsutil.formatJsonSearch({ a: 'a1', b: 'b1', c: '哈哈' }, '&'))
 
 
-    console.log("jsUtil.formatMoneyNumCapital(200)",jsUtil.formatMoneyNumCapital(200))
-    console.log("jsUtil.formatMoneyNumCapital(200.00)",jsUtil.formatMoneyNumCapital(200.00))
-    console.log("jsUtil.formatMoneyNumCapital(200.012)",jsUtil.formatMoneyNumCapital(200.012))
-    console.log("jsUtil.formatMoneyNumCapital(-200.012,'欠')",jsUtil.formatMoneyNumCapital(-200.012,'欠'))
-    console.log("jsUtil.formatMoneyNumCapital(-200.012)",jsUtil.formatMoneyNumCapital(-200.012))
+    console.log("jsutil.formatSearchJson('?a=a1&b=b1&c=%E5%93%88%E5%93%88')", jsutil.formatSearchJson('?a=a1&b=b1&c=%E5%93%88%E5%93%88'))
+
+    console.log("jsutil.formatSearchJson('a=a1&b=b1&c=%E5%93%88%E5%93%88')", jsutil.formatSearchJson('a=a1&b=b1&c=%E5%93%88%E5%93%88'))
+    console.log("jsutil.formatSearchJson('&a=a1&b=b1&c=%E5%93%88%E5%93%88')", jsutil.formatSearchJson('&a=a1&b=b1&c=%E5%93%88%E5%93%88'))
+
+
+    console.log("jsutil.formatMoneyNumCapital(200)",jsutil.formatMoneyNumCapital(200))
+    console.log("jsutil.formatMoneyNumCapital(200.00)",jsutil.formatMoneyNumCapital(200.00))
+    console.log("jsutil.formatMoneyNumCapital(200.012)",jsutil.formatMoneyNumCapital(200.012))
+    console.log("jsutil.formatMoneyNumCapital(-200.012,'欠')",jsutil.formatMoneyNumCapital(-200.012,'欠'))
+    console.log("jsutil.formatMoneyNumCapital(-200.012)",jsutil.formatMoneyNumCapital(-200.012))
 </script>
 
 <!-- 其他类 -->
@@ -186,19 +187,19 @@
     }
     // demo一 深拷贝 
     myA.obj.fn();
-    jsUtil.extend(myA,copayA);
+    jsutil.extend(myA,copayA);
     myA.obj.fn();
     console.log('myA:',myA,'-----copayA:',copayA);
 
     // demo二 浅拷贝 每次只测试一种demo
     // myA.obj.fn();
-    // jsUtil.extend(myA,copayA,false);
+    // jsutil.extend(myA,copayA,false);
     // myA.obj.fn();
     // console.log('myA:',myA,'-----copayA:',copayA);
     
     // demo三 不改变原有的对象
     // myA.obj.fn();
-    // const newObj = jsUtil.extend({},myA,copayA);
+    // const newObj = jsutil.extend({},myA,copayA);
     // myA.obj.fn();
     // newObj.obj.fn()
     // console.log('newObj:',newObj, '------myA:',myA,'-----copayA:',copayA);
@@ -209,28 +210,28 @@
     //     console.log('加载成功') //此处输出一定会在其他JS都输出完才会执行
     // });
     // 并联加载多个JS
-    // jsUtil.loadScript(['./a.js','./b.js','./c.js']).then(res=>{
+    // jsutil.loadScript(['./a.js','./b.js','./c.js']).then(res=>{
     //     console.log('加载成功') //此处输出一定会在其他JS都输出完才会执行
     // }); //输出2,3,1 顺序不固定
 
     // 串联加载多个JS
-    jsUtil.loadScriptAwait(['./a.js','./b.js','./c.js']).then(res=>{
+    jsutil.loadScriptAwait(['./a.js','./b.js','./c.js']).then(res=>{
         console.log('加载成功22') 
     });
 
 
 
 
-    console.log("jsUtil.fillZero(1) ",jsUtil.fillZero(1)) // 01
-    console.log("jsUtil.fillZero(0.1) ",jsUtil.fillZero(0.1))   // 0.1
-    console.log("jsUtil.fillZero(-0.1)",jsUtil.fillZero(-0.1))    // -0.1
-    console.log("jsUtil.fillZero('2') ",jsUtil.fillZero('2') ) // 02
-    console.log("jsUtil.fillZero('11')",jsUtil.fillZero('11')) // 11
+    console.log("jsutil.fillZero(1) ",jsutil.fillZero(1)) // 01
+    console.log("jsutil.fillZero(0.1) ",jsutil.fillZero(0.1))   // 0.1
+    console.log("jsutil.fillZero(-0.1)",jsutil.fillZero(-0.1))    // -0.1
+    console.log("jsutil.fillZero('2') ",jsutil.fillZero('2') ) // 02
+    console.log("jsutil.fillZero('11')",jsutil.fillZero('11')) // 11
 
-    console.log("jsUtil.creatUUID() ",jsUtil.creatUUID() )
-    console.log("jsUtil.creatUUID(32, 2) ",jsUtil.creatUUID(32, 2)  )
-    console.log("jsUtil.creatUUID(32, 10)",jsUtil.creatUUID(32, 10))
-    console.log("jsUtil.creatUUID(32, 16)",jsUtil.creatUUID(32, 16) )
+    console.log("jsutil.creatUUID() ",jsutil.creatUUID() )
+    console.log("jsutil.creatUUID(32, 2) ",jsutil.creatUUID(32, 2)  )
+    console.log("jsutil.creatUUID(32, 10)",jsutil.creatUUID(32, 10))
+    console.log("jsutil.creatUUID(32, 16)",jsutil.creatUUID(32, 16) )
 
 </script>
 
@@ -240,7 +241,7 @@
 <script>
 const $input = document.querySelector('#input');
 $input.addEventListener('input',()=>{
-    $input.value = jsUtil.limitInt($input.value);
+    $input.value = jsutil.limitInt($input.value);
 })
 </script>
 

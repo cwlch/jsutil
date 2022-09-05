@@ -1,5 +1,5 @@
 # 校验类
-## isEmpty
+## _IsEmpty
 ### 校验一个变量是否为空
 ::: tip 参数
 + val { string | number | object | array | null | undefined }  
@@ -24,14 +24,14 @@ const a = '',
 	d = [],
 	e = {},
 	f = 0;
-isEmpty(b); //true
-isEmpty(c); //true
-isEmpty(d); //true
-isEmpty(e); //true
-isEmpty(f); //false
+_IsEmpty(b); //true
+_IsEmpty(c); //true
+_IsEmpty(d); //true
+_IsEmpty(e); //true
+_IsEmpty(f); //false
 
 ```
-## isName
+## _IsName
 ### 校验是否为正常的姓名格式，支持中英文姓名格式；
 
 ::: tip 参数
@@ -43,10 +43,10 @@ isEmpty(f); //false
 
 - 示例
 ``` javascript
-isName('欧阳张三');//true
-isName('Jason Statham');//true
+_IsName('欧阳张三');//true
+_IsName('Jason Statham');//true
 ```
-## isPhone
+## _IsPhone
 ### 校验是否为手机号，支持13-9号段;
 ::: tip 参数
 + val { number | string }  
@@ -54,11 +54,11 @@ isName('Jason Statham');//true
 
 - 示例
 ``` javascript
-isPhone('13202023232'); //true
-isPhone(19982023232); //true
-isPhone(12882023232); //false
+_IsPhone('13202023232'); //true
+_IsPhone(19982023232); //true
+_IsPhone(12882023232); //false
 ```
-## isTel
+## _IsTel
 ### 判断是否为座机号码,只支持示例中的输入格式；
 ::: tip 参数
 + val { string }  
@@ -66,10 +66,10 @@ isPhone(12882023232); //false
 
 - 示例
 ``` javascript
-isTel('0731-1231456'); //true
+_IsTel('0731-1231456'); //true
 ```
 
-## isEmail
+## _IsEmail
 ### 校验邮箱格式是否正确;
 ::: tip 参数
 + val { string }  
@@ -82,24 +82,24 @@ isTel('0731-1231456'); //true
 >+ 域名后缀 =（中文，字母，数字） 
 - 示例
 ``` javascript
-isEmail('cwl_ch@163.com'); //true
-isEmail('cwl-_ch@gjke-compay.com'); //true
-isEmail('cC.wl-_ch@gjke-我是.中文.vipcn') //true
-isEmail('cwl-_ch@gjke-compay.vip.cn') //true
-isEmail('cC.wl-_ch@vipcn') //false
+_IsEmail('cwl_ch@163.com'); //true
+_IsEmail('cwl-_ch@gjke-compay.com'); //true
+_IsEmail('cC.wl-_ch@gjke-我是.中文.vipcn') //true
+_IsEmail('cwl-_ch@gjke-compay.vip.cn') //true
+_IsEmail('cC.wl-_ch@vipcn') //false
 ```
 
-## isIdCard
+## _IsIdCard
 ### 校验身份证号是否正确
 ::: tip 参数
 + val { string }  
 :::
 >使用加权因子计算校验
 ``` javascript
-isIdCard('430529202002025271') //false 非正确身份证，可以使用自己身份证改一个数字试试。
+_IsIdCard('430529202002025271') //false 非正确身份证，可以使用自己身份证改一个数字试试。
 ```
 
-## isMoney
+## _IsMoney
 ### 校验是否为金额格式
 ::: tip 参数
 + val { string | number}  
@@ -110,14 +110,14 @@ isIdCard('430529202002025271') //false 非正确身份证，可以使用自己�
 >+ 非0开头1-13位纯数字，可带2位0-9小数
 - 示例
 ``` javascript
-	isMoney(111.11); //true
-	isMoney(0.11); //true
-	isMoney(0.00); //true
-	isMoney(0); //true
-	isMoney(1111111111111.11); //true  
-	isMoney(11111111111111); //false  
-	isMoney(111.111); //false 
-	isMoney('0.000'); //false 
+	_IsMoney(111.11); //true
+	_IsMoney(0.11); //true
+	_IsMoney(0.00); //true
+	_IsMoney(0); //true
+	_IsMoney(1111111111111.11); //true  
+	_IsMoney(11111111111111); //false  
+	_IsMoney(111.111); //false 
+	_IsMoney('0.000'); //false 
 ```
 ::: warning 提示
 参数最好使用String类型，如果是Number类型0.00000这种格式会判断为正确，因为0.00000系统识别为0

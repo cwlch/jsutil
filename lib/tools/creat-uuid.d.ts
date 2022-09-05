@@ -8,5 +8,5 @@
  * uuid(8, 10) // "82841022800573848567251899801403"
  * uuid(8, 16) // "F743098834031FDFCE1D8976F9769222"
  */
-declare const createUUID: (len?: number | undefined, radix?: number | undefined) => string;
+declare const createUUID: (len?: number, radix?: number) => string;
 export default createUUID;

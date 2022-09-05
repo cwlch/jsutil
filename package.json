@@ -1,10 +1,10 @@
 {
-  "name": "js-util-all",
-  "version": "1.0.6",
+  "name": "@gykeji/jsutil",
+  "version": "2.0.0-beta0",
   "description": "js工具类",
-  "main": "lib/jsUtlis-cjs.js",
-  "module": "lib/jsUtlis-esm.js",
-  "browser": "lib/jsUtlis-umd.js",
+  "main": "lib/jsutil-cjs.js",
+  "module": "lib/jsutil-esm.js",
+  "browser": "lib/jsutil-umd.js",
   "types": "lib/index.d.ts",
   "scripts": {
     "build": "rollup -c & vuepress build docs",
@@ -17,12 +17,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cwlch/jsUtil.git"
+    "url": "git+https://github.com/cwlch/jsutil.git"
   },
   "author": "Ch",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/cwlch/jsUtil/issues"
+    "url": "https://github.com/cwlch/jsutil/issues"
   },
   "babel": {
     "presets": [

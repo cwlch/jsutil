@@ -1,6 +1,6 @@
 # 获取类
 
-## getVarType
+## _GetVarType
 ### 获取变量类型
 ::: tip 参数
 + key {string} 存储名称
@@ -8,10 +8,10 @@
 
 - 示例
 ``` javascript
-getSessionStorage('mySessionStorage');
+_GetSessionStorage('mySessionStorage');
 ```
 
-## getCookie
+## _GetCookie
 ### 获取ckookie
 ::: tip 参数
 + key {string} 存储名称
@@ -19,11 +19,11 @@ getSessionStorage('mySessionStorage');
 
 - 示例
 ``` javascript
-getCookie('myCookieName') //我是cookie值
+_GetCookie('myCookieName') //我是cookie值
 ```
 
 
-## getLocalStorage
+## _GetLocalStorage
 ### 获取localStorage
 ::: tip 参数
 + key {string} 存储名称
@@ -31,10 +31,10 @@ getCookie('myCookieName') //我是cookie值
 
 - 示例
 ``` javascript
-getLocalStorage('myLocalStorage');
+_GetLocalStorage('myLocalStorage');
 ```
 
-## getSessionStorage
+## _GetSessionStorage
 ### 获取sessionStorage
 ::: tip 参数
 + key {string} 存储名称
@@ -42,10 +42,10 @@ getLocalStorage('myLocalStorage');
 
 - 示例
 ``` javascript
-getSessionStorage('mySessionStorage');
+_GetSessionStorage('mySessionStorage');
 ```
 
-## getUAInfo
+## _GetUAInfo
 ### 获取浏览器UserAgent信息
 ::: tip 参数
 + key {string} 存储名称
@@ -53,10 +53,10 @@ getSessionStorage('mySessionStorage');
 
 - 示例
 ``` javascript
-getSessionStorage('mySessionStorage');
+_GetSessionStorage('mySessionStorage');
 ```
 
-## getIdCardSex
+## _GetIdCardSex
 ### 根据身份证号获取性别
 ::: tip 参数
 + idCard {string} 身份证号
@@ -65,11 +65,11 @@ getSessionStorage('mySessionStorage');
 
 - 示例
 ``` javascript
-getIdCardSex('4xxxxx202101015273',['先生','女士']); //{sex:0,sexName:'先生'}
+_GetIdCardSex('4xxxxx202101015273',['先生','女士']); //{sex:0,sexName:'先生'}
 ```
 
 
-## getIdCardBrithDay
+## _GetIdCardBrithDay
 ### 根据身份证号获取生日
 ::: tip 参数
 + idCard {string} 身份证号
@@ -77,5 +77,5 @@ getIdCardSex('4xxxxx202101015273',['先生','女士']); //{sex:0,sexName:'先生
 
 - 示例
 ``` javascript
-getIdCardBrithDay('4xxxxx202101015273'); //20210101
+_GetIdCardBrithDay('4xxxxx202101015273'); //20210101
 ```

@@ -1,6 +1,6 @@
 # 设置类
 
-## setCookie
+## _SetCookie
 ### 设置ckookie
 ::: tip 参数
 + key {string} cookie名
@@ -16,10 +16,10 @@
 ``` javascript
 // 30分钟后失效
 const expires =   30 * 60 * 1000
-setCookie('myCookieName','我是cookie值',{expires:expires});
+_SetCookie('myCookieName','我是cookie值',{expires:expires});
 ```
 
-## setLocalStorage
+## _SetLocalStorage
 ### 设置localStorage
 ::: tip 参数
 + key {string} 名称
@@ -28,11 +28,11 @@ setCookie('myCookieName','我是cookie值',{expires:expires});
 
 - 示例
 ``` javascript
-setLocalStorage('localStorage',{a:'a',b:'b'});
-setLocalStorage('localStorage2','localStorage2');
+_SetLocalStorage('localStorage',{a:'a',b:'b'});
+_SetLocalStorage('localStorage2','localStorage2');
 ```
 
-## setSessionStorage
+## _SetSessionStorage
 ### 设置sessionStorage
 ::: tip 参数
 + key {string} 名称
@@ -41,6 +41,6 @@ setLocalStorage('localStorage2','localStorage2');
 
 - 示例
 ``` javascript
-setSessionStorage('sessionStorage',{a:'a',b:'b'});
-setSessionStorage('sessionStorage2','sessionStorage2');
+_SetSessionStorage('sessionStorage',{a:'a',b:'b'});
+_SetSessionStorage('sessionStorage2','sessionStorage2');
 ```
