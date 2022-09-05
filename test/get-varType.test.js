@@ -1,4 +1,11 @@
-import getVarType from '../src/tools/get-varType';
+/*
+ * @Author: ch cwl_ch@163.com
+ * @Date: 2021-06-28 16:53:29
+ * @LastEditors: ch
+ * @LastEditTime: 2022-09-01 22:17:06
+ * @Description: file content
+ */
+const getVarType = require('../src/tools/get-var-type').default;
 
 test('获取数字变量类型',()=>{
     expect(getVarType(1)).toBe('number');
