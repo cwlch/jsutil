@@ -8,8 +8,8 @@
 ```html
 <script src="http://jsutil.gykeji.com/lib/jsutil-umd.js"></script>
 <script>
-	jsutil.isName('你的名字'); //true
-	jsutil.isName('你的名字12'); //false
+	jsutil._IsName('你的名字'); //true
+	jsutil._IsName('你的名字12'); //false
 	// jsutil....
 </script>
 ```
@@ -24,11 +24,11 @@ npm i @gykeji/jsutil -S
 #### 按需引入
 在你要用到相关方法的页面直接引入方法即可
 ```javascript
-import {isEmpty,isPhone} from '@gykeji/jsutil';
+import {_IsEmpty,_IsPhone} from '@gykeji/jsutil';
 
 const a = '';
-isEmpty(a); // true
-isPhone(a); // false
+_IsEmpty(a); // true
+_IsPhone(a); // false
 ```
 
 ##### 在文件中直接全量引入

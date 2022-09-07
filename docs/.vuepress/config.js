@@ -1,8 +1,16 @@
+/*
+ * @Author: ch cwl_ch@163.com
+ * @Date: 2022-09-07 06:23:43
+ * @LastEditors: ch
+ * @LastEditTime: 2022-09-07 08:03:31
+ * @Description: file content
+ */
 import { defaultTheme } from '@vuepress/theme-default'
 import { docsearchPlugin } from '@vuepress/plugin-docsearch'
 
 export default {
   head: [
+    ['meta', { name: 'keywords', content: 'jsutil函数库,jsutil工具类,js工具类,javascript工具类,js基础类,jsTool类,时间格式化,校验手机号,校验邮箱格式,校验身份证号,校验金额格式,金额格式化,校验座机号,校验为空,校验姓名格式'}],
     ['script', {}, `
         var _hmt = _hmt || [];
         (function() {
@@ -13,15 +21,16 @@ export default {
         })();
       `]
   ],
-  title: 'jsUtil | js工具类',
-  description: 'js工具类 | javascript工具类｜js基础类｜jsTool类｜校验一个变量是否为空、校验是否为正常的姓名格式、校验是否为手机号、校验是否为座机号、校验邮箱格式是否正确、校验身份证号是否正确、校验是否为金额格式、时间格式化、金额格式化',
+  title: 'Jsutil',
+  description: 'jsutil是一个功能型JavaScript函数库，一个功能型js工具类',
   theme: defaultTheme({
+    logo:'/imgs/logo.png',
     navbar: [
       { text: '首页', link: '/' },
       { text: '教程', link: '/guide/' },
       { text: 'API', link: '/api/is/' },
-      { text: 'GIT', link: 'https://github.com/cwlch/jsUtil.git' },
-      { text: 'NPM', link: 'https://www.npmjs.com/package/js-util-all' }
+      { text: 'GIT', link: 'https://github.com/cwlch/jsutil.git' },
+      { text: 'NPM', link: 'https://www.npmjs.com/package/@gykeji/jsutil' }
     ],
     sidebar: {
       '/guide/': [''],
@@ -34,7 +43,10 @@ export default {
         'ohter'
       ]
     },
-    displayAllHeaders: true
+    displayAllHeaders: true,
+    themePlugins : {
+      git : false
+    },
   }),
   plugins: [
     docsearchPlugin({
