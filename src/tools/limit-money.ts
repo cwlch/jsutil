@@ -1,4 +1,11 @@
-const limitMoney = (val:any)=>{
+/*
+ * @Author: ch cwl_ch@163.com
+ * @Date: 2021-06-28 16:53:29
+ * @LastEditors: ch
+ * @LastEditTime: 2022-09-16 09:06:49
+ * @Description: file content
+ */
+const _LimitMoney = (val:any)=>{
     let num:any = val.toString();
     //清除"数字"和"."以外的字符
     num = num.replace(/[^\d.]/g, '');
@@ -15,3 +22,4 @@ const limitMoney = (val:any)=>{
     // num.replace(/^(-)*(\d+)\.(\d\d).*$/, '$1$2.$3'); 
     return num
 }
+export default _LimitMoney

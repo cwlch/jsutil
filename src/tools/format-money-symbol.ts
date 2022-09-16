@@ -12,7 +12,7 @@ import getVarType from './get-var-type';
  * @param {number | string} money 金额数据
  * @returns {string} 金额格式数据
  */
-const formatMoneySymbol = (money:number | string): string|number|null =>{
+const _FormatMoneySymbol = (money:number | string): string|number|null =>{
     const moneyType = getVarType(money);
     if(money === '' || moneyType === 'null' || moneyType === 'undefined'){
         return null;
@@ -30,4 +30,4 @@ const formatMoneySymbol = (money:number | string): string|number|null =>{
     }
     return str += `.${floatNum[1]}`;
 }
-export default formatMoneySymbol;
+export default _FormatMoneySymbol;

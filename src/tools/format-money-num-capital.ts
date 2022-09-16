@@ -13,7 +13,7 @@
   * @param n 金额
   * @param h 金额为负时的前缀
   */
-const toCapitalMoney = (n:number,h:string)=>{
+const _FormatMoneyNumCapital = (n:number,h:string)=>{
     const fraction:string[] = ['角', '分'],
         digit:string[] = [
             '零', '壹', '贰', '叁', '肆',
@@ -53,4 +53,4 @@ const toCapitalMoney = (n:number,h:string)=>{
         .replace(/(零.)+/g, '零')
         .replace(/^整$/, '零元整');
 }
-export default toCapitalMoney;
+export default _FormatMoneyNumCapital;

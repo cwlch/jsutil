@@ -11,7 +11,7 @@
  */
 import isEmpty from './is-empty.js';
 
-const isIdCard = (val:string) => {
+const _IsIdCard = (val:string) => {
     if(isEmpty(val)) {
         return false;
     }
@@ -37,4 +37,4 @@ const isIdCard = (val:string) => {
     }
 };
 
-export default isIdCard;
+export default _IsIdCard;

@@ -31,6 +31,7 @@ import _LimitInt from './limit-int';
 import _LimitIntFloat from './limit-int-float';
 import _LimitPNInt from './limit-p-n-int';
 import _LimitPNIntFloat from './limit-p-n-int-float';
+import _LimitMoney from './limit-money';
 import _LoadScript from './load-script';
 import _LoadScriptAwait from './load-script-await';
 import _CreatUUID from './creat-uuid';
@@ -40,6 +41,7 @@ import _DownBlobFile from './down-blob-file';
 import _LoactionReplace from './loaction-replace';
 import _CopyText from './copy-text';
 import _ToAsyncAwait from './to-async-await';
+import _Calc from './calc';
 export {
     // 验证是否为空
     _IsEmpty,
@@ -95,6 +97,8 @@ export {
     _LimitPNInt,
     // 限制输入正负整数及浮点数
     _LimitPNIntFloat,
+    // 限制输入金额
+    _LimitMoney,
     // 动态加载JS 并联
     _LoadScript,
     // 动态加载JS 串联
@@ -112,5 +116,7 @@ export {
     // 文本拷贝
     _CopyText,
     // 同步方法
-    _ToAsyncAwait
+    _ToAsyncAwait,
+    // 精度计算
+    _Calc
 };

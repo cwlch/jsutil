@@ -2,10 +2,10 @@
  * @Author: ch cwl_ch@163.com
  * @Date: 2022-08-27 17:20:09
  * @LastEditors: ch
- * @LastEditTime: 2022-08-27 19:10:04
+ * @LastEditTime: 2022-09-16 08:49:19
  * @Description: file content
  */
-const calc = (symbol:string, number1:number, number2:number, ...args:number[]):number =>{
+const _Calc = (symbol:string, number1:number, number2:number, ...args:number[]):number =>{
     if(!['+','-','*','/'].includes(symbol)){
         throw new Error('第一个参数请传+ - * /计算符');
     }
@@ -51,8 +51,9 @@ const calc = (symbol:string, number1:number, number2:number, ...args:number[]):n
     const nextNum = args[0];
     if(nextNum){
         args.shift()
-        result =  calc(symbol, result, nextNum, ...args);
+        result =  _Calc(symbol, result, nextNum, ...args);
     }
     
     return result;
 }
+export default _Calc

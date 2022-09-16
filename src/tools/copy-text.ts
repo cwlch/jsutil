@@ -8,7 +8,7 @@
  * 拷贝指定文本
  * @param str 
  */
-const copyText = (str:string) => {
+const _CopyText = (str:string) => {
     try {
         let input = document.createElement('textarea');
         input.value = str;
@@ -25,4 +25,4 @@ const copyText = (str:string) => {
         return false;
     }
 }
-export default copyText;
+export default _CopyText;

@@ -10,11 +10,11 @@
  * 设置localStorage
  */
 
-const setLocalStorage = (key:string,val:any):any => {
+const _SetLocalStorage = (key:string,val:any):any => {
     const valStr:string = JSON.stringify(val)
     if(localStorage){
         localStorage.setItem(key,valStr)
     }
 };
 
-export default setLocalStorage;
+export default _SetLocalStorage;

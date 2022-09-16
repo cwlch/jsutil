@@ -10,7 +10,7 @@
  * 获取SessionStorage
  */
 
-const getSessionStorage = (key:string):any => {
+const _GetSessionStorage = (key:string):any => {
     let val:any = null;
     if(sessionStorage){
         sessionStorage.getItem(key);
@@ -21,4 +21,4 @@ const getSessionStorage = (key:string):any => {
     return val;
 };
 
-export default getSessionStorage;
+export default _GetSessionStorage;

@@ -11,7 +11,7 @@
  */
 import getType from './get-var-type';
 
-const isEmpty = (params:any = ''):boolean => {
+const _IsEmpty = (params:any = ''):boolean => {
     const myType:string = getType(params);
     if(params === '' || myType === 'undefined' || myType === 'null' ||
      (myType === 'array' && params.length === 0) || (myType === 'object' && Object.keys(params).length === 0)){
@@ -19,4 +19,4 @@ const isEmpty = (params:any = ''):boolean => {
     }
     return false;
 };
-export default isEmpty;
+export default _IsEmpty;
