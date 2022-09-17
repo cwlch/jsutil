@@ -32,7 +32,7 @@ declare const _default: {
     _LimitPNIntFloat: (val: string | number, digit: number) => number;
     _LoadScript: (scripts: string | string[]) => Promise<boolean>;
     _LoadScriptAwait: (scripts: string | string[]) => Promise<void>;
-    _CreatUuid: (len?: number | undefined, radix?: number | undefined) => string;
+    _CreatUUID: (len?: number | undefined, radix?: number | undefined) => string;
     _Extend: (target: any, ...args: any) => object;
     _FillZero: (num: string | number) => string | number;
     _DownBlobFile: (blob: any, { name, suffix }?: any) => void;

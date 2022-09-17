@@ -19,7 +19,7 @@ const suffixMap:any = {
 	'application/vnd.ms-powerpoint' : 'ppt'
 }
 
-const downBlobFile = (blob:any,{name,suffix}:any={}):void => {
+const _DownBlobFile = (blob:any,{name,suffix}:any={}):void => {
 	const $a = document.createElement('a'),
 		fileName:string = blob.name || '',		
 		urlObject = formatBlobUrl(blob);
@@ -40,4 +40,4 @@ const downBlobFile = (blob:any,{name,suffix}:any={}):void => {
 	$a.download = `${myName}.${mySuffix}`;
 	$a.click();
 }
-export default downBlobFile;
+export default _DownBlobFile;

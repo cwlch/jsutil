@@ -13,7 +13,7 @@ import getVarType from './get-var-type'
  * @return Promise 
  */
 
-const loadScripts = (scripts: string | string[]) : Promise<boolean> => {
+const _LoadScript = (scripts: string | string[]) : Promise<boolean> => {
 	const scriptArr:any = getVarType(scripts) === "string" ? [scripts] : scripts,
 		HEAD = document.getElementsByTagName("head").item(0) || document.documentElement;
 	let	loaded = 0;
@@ -44,4 +44,4 @@ const loadScripts = (scripts: string | string[]) : Promise<boolean> => {
 	
 }
 
-export default loadScripts;
+export default _LoadScript;

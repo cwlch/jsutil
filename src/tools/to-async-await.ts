@@ -2,7 +2,7 @@
  * @Author: ch
  * @Date: 2021-09-11 15:57:23
  * @LastEditors: ch
- * @LastEditTime: 2021-09-11 16:06:34
+ * @LastEditTime: 2022-09-16 08:57:45
  * @Description: file content
  */
 
@@ -15,7 +15,7 @@ interface outData {
     error:string|null,
     result:any
 }
-const toAsyncAwait = (promise:Promise<any>,fromatResult:boolean=true) : Promise<any|outData> => {
+const _ToAsyncAwait = (promise:Promise<any>,fromatResult:boolean=true) : Promise<any|outData> => {
     if(!fromatResult){
         return promise;
     }else{
@@ -23,4 +23,4 @@ const toAsyncAwait = (promise:Promise<any>,fromatResult:boolean=true) : Promise<
     }
 }
 
-export default toAsyncAwait
+export default _ToAsyncAwait

@@ -1,9 +1,16 @@
+/*
+ * @Author: ch cwl_ch@163.com
+ * @Date: 2021-06-28 16:53:29
+ * @LastEditors: ch
+ * @LastEditTime: 2022-09-16 08:55:18
+ * @Description: file content
+ */
 /**
  * 限制数字及浮点数
  * @param val 
  * @param digit 需要保留的小数位数
  */
-const limitIntFloat = (val:string|number,digit:number) :number => {
+const _LimitIntFloat = (val:string|number,digit:number) :number => {
     let num:any = val.toString();
     num = num.replace(/[^\d\.]/g, '');
     num = num.replace('.', '$#$').replace(/\./g, '').replace('$#$', '.');    
@@ -16,4 +23,4 @@ const limitIntFloat = (val:string|number,digit:number) :number => {
 }
 
  
-export default limitIntFloat
+export default _LimitIntFloat

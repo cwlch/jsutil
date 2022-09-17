@@ -1,6 +1,13 @@
+/*
+ * @Author: ch cwl_ch@163.com
+ * @Date: 2021-06-28 16:53:29
+ * @LastEditors: ch
+ * @LastEditTime: 2022-09-16 08:53:34
+ * @Description: file content
+ */
 import getVarType from './get-var-type';
 
-const toJsonSearch = (myJson:any,connector:string='?'):string=>{
+const _FormatJsonSearch = (myJson:any,connector:string='?'):string=>{
     if(getVarType(myJson) !== 'object'){
         throw new Error('必须是JSON对象');
     }
@@ -10,4 +17,4 @@ const toJsonSearch = (myJson:any,connector:string='?'):string=>{
     }
     return `${connector}${arr.join('&')}`;
 }
-export default toJsonSearch;
+export default _FormatJsonSearch;

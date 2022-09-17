@@ -1,4 +1,12 @@
-import isEmpty from '../src/tools/is-empty';
+/*
+ * @Author: ch cwl_ch@163.com
+ * @Date: 2022-08-31 12:29:35
+ * @LastEditors: ch
+ * @LastEditTime: 2022-09-01 22:17:22
+ * @Description: file content
+ */
+
+const isEmpty = require('../src/tools/is-empty').default;
 
 test('空字符串判断',()=>{
     expect(isEmpty('')).toBe(true);

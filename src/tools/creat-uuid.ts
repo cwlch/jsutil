@@ -1,3 +1,10 @@
+/*
+ * @Author: ch cwl_ch@163.com
+ * @Date: 2021-06-28 16:53:29
+ * @LastEditors: ch
+ * @LastEditTime: 2022-09-16 08:49:41
+ * @Description: file content
+ */
 /**
  * 创建一个UUID
  * @param len 长度
@@ -8,7 +15,7 @@
  * uuid(8, 10) // "82841022800573848567251899801403"
  * uuid(8, 16) // "F743098834031FDFCE1D8976F9769222"
  */
-const createUUID = (len?:number,radix?:number):string =>{
+const _CreateUUID = (len?:number,radix?:number):string =>{
     const chars:string[] = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');
     let uuid:string[] = [],
         i:number=0;
@@ -29,4 +36,4 @@ const createUUID = (len?:number,radix?:number):string =>{
 
     return uuid.join('');
 }
-export default createUUID;
+export default _CreateUUID;

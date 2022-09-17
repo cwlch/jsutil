@@ -1,7 +1,7 @@
 # 设置类
 
 ## _SetCookie
-### 设置ckookie
+ 设置ckookie
 ::: tip 参数
 + key {string} cookie名
 + value {string} cookei值
@@ -20,7 +20,7 @@ _SetCookie('myCookieName','我是cookie值',{expires:expires});
 ```
 
 ## _SetLocalStorage
-### 设置localStorage
+ 设置localStorage
 ::: tip 参数
 + key {string} 名称
 + value {string | JSON} 值，字符串或正常的JSON串
@@ -33,7 +33,7 @@ _SetLocalStorage('localStorage2','localStorage2');
 ```
 
 ## _SetSessionStorage
-### 设置sessionStorage
+ 设置sessionStorage
 ::: tip 参数
 + key {string} 名称
 + value {string | JSON} 值，字符串或正常的JSON串

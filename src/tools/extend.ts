@@ -6,7 +6,7 @@
  */
 'use strict'
 import getVarType from './get-var-type';
-const extend = (target:any, ...args:any):object =>{
+const _Extend = (target:any, ...args:any):object =>{
     const last:any = args[args.length-1],
         lastType:string = getVarType(last),
         deep = lastType === 'boolean' ? last : true,
@@ -16,7 +16,7 @@ const extend = (target:any, ...args:any):object =>{
     }
     if(soucre.length > 1){
         soucre.forEach((item:any) => {
-            target = extend(target, item, deep);
+            target = _Extend(target, item, deep);
         });
     }else{
         const curSoucre = soucre[0];
@@ -31,7 +31,7 @@ const extend = (target:any, ...args:any):object =>{
                     _target = ['array'].includes(getVarType(target[key])) ? target[key] : []
 
                 }
-                target[key] = extend(_target,me);
+                target[key] = _Extend(_target,me);
             }else if(me !== undefined){
                 target[key] = me;
             }
@@ -39,4 +39,4 @@ const extend = (target:any, ...args:any):object =>{
     }
     return target;
 }
-export default  extend;
+export default  _Extend;

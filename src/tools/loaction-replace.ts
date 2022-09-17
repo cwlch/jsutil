@@ -4,7 +4,7 @@
  * @Last Modified by: ch
  * @Last Modified time: 2020-12-01 17:26:16
  */
-const locationReplace = (url:string):void =>{
+const _LoactionReplace = (url:string):void =>{
     if(window.history.replaceState){
         window.history.replaceState(null, window.document.title, url);
         window.history.go(0);
@@ -13,4 +13,4 @@ const locationReplace = (url:string):void =>{
     }
 }
 
-export default locationReplace;
+export default _LoactionReplace;

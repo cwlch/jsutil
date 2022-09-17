@@ -10,7 +10,7 @@
  * 1位数补零
  */
 
-const fillZero = (num:number|string):number|string => {
+const _FillZero = (num:number|string):number|string => {
     let res:number|string = num;
     if(num < 10 && num >= 0 && num.toString().indexOf('.') < 0){
         res = `0${num}`;
@@ -18,4 +18,4 @@ const fillZero = (num:number|string):number|string => {
     return res;
 };
 
-export default fillZero;
+export default _FillZero;

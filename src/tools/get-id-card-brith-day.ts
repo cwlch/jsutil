@@ -2,7 +2,7 @@
  * @Author: ch
  * @Date: 2021-09-11 16:19:39
  * @LastEditors: ch
- * @LastEditTime: 2021-09-11 16:25:56
+ * @LastEditTime: 2022-09-16 09:00:38
  * @Description: file content
  */
 
@@ -12,5 +12,5 @@
  * @param {string} idCard 身份证号
  * @return {string} 生日字符串
  */
-const getIdCardBirthDay = (idCard: string):string => idCard.slice(6, 14)
-export default getIdCardBirthDay
+const _GetIdCardBrithDay = (idCard: string):string => idCard.slice(6, 14)
+export default _GetIdCardBrithDay
