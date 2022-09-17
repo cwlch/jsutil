@@ -13,7 +13,8 @@
     "dev": "vuepress dev docs",
     "start": "node server.js",
     "test": "jest",
-    "npmpush": "npm run build & npm publish"
+    "npmpush": "npm run build & npm publish",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
