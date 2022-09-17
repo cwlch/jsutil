@@ -47,7 +47,7 @@
   },
   "devDependencies": {
     "@babel/preset-env": "^7.18.10",
-    "@vuepress/plugin-docsearch": "^2.0.0-alpha.1",
+    "@vuepress/plugin-docsearch": "^2.0.0-beta.51",
     "@vuepress/plugin-register-components": "^2.0.0-beta.51",
     "@vuepress/theme-default": "^2.0.0-beta.50",
     "babel-7-jest": "^21.3.3",
