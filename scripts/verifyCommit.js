@@ -5,7 +5,6 @@ const msg = require('fs')
 
 const commitRE = /^(revert: )?(feat|fix|docs|dx|style|refactor|perf|test|workflow|build|ci|chore|types|wip|release)(\(.+\))?: .{1,50}/
 const mergeRe = /^(Merge pull request|Merge branch)/
-console.log(msg, 'msgmsgmsgmsgmsgmsgmsgmsgmsgmsgmsgmsg')
 if (!commitRE.test(msg)) {
   if(!mergeRe.test(msg)){
     console.log('git commit信息校验不通过')
