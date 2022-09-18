@@ -15,33 +15,6 @@
      <b id="count" >0</b>
 </div>
 <script>
-    var _Throttle = function (fn, delay, type) {
-        if (delay === void 0) { delay = 500; }
-        if (type === void 0) { type = 1; }
-        var previous = 0, timer;
-        if (jsutil._GetVarType([]) !== 'function') {
-            throw new Error('fn需要为函数哦！');
-        }
-        return function (args) {
-            if (type === 1 || type === 3) {
-                var now = Date.now();
-                // 当前时间-先前时间 > 延迟时间
-                if (now - previous > delay) {
-                    fn(args);
-                    previous = now;
-                }
-            }
-            if (type === 2 || type === 3) {
-                if (!timer) {
-                    timer = setTimeout(function () {
-                        clearTimeout(timer);
-                        timer = null;
-                        fn(args);
-                    }, delay);
-                }
-            }
-        };
-    };
     let num = 1;
     const $content = document.getElementById('content');
     const $count = document.getElementById('count');
@@ -49,7 +22,7 @@
         console.log(val);
         $count.innerHTML = num++;
     };
-    let throttleCount = _Throttle(count, 2000, 3)
+    let throttleCount = jsutil._Throttle(count, 2000, 3)
     $content.onclick = () => {
         throttleCount('throttleCount')
     }
