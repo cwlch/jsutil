@@ -1,6 +1,6 @@
 /*
- * @Author: ch 
- * @Date: 2020-04-03 09:37:38 
+ * @Author: ch
+ * @Date: 2020-04-03 09:37:38
  * @Last Modified by: ch
  * @Last Modified time: 2020-05-26 09:26:03
  */
@@ -10,7 +10,7 @@
  */
 export default ():object => {
     const ua:string = navigator.userAgent.toLocaleLowerCase();
-    let b:string = '', s:string = '';
+    let b:string = '', s:string = '', isWeChat:boolean = false;
 
     if(ua.search(/chrome\/(\d+\.\d+)/i) > 0){
         b = 'chrome';
@@ -35,7 +35,10 @@ export default ():object => {
     } else if(ua.search(/windows/i) > 0){
         s = 'windows';
     }
+    if(ua.search(/micromessenger/i) > 0){
+        isWeChat = true
+    }
 
-    return { browser: b, system: s};
-    
+    return { browser: b, system: s, isWeChat};
+
 };
