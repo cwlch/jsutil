@@ -7,10 +7,7 @@
   "browser": "lib/jsutil-umd.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "build": "rollup -c & vuepress build docs",
-    "build-rollup": "rollup -c",
-    "build-vuepress": "vuepress build docs",
-    "dev": "vuepress dev docs",
+    "build": "rollup -c",
     "start": "node server.js",
     "test": "jest",
     "npmpush": "npm run build & npm publish"
