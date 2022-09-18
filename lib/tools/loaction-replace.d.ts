@@ -1,2 +1,2 @@
-declare const locationReplace: (url: string) => void;
-export default locationReplace;
+declare const _LoactionReplace: (url: string) => void;
+export default _LoactionReplace;

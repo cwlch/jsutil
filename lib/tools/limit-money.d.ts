@@ -1,1 +1,2 @@
-declare const limitMoney: (val: any) => any;
+declare const _LimitMoney: (val: any) => any;
+export default _LimitMoney;

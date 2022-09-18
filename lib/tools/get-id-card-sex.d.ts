@@ -4,8 +4,8 @@
  * @param {string} sexDesc 对应性别描述数组，下标0为男生描述，1为女生描述 。默认 ['男','女']
  * @return {*}
  */
-declare const getIdCardSex: (idCard: string, sexDesc?: string[]) => {
+declare const _GetIdCardSex: (idCard: string, sexDesc?: string[]) => {
     sex: number;
     sexName: string;
 };
-export default getIdCardSex;
+export default _GetIdCardSex;

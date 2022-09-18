@@ -3,5 +3,5 @@
  * @param val
  * @param digit 需要保留的小数位数
  */
-declare const limitPNIntFloat: (val: string | number, digit: number) => number;
-export default limitPNIntFloat;
+declare const _LimitPNIntFloat: (val: string | number, digit: number) => number;
+export default _LimitPNIntFloat;

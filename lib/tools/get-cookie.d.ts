@@ -3,5 +3,5 @@
  * @param key
  * @return 有值返回字符串，不存在返回null
  */
-declare const getCookie: (key: string) => any;
-export default getCookie;
+declare const _GetCookie: (key: string) => any;
+export default _GetCookie;

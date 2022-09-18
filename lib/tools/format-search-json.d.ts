@@ -1,2 +1,2 @@
-declare const toSearchJson: (search: string) => object;
-export default toSearchJson;
+declare const _FormatSearchJson: (search: string) => object;
+export default _FormatSearchJson;

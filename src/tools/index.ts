@@ -42,6 +42,8 @@ import _LoactionReplace from './loaction-replace';
 import _CopyText from './copy-text';
 import _ToAsyncAwait from './to-async-await';
 import _Calc from './calc';
+import _DebounceFn from './debounce-fn';
+import _ThrottleFn from './throttle-fn';
 export {
     // 验证是否为空
     _IsEmpty,
@@ -118,5 +120,9 @@ export {
     // 同步方法
     _ToAsyncAwait,
     // 精度计算
-    _Calc
+    _Calc,
+    // 防抖
+    _DebounceFn,
+    // 节流
+    _ThrottleFn,
 };

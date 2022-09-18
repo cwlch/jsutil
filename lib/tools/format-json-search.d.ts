@@ -1,2 +1,2 @@
-declare const toJsonSearch: (myJson: any, connector?: string) => string;
-export default toJsonSearch;
+declare const _FormatJsonSearch: (myJson: any, connector?: string) => string;
+export default _FormatJsonSearch;

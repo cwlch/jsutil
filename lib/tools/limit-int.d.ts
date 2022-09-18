@@ -1,2 +1,2 @@
-declare const limitInt: (val: string | number) => string;
-export default limitInt;
+declare const _LimitInt: (val: string | number) => string;
+export default _LimitInt;

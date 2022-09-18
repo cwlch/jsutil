@@ -30,6 +30,7 @@ declare const _default: {
     _LimitIntFloat: (val: string | number, digit: number) => number;
     _LimitPNInt: (val: string | number) => string;
     _LimitPNIntFloat: (val: string | number, digit: number) => number;
+    _LimitMoney: (val: any) => any;
     _LoadScript: (scripts: string | string[]) => Promise<boolean>;
     _LoadScriptAwait: (scripts: string | string[]) => Promise<void>;
     _CreatUUID: (len?: number | undefined, radix?: number | undefined) => string;
@@ -39,5 +40,8 @@ declare const _default: {
     _LoactionReplace: (url: string) => void;
     _CopyText: (str: string) => boolean;
     _ToAsyncAwait: (promise: Promise<any>, fromatResult?: boolean) => Promise<any>;
+    _Calc: (symbol: string, number1: number, number2: number, ...args: number[]) => number;
+    _DebounceFn: (fn: (args: any) => void, delay: number, immediate?: boolean | undefined) => (args: any) => void;
+    _ThrottleFn: (fn: (args: any) => void, delay: number, type?: Number) => (args: any) => void;
 };
 export default _default;

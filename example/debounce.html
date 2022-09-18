@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/jsutil-umd.js"></script>
+</head>
+<body>
+<div id="content"
+     style="height:150px;line-height:150px;text-align:center; color: #fff;background-color:#ccc;font-size:80px;"></div>
+<script>
+    let num = 1;
+    const content = document.getElementById('content');
+    let a = 20
+    function count(val) {
+        console.log(val);
+        content.innerHTML = num++;
+    };
+    let debounceCount = jsutil._DebounceFn(count, 1000, true)
+    content.onmousemove = () =>{
+        debounceCount(222222222222222)
+    }
+</script>
+</body>
+</html>
