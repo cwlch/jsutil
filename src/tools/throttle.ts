@@ -11,7 +11,7 @@
  * @param delay 延迟执行的毫秒数
  * @param type 1 表示时间戳类型(立即触发)  2 表示定时器（到时间再触发）  3 时间戳+定时器版: 实现第一次触发可以立即响应,结束触发后也能有响应
  */
-const throttleFn = (fn: (args: any) => void, delay: number, type: Number = 1) => {
+const _Throttle = (fn: (args: any) => void, delay: number, type: Number = 1) => {
     let previous: number = 0,
         timer: any;
     return (args: any) => {
@@ -34,4 +34,4 @@ const throttleFn = (fn: (args: any) => void, delay: number, type: Number = 1) =>
         }
     }
 }
-export default throttleFn
+export default _Throttle

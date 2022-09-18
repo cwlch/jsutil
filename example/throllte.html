@@ -1,3 +1,10 @@
+<!--
+ * @Author: ch cwl_ch@163.com
+ * @Date: 2022-09-18 21:30:36
+ * @LastEditors: ch
+ * @LastEditTime: 2022-09-18 22:28:21
+ * @Description: file content
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,20 +13,39 @@
     <script src="../lib/jsutil-umd.js"></script>
 </head>
 <body>
-<div id="content"
-     style="height:150px;line-height:150px;text-align:center; color: #fff;background-color:#ccc;font-size:80px;"></div>
+
+
+<div class="ctx">
+    <h1>节流函数：_Throttle</h1>
+    <p>看计数。连续狂点,每<b>2秒</b>计数1次哦~</p>
+    <button  id="content" class="btn">请疯狂点我</button>
+     <b id="count" >0</b>
+</div>
 <script>
     let num = 1;
-    const content = document.getElementById('content');
-    let a = 20
+    const $content = document.getElementById('content');
+    const $count = document.getElementById('count');
     function count(val) {
         console.log(val);
-        content.innerHTML = num++;
+        $count.innerHTML = num++;
     };
-    let throttleCount = jsutil._ThrottleFn(count, 2000, 3)
-    content.onmousemove = () => {
+    let throttleCount = jsutil._Throttle(count, 2000, 3)
+    $content.onclick = () => {
         throttleCount('throttleCount')
     }
 </script>
+<style>
+    .ctx{
+        height:150px;
+        text-align:center; color: #353e56;font-size:16px;
+    }
+    .btn{
+        border:0;
+        background: #44c843; color: #353e56;
+        cursor: pointer;
+        height: 36px;
+        font-size: 16px;
+    }
+</style>
 </body>
 </html>

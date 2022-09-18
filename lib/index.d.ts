@@ -41,7 +41,7 @@ declare const _default: {
     _CopyText: (str: string) => boolean;
     _ToAsyncAwait: (promise: Promise<any>, fromatResult?: boolean) => Promise<any>;
     _Calc: (symbol: string, number1: number, number2: number, ...args: number[]) => number;
-    _DebounceFn: (fn: (args: any) => void, delay: number, immediate?: boolean | undefined) => (args: any) => void;
-    _ThrottleFn: (fn: (args: any) => void, delay: number, type?: Number) => (args: any) => void;
+    _Debounce: (fn: (args: any) => void, delay: number, immediate?: boolean | undefined) => (args: any) => void;
+    _Throttle: (fn: (args: any) => void, delay: number, type?: Number) => (args: any) => void;
 };
 export default _default;

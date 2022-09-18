@@ -10,7 +10,7 @@
  * @param delay 延迟执行的毫秒数
  * @param immediate 是否立即执行
  */
-const debounceFn = (fn: (args: any) => void, delay: number, immediate?: boolean) => {
+const _Debounce = (fn: (args: any) => void, delay: number, immediate?: boolean) => {
     let timer: any;
     return (args: any) => {
         if (timer) clearTimeout(timer)
@@ -18,16 +18,16 @@ const debounceFn = (fn: (args: any) => void, delay: number, immediate?: boolean)
         if (immediate) {
             const callNow = !timer
             timer = setTimeout(() => {
-                timer = null
+                timer = null;
             }, delay)
             if (callNow) {
-                fn(args)
+                fn(args);
             }
         } else {
             timer = setTimeout(() => {
-                fn(args)
+                fn(args);
             }, delay)
         }
     }
 }
-export default debounceFn
+export default _Debounce
