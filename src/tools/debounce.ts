@@ -15,7 +15,7 @@ import _GetVarType from "./get-var-type";
 const _Debounce = (fn: (args: any) => void, delay: number, immediate?: boolean) => {
     let timer: any;
     if (_GetVarType(fn) !== 'function') {
-        throw new Error('fn需要为函数哦！');
+        throw new Error('第一个参数，需要为函数哦~');
     }
     return (args: any) => {
         if (timer) clearTimeout(timer)

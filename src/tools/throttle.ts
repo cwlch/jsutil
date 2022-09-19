@@ -16,7 +16,7 @@ const _Throttle = (fn: (args: any) => void, delay: number = 500, type: number = 
     let previous: number = 0,
         timer: any;
     if (_GetVarType(fn) !== 'function') {
-        throw new Error('fn需要为函数哦！');
+        throw new Error('第一个参数，需要为函数哦~');
     }
     return (args: any) => {
         if (type === 1 || type === 3) {
