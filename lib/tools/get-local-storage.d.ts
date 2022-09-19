@@ -2,5 +2,5 @@
  *
  * 获取localStorage
  */
-declare const getLocalStorage: (key: string) => any;
-export default getLocalStorage;
+declare const _GetLocalStorage: (key: string) => any;
+export default _GetLocalStorage;

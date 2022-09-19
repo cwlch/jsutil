@@ -1,2 +1,2 @@
-declare const extend: (target: any, ...args: any) => object;
-export default extend;
+declare const _Extend: (target: any, ...args: any) => object;
+export default _Extend;

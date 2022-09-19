@@ -10,7 +10,7 @@
  * @param key
  * @return 有值返回字符串，不存在返回null 
  */
-const getCookie = (key:string):any=>{
+const _GetCookie = (key:string):any=>{
     if(!window){
         throw new Error('getCookie只支持浏览器端使用');
     }
@@ -22,4 +22,4 @@ const getCookie = (key:string):any=>{
 }
 
 
-export default getCookie;
+export default _GetCookie;

@@ -1,10 +1,17 @@
+/*
+ * @Author: ch cwl_ch@163.com
+ * @Date: 2021-06-28 16:53:29
+ * @LastEditors: ch
+ * @LastEditTime: 2022-09-16 08:55:58
+ * @Description: file content
+ */
 
 /**
  * 限制输入正负数字及浮点数
  * @param val 
  * @param digit 需要保留的小数位数
  */
-const limitPNIntFloat = (val:string|number,digit:number) :number => {
+const _LimitPNIntFloat = (val:string|number,digit:number) :number => {
     // /^(\.*)(\d+)(\.?)(\d{0,2}).*$/g
     let num:any = val.toString();
     // 剔除数字和“-”，“.”号以外字符，
@@ -26,4 +33,4 @@ const limitPNIntFloat = (val:string|number,digit:number) :number => {
 }
 
  
-export default limitPNIntFloat;
+export default _LimitPNIntFloat;

@@ -5,5 +5,5 @@
  * @param array|string 指定的脚本们
  * @return Promise
  */
-declare const loadScripts: (scripts: string | string[]) => Promise<boolean>;
-export default loadScripts;
+declare const _LoadScript: (scripts: string | string[]) => Promise<boolean>;
+export default _LoadScript;

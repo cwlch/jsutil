@@ -3,5 +3,5 @@
  * @param {string} idCard 身份证号
  * @return {string} 生日字符串
  */
-declare const getIdCardBirthDay: (idCard: string) => string;
-export default getIdCardBirthDay;
+declare const _GetIdCardBrithDay: (idCard: string) => string;
+export default _GetIdCardBrithDay;

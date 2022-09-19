@@ -12,7 +12,7 @@ import getVarType from './get-var-type';
  * @param {number|string|Date} d 时间参数能被new Date识别的数字，字符串，日期
  * @param {string} fmt 时间格式参数 字符串类型 默认'yyyy/mm/dd'
  */
- const formatDate = (date:any, fmt:string = 'yyyy/mm/dd' ): string =>{
+ const _FormatDate = (date:any, fmt:string = 'yyyy/mm/dd' ): string =>{
     //  处理不识别的时间表示字符串，如2020年01月01日00时00分00秒
     const dateType = getVarType(date);
     if(dateType === 'string'){
@@ -51,4 +51,4 @@ import getVarType from './get-var-type';
 
     return fmt;
 }
-export default formatDate;
+export default _FormatDate;

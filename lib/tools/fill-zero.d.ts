@@ -2,5 +2,5 @@
  *
  * 1位数补零
  */
-declare const fillZero: (num: number | string) => number | string;
-export default fillZero;
+declare const _FillZero: (num: number | string) => number | string;
+export default _FillZero;

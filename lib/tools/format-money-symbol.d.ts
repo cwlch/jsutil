@@ -4,5 +4,5 @@
  * @param {number | string} money 金额数据
  * @returns {string} 金额格式数据
  */
-declare const formatMoneySymbol: (money: number | string) => string | number | null;
-export default formatMoneySymbol;
+declare const _FormatMoneySymbol: (money: number | string) => string | number | null;
+export default _FormatMoneySymbol;

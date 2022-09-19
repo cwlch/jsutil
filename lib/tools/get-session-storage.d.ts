@@ -2,5 +2,5 @@
  *
  * 获取SessionStorage
  */
-declare const getSessionStorage: (key: string) => any;
-export default getSessionStorage;
+declare const _GetSessionStorage: (key: string) => any;
+export default _GetSessionStorage;

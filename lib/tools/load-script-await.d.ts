@@ -5,5 +5,5 @@
 * @param array|string 指定的脚本们
 * @return Promise
 */
-declare const loadScriptsAwait: (scripts: string | string[]) => Promise<void>;
-export default loadScriptsAwait;
+declare const _LoadScriptAwait: (scripts: string | string[]) => Promise<void>;
+export default _LoadScriptAwait;

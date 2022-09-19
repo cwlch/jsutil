@@ -1,0 +1,71 @@
+<!--
+ * @Author: ch cwl_ch@163.com
+ * @Date: 2022-09-18 21:30:36
+ * @LastEditors: ch
+ * @LastEditTime: 2022-09-18 22:27:09
+ * @Description: file content
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/jsutil-umd.js"></script>
+</head>
+<body>
+<div class="ctx">
+    <h1>防抖函数：_Debounce</h1>
+    <p>看计数。连续狂点只会计数1次哦~</p>
+    <p>
+        <b>点击第一次，立即计数</b>
+    <button  id="content" class="btn">请疯狂点我</button>
+     <b id="count" >0</b>
+    </p>
+    <p>
+        <b>点击停止，才计数</b>
+        <button  id="content2" class="btn">请疯狂点我</button>
+        <b id="count2" >0</b>
+    </p>
+    
+</div>
+<script>
+    let num = 1;
+    const $content = document.getElementById('content');
+    const $count = document.getElementById('count');
+    function count(val) {
+        console.log(val);
+        $count.innerHTML = num++;
+    };
+    let debounceCount = jsutil._Debounce(count, 1000, true)
+    $content.onclick = () =>{
+        debounceCount(11111111111)
+    }
+
+
+    // 最后计数
+    let num2 = 1;
+    const $content2 = document.getElementById('content2');
+    const $count2 = document.getElementById('count2');
+    function count2(val) {
+        console.log(val);
+        $count2.innerHTML = num2++;
+    };
+    let debounceCount2 = jsutil._Debounce(count2, 500)
+    $content2.onclick = () =>{
+        debounceCount2(222222222222222)
+    }
+</script>
+<style>
+    .ctx{
+        height:150px;text-align:center; color: #353e56;font-size:16px;
+    }
+    .btn{
+        border:0;
+        background: #44c843; color: #353e56;
+        cursor: pointer;
+        height: 36px;
+        font-size: 16px;
+    }
+</style>
+</body>
+</html>

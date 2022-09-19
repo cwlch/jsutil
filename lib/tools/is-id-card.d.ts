@@ -1,2 +1,2 @@
-declare const isIdCard: (val: string) => boolean;
-export default isIdCard;
+declare const _IsIdCard: (val: string) => boolean;
+export default _IsIdCard;

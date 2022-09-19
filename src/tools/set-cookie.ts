@@ -5,7 +5,7 @@
  * @Last Modified time: 2020-12-01 16:25:13
  */
 'use strict'
-const setCookie = (key:string,value:string,{domain, path = '/',expires,secure}:any={}):void=>{
+const _SetCookie = (key:string,value:string,{domain, path = '/',expires,secure}:any={}):void=>{
     if(!window){
         throw new Error('setCookie只支持浏览器端使用');
     }
@@ -14,4 +14,4 @@ const setCookie = (key:string,value:string,{domain, path = '/',expires,secure}:a
     window.document.cookie = `${key}=${encodeURI(value)};domain=${domain};path=${path};${expires ? `expires=${new Date(time+expires)}` : ''};${secure ? `secure=${secure}` : ''}`;
     
 }
-export default setCookie;
+export default _SetCookie;

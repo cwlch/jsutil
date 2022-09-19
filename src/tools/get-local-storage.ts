@@ -10,7 +10,7 @@
  * 获取localStorage
  */
 
-const getLocalStorage = (key:string):any => {
+const _GetLocalStorage = (key:string):any => {
     let val:any = null;
     if(localStorage){
         localStorage.getItem(key);
@@ -21,4 +21,4 @@ const getLocalStorage = (key:string):any => {
     return val;
 };
 
-export default getLocalStorage;
+export default _GetLocalStorage;

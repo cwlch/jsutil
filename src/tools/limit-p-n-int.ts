@@ -1,8 +1,15 @@
+/*
+ * @Author: ch cwl_ch@163.com
+ * @Date: 2021-06-28 16:53:29
+ * @LastEditors: ch
+ * @LastEditTime: 2022-09-16 08:55:42
+ * @Description: file content
+ */
 /**
  * 限制可输入正负整数
  * @param val 
  */
-const limitPNInt = (val:string|number):string  => {
+const _LimitPNInt = (val:string|number):string  => {
     let num = val.toString();
     // 剔除数字和“-”号以外字符，
     num = num.replace(/[^\d\-]/g,'');
@@ -13,4 +20,4 @@ const limitPNInt = (val:string|number):string  => {
     return num;
 }
  
-export default limitPNInt
+export default _LimitPNInt

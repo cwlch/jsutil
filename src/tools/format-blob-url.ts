@@ -22,13 +22,13 @@ class MyObjectURL {
  * @param blob 
  * @return Promise
  */
-const blobToURL = (blob:any):any =>{
+const _FormatBlobUrl = (blob:any):any =>{
     let objectURL:string = '';
     const MyURL = window.URL || window.webkitURL;
     objectURL = MyURL.createObjectURL(blob);
     return new MyObjectURL(objectURL);
 }
-export default blobToURL;
+export default _FormatBlobUrl;
 
 // return new Promise((res,rej)=>{
     //     const reader = new FileReader();    

@@ -3,5 +3,5 @@
  * @param blob
  * @return Promise
  */
-declare const blobToURL: (blob: any) => any;
-export default blobToURL;
+declare const _FormatBlobUrl: (blob: any) => any;
+export default _FormatBlobUrl;

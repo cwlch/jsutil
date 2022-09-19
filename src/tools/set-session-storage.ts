@@ -10,11 +10,11 @@
  * 设置SessionStorage
  */
 
-const setSessionStorage = (key:string,val:any):any => {
+const _SetSessionStorage = (key:string,val:any):any => {
     const valStr:string = JSON.stringify(val)
     if(sessionStorage){
         sessionStorage.setItem(key,valStr);
     }
 };
 
-export default setSessionStorage;
+export default _SetSessionStorage;

@@ -4,113 +4,125 @@
  * @Last Modified by: ch
  * @Last Modified time: 2021-01-21 09:58:33
  */
-import isEmpty from './is-empty';
-import isName from './is-name';
-import isPhone from './is-phone';
-import isTel from './is-tel';
-import isEmail from './is-email';
-import isIdCard from './is-id-card';
-import isMoney from './is-money';
-import setCookie from './set-cookie';
-import setSessionStorage from './set-session-storage';
-import setLocalStorage from './set-local-storage';
-import getCookie from './get-cookie';
-import getSessionStorage from './get-session-storage';
-import getLocalStorage from './get-local-storage';
-import getVarType from './get-var-type';
-import getUaInfo from './get-ua-info';
-import getIdCardSex from './get-id-card-sex';
-import getIdCardBrithDay from './get-id-card-brith-day';
-import formatBlobUrl from './format-blob-url';
-import formatJsonSearch from './format-json-search';
-import formatSearchJson from './format-search-json';
-import formatMoneyNumCapital from './format-money-num-capital';
-import formatDate from './format-date';
-import formatMoneySymbol from './format-money-symbol';
-import limitInt from './limit-int';
-import limitIntFloat from './limit-int-float';
-import limitPNInt from './limit-p-n-int';
-import limitPNIntFloat from './limit-p-n-int-float';
-import loadScript from './load-script';
-import loadScriptAwait from './load-script-await';
-import creatUuid from './creat-uuid';
-import extend from './extend';
-import fillZero from './fill-zero';
-import downBlobFile from './down-blob-file';
-import loactionReplace from './loaction-replace';
-import copyText from './copy-text';
-import toAsyncAwait from './to-async-await';
+import _IsEmpty from './is-empty';
+import _IsName from './is-name';
+import _IsPhone from './is-phone';
+import _IsTel from './is-tel';
+import _IsEmail from './is-email';
+import _IsIdCard from './is-id-card';
+import _IsMoney from './is-money';
+import _SetCookie from './set-cookie';
+import _SetSessionStorage from './set-session-storage';
+import _SetLocalStorage from './set-local-storage';
+import _GetCookie from './get-cookie';
+import _GetSessionStorage from './get-session-storage';
+import _GetLocalStorage from './get-local-storage';
+import _GetVarType from './get-var-type';
+import _GetUaInfo from './get-ua-info';
+import _GetIdCardSex from './get-id-card-sex';
+import _GetIdCardBrithDay from './get-id-card-brith-day';
+import _FormatBlobUrl from './format-blob-url';
+import _FormatJsonSearch from './format-json-search';
+import _FormatSearchJson from './format-search-json';
+import _FormatMoneyNumCapital from './format-money-num-capital';
+import _FormatDate from './format-date';
+import _FormatMoneySymbol from './format-money-symbol';
+import _LimitInt from './limit-int';
+import _LimitIntFloat from './limit-int-float';
+import _LimitPNInt from './limit-p-n-int';
+import _LimitPNIntFloat from './limit-p-n-int-float';
+import _LimitMoney from './limit-money';
+import _LoadScript from './load-script';
+import _LoadScriptAwait from './load-script-await';
+import _CreatUUID from './creat-uuid';
+import _Extend from './extend';
+import _FillZero from './fill-zero';
+import _DownBlobFile from './down-blob-file';
+import _LoactionReplace from './loaction-replace';
+import _CopyText from './copy-text';
+import _ToAsyncAwait from './to-async-await';
+import _Calc from './calc';
+import _Debounce from './debounce';
+import _Throttle from './throttle';
 export {
     // 验证是否为空
-    isEmpty,
+    _IsEmpty,
     // 验证姓名格式
-    isName,
+    _IsName,
     // 验证手机
-    isPhone,
+    _IsPhone,
     // 验证座机号
-    isTel,
+    _IsTel,
     // 验证邮箱地址
-    isEmail,
+    _IsEmail,
     // 验证身份证号
-    isIdCard,
+    _IsIdCard,
     // 验证金额格式
-    isMoney,
+    _IsMoney,
     // 设置cookie
-    setCookie,
+    _SetCookie,
     // 设置seesionStorage，json格式
-    setSessionStorage,
+    _SetSessionStorage,
     // 设置localStorage，JSON格式
-    setLocalStorage,
+    _SetLocalStorage,
     // 获取cookie
-    getCookie,
+    _GetCookie,
     // 获取sessionStorage
-    getSessionStorage,
+    _GetSessionStorage,
     // 获取localStorage
-    getLocalStorage,
+    _GetLocalStorage,
     // 获取变量类型
-    getVarType,
+    _GetVarType,
     // 获取userAgent信息
-    getUaInfo,
+    _GetUaInfo,
     // 获取身份证号性别
-    getIdCardSex,
+    _GetIdCardSex,
     // 获取身份证号生日
-    getIdCardBrithDay,
+    _GetIdCardBrithDay,
     // 格式化时间
-    formatDate,
+    _FormatDate,
     // 格式化金额，添加千分符
-    formatMoneySymbol,
+    _FormatMoneySymbol,
     // 数字金额转中文大写
-    formatMoneyNumCapital,
+    _FormatMoneyNumCapital,
     // 二进制文件流转可访问URL
-    formatBlobUrl,
+    _FormatBlobUrl,
     // JSON转URLSearch格式串
-    formatJsonSearch,
+    _FormatJsonSearch,
     // URLSearch串转JSON对象
-    formatSearchJson,
+    _FormatSearchJson,
     // 限制输入整数
-    limitInt,
+    _LimitInt,
     // 限制输入整数和浮点数
-    limitIntFloat,
+    _LimitIntFloat,
     // 限制输入正负整数
-    limitPNInt,
+    _LimitPNInt,
     // 限制输入正负整数及浮点数
-    limitPNIntFloat,
+    _LimitPNIntFloat,
+    // 限制输入金额
+    _LimitMoney,
     // 动态加载JS 并联
-    loadScript,
+    _LoadScript,
     // 动态加载JS 串联
-    loadScriptAwait,
+    _LoadScriptAwait,
     // 创建UUID
-    creatUuid,
+    _CreatUUID,
     // 对象拷贝
-    extend,
+    _Extend,
     // 个位数补0
-    fillZero,
+    _FillZero,
     // 下载二进制文件流文件
-    downBlobFile,
+    _DownBlobFile,
     // 浏览器replace方法
-    loactionReplace,
+    _LoactionReplace,
     // 文本拷贝
-    copyText,
+    _CopyText,
     // 同步方法
-    toAsyncAwait
+    _ToAsyncAwait,
+    // 精度计算
+    _Calc,
+    // 防抖
+    _Debounce,
+    // 节流
+    _Throttle,
 };

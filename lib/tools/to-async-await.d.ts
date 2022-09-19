@@ -6,5 +6,5 @@ interface outData {
     error: string | null;
     result: any;
 }
-declare const toAsyncAwait: (promise: Promise<any>, fromatResult?: boolean) => Promise<any | outData>;
-export default toAsyncAwait;
+declare const _ToAsyncAwait: (promise: Promise<any>, fromatResult?: boolean) => Promise<any | outData>;
+export default _ToAsyncAwait;
