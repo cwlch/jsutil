@@ -15,7 +15,7 @@ import _GetVarType from './get-var-type';
 const _Throttle = (fn: (args: any) => void, delay: number = 500, type: number = 1) => {
     let previous: number = 0,
         timer: any;
-    if (_GetVarType(fn) !== 'function') {
+    if (_GetVarType(fn) !== 'Function') {
         throw new Error('第一个参数，需要为函数哦~');
     }
     return (args: any) => {
