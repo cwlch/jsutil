@@ -1,0 +1,59 @@
+<!--
+ * @Author: ch cwl_ch@163.com
+ * @Date: 2022-10-16 21:05:00
+ * @LastEditors: ch
+ * @LastEditTime: 2022-10-16 22:21:16
+ * @Description: file content
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/jsutil-umd.js"></script>
+</head>
+<body>
+
+
+<div class="ctx">
+    <h1>秒转时间格式：_FormatNumTime</h1>
+    <p>
+        <input id="input" placeholder="请输入秒数转换"/>秒
+    </p>
+    <button  id="btn" class="btn">点我转换</button>
+    <p>
+        <b id="con1" >--</b><br>
+        <b id="con2" >--</b><br>
+        <b id="con3" >--</b><br>
+    </p>
+     
+</div>
+<script>
+    let num = 1;
+    const $input = document.getElementById('input');
+    const $btn = document.getElementById('btn');
+    const $con1 = document.getElementById('con1');
+    const $con2 = document.getElementById('con2');
+    const $con3 = document.getElementById('con3');
+    $btn.onclick = () => {
+        let num = $input.value;
+        $con1.innerHTML = jsutil._FormatNumTime(num,'dd天hh时ii分ss秒').formatTime
+        $con2.innerHTML = jsutil._FormatNumTime(num,'hh时ii分ss秒').formatTime
+        $con3.innerHTML = jsutil._FormatNumTime(num,'ii分ss秒').formatTime
+    }
+</script>
+<style>
+    .ctx{
+        height:150px;
+        text-align:center; color: #353e56;font-size:16px;
+    }
+    .btn{
+        border:0;
+        background: #44c843; color: #353e56;
+        cursor: pointer;
+        height: 36px;
+        font-size: 16px;
+    }
+</style>
+</body>
+</html>

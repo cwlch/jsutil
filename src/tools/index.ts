@@ -44,6 +44,7 @@ import _ToAsyncAwait from './to-async-await';
 import _Calc from './calc';
 import _Debounce from './debounce';
 import _Throttle from './throttle';
+import _FormatNumTime from './format-num-time';
 export {
     // 验证是否为空
     _IsEmpty,
@@ -81,6 +82,8 @@ export {
     _GetIdCardBrithDay,
     // 格式化时间
     _FormatDate,
+    // 秒数格式化为时间格式
+    _FormatNumTime,
     // 格式化金额，添加千分符
     _FormatMoneySymbol,
     // 数字金额转中文大写
