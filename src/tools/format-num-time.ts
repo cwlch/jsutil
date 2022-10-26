@@ -2,7 +2,7 @@
  * @Author: ch cwl_ch@163.com
  * @Date: 2022-10-16 17:23:56
  * @LastEditors: ch
- * @LastEditTime: 2022-10-16 22:18:54
+ * @LastEditTime: 2022-10-17 22:19:53
  * @Description: file content
  */
 import _FillZero from './fill-zero';
@@ -46,7 +46,7 @@ const _FormatNumTime = (secondNum:number|string, format:string = 'dd天hh时ii�
 
     // 表示格式中有天
     if(!_IsEmpty(result.day)){
-        // 天为0,且不需要补齐
+        // 天为0,且不需要补齐把天干掉
         if(result.day === 0 && !fill){
             formatTimeStr = formatTimeStr.replace(formatTimeStr.substring(0, formatTimeStr.match(/(h+)/i)?.index), '');
         }else{
@@ -55,8 +55,8 @@ const _FormatNumTime = (secondNum:number|string, format:string = 'dd天hh时ii�
     }
     // 表示格式中有小时
     if(!_IsEmpty(result.hours)){
-        // 天和小时都0,且不需要补齐
-        if(result.day === 0 && result.hours === 0 && !fill){
+        // 天不存在或天为0，小时为0, 且不需要补齐，则把小时干掉
+        if(!result.day && result.hours === 0 && !fill){
             formatTimeStr = formatTimeStr.replace(formatTimeStr.substring(0, formatTimeStr.match(/(i+)/i)?.index),'');
         }else{
             formatTimeStr = formatUnitTime(formatTimeStr,<string>unitHours,<number>result.hours);

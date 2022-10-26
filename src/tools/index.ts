@@ -45,6 +45,8 @@ import _Calc from './calc';
 import _Debounce from './debounce';
 import _Throttle from './throttle';
 import _FormatNumTime from './format-num-time';
+import _CreateCountdown from './create-countdown';
+
 export {
     // 验证是否为空
     _IsEmpty,
@@ -128,4 +130,6 @@ export {
     _Debounce,
     // 节流
     _Throttle,
+    // 创建一个倒计时
+    _CreateCountdown
 };

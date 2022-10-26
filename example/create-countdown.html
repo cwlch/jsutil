@@ -1,0 +1,148 @@
+<!--
+ * @Author: ch cwl_ch@163.com
+ * @Date: 2022-10-16 21:05:00
+ * @LastEditors: ch
+ * @LastEditTime: 2022-10-26 09:08:55
+ * @Description: file content
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/jsutil-umd.js"></script>
+</head>
+<body>
+
+
+<div class="ctx">
+    <h1>创建一个倒计时：_CreateCountDown</h1>
+    <h2>初始化与开始分开</h2>
+    <p>
+        结束时间：<input id="input" value="2022/10/17 22:24:00" placeholder="请输入正确时间格式"/>
+    </p>
+    <button  id="btn" class="btn">初始化</button>
+    <button  id="start" class="btn">开始</button>
+    <button  id="stop" class="btn">暂停</button>
+    <button  id="destroy" class="btn">销毁</button>
+    <p>
+        <b id="con1" >--</b><br>
+    </p>
+    <h2>自动开始</h2>
+    <p>
+        结束时间：<input id="input2" value="2022/10/17 22:24:00" placeholder="请输入正确时间格式"/>
+    </p>
+    <button  id="btn2" class="btn">初始化并开始</button>
+    <button  id="stop2" class="btn">暂停</button>
+    <button  id="restart" class="btn">重新开始</button>
+    <button  id="destroy2" class="btn">销毁</button>
+    <p>
+        <b id="con2" >--</b><br>
+    </p>
+     
+</div>
+<script>
+    let num = 1;
+    const $input = document.getElementById('input');
+    const $btn = document.getElementById('btn');
+    const $start = document.getElementById('start');
+    const $stop = document.getElementById('stop');
+    const $destroy = document.getElementById('destroy');
+    let countDown = null;
+    let countDown2 = null;
+    $btn.onclick = () => {
+        let time = $input.value;
+        if(countDown){
+            alert('请先销毁正在执行的计时器')
+        }
+        countDown = jsutil._CreateCountDown({
+            endTime: time,
+            format : 'hh时ii分ss秒',
+            fill : true,
+            callback: (res) =>{
+                console.log(res)
+                $con1.innerHTML = res.formatTime;
+            },
+            finishCallback: (res) => {
+                console.log('结束了',res);
+                countDown = null;
+            },
+            start : false
+        })
+    }
+    $start.onclick = ()=>{
+        if(countDown){
+            countDown.start();
+        }
+    }
+    $stop.onclick = ()=>{
+        if(countDown){
+            countDown.stop();
+        }
+    }
+    $destroy.onclick = ()=>{
+        if(countDown){
+            countDown.destroy();
+        }
+        countDown = null;
+    }
+
+    const $con1 = document.getElementById('con1');
+    const $input2 = document.getElementById('input2');
+    const $con2 = document.getElementById('con2');
+    const $btn2 = document.getElementById('btn2');
+    const $stop2 = document.getElementById('stop2');
+    const $restart = document.getElementById('restart');
+    const $destroy2 = document.getElementById('destroy2');
+    $btn2.onclick = () => {
+        let time = $input2.value;
+        if(countDown2){
+            alert('请先销毁正在执行的计时器')
+        }
+        countDown2 = jsutil._CreateCountDown({
+            endTime: time,
+            format : 'hh时ii分ss秒',
+            fill : true,
+            callback: (res) =>{
+                console.log(res)
+                $con2.innerHTML = res.formatTime;
+            },
+            finishCallback: (res) => {
+                console.log('结束了',res);
+                countDown2 = null;
+            }
+        })
+    }
+    $stop2.onclick = ()=>{
+        if(countDown2){
+            countDown2.stop();
+        }
+    }
+    $restart.onclick = ()=>{
+        if(countDown2){
+            countDown2.start();
+        }
+        
+    }
+    $destroy2.onclick = ()=>{
+        if(countDown2){
+            countDown2.destroy();
+        }
+        countDown2 = null;
+    }
+</script>
+<style>
+    .ctx{
+        height:150px;
+        text-align:center; color: #353e56;font-size:16px;
+    }
+    .btn{
+        border:0;
+        background: #44c843; color: #353e56;
+        cursor: pointer;
+        height: 36px;
+        font-size: 16px;
+    }
+</style>
+</body>
+</html>

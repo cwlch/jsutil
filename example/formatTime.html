@@ -2,7 +2,7 @@
  * @Author: ch cwl_ch@163.com
  * @Date: 2022-10-16 21:05:00
  * @LastEditors: ch
- * @LastEditTime: 2022-10-16 22:21:16
+ * @LastEditTime: 2022-10-26 09:16:30
  * @Description: file content
 -->
 <!DOCTYPE html>
@@ -37,9 +37,13 @@
     const $con3 = document.getElementById('con3');
     $btn.onclick = () => {
         let num = $input.value;
-        $con1.innerHTML = jsutil._FormatNumTime(num,'dd天hh时ii分ss秒').formatTime
-        $con2.innerHTML = jsutil._FormatNumTime(num,'hh时ii分ss秒').formatTime
-        $con3.innerHTML = jsutil._FormatNumTime(num,'ii分ss秒').formatTime
+        const time1 = jsutil._FormatNumTime(num,'dd天hh时ii分ss秒');
+        const time2 = jsutil._FormatNumTime(num,'hh时ii分ss秒',false);
+        const time3 = jsutil._FormatNumTime(num,'ii分ss秒');
+        $con1.innerHTML = time1.formatTime;
+        $con2.innerHTML = time2.formatTime;
+        $con3.innerHTML = time3.formatTime;
+        console.log(time1,time2,time3)
     }
 </script>
 <style>
