@@ -4,7 +4,7 @@ import _FormatNumTime from "./format-num-time"
  * @Author: ch cwl_ch@163.com
  * @Date: 2022-10-12 21:22:58
  * @LastEditors: ch
- * @LastEditTime: 2022-10-26 09:11:13
+ * @LastEditTime: 2022-10-27 21:14:05
  * @Description: file content
  */
 interface Option {
@@ -26,7 +26,9 @@ enum STATUS {
     FINISH = 'finish',
 }
 const FORMAT_STR = 'dd天hh时ii分ss秒';
-// const calcSecondSymbol : symbol = Symbol("calcSecond")
+
+// 私有方法标识
+const _calcSecond = Symbol();
 
 class Countdown {
     private secondNum: number = 0
@@ -54,7 +56,7 @@ class Countdown {
      * @return {*}
      */
     }
-    _calcSecond(){
+    [_calcSecond](){
         this.secondNum--;
         let formatRes = _FormatNumTime(this.secondNum, this.options.format, this.options.fill)
         this.result = {status:STATUS.PROGRESS, formatTime : formatRes.formatTime};
@@ -64,7 +66,9 @@ class Countdown {
             this.destroy();
         }else{
             // 大于1继续计算
-            this.stopCalc = setTimeout(()=>{this._calcSecond()}, 1000)
+            this.stopCalc = setTimeout(()=>{
+                this[_calcSecond]()
+            }, 1000)
         }
     }
     /**
@@ -76,7 +80,7 @@ class Countdown {
             this.curTime = <number>new Date().getTime();
             this.secondDiff = Math.floor((this.endTimeNum - <number>this.curTime) / 1000);
             this.secondNum = this.secondDiff > 0 ? this.secondDiff : 0;
-            this._calcSecond();
+            this[_calcSecond]();
         }
         
     }
@@ -100,6 +104,7 @@ class Countdown {
         this.options.finishCallback && this.options.finishCallback(this.result);
     }
 }
+
 const _CreateCountdown = ({
     endTime,
     format = FORMAT_STR,

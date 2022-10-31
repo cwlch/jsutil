@@ -34,7 +34,7 @@ import _LimitPNIntFloat from './limit-p-n-int-float';
 import _LimitMoney from './limit-money';
 import _LoadScript from './load-script';
 import _LoadScriptAwait from './load-script-await';
-import _CreatUUID from './creat-uuid';
+import _CreateUUID from './create-uuid';
 import _Extend from './extend';
 import _FillZero from './fill-zero';
 import _DownBlobFile from './down-blob-file';
@@ -111,7 +111,7 @@ export {
     // 动态加载JS 串联
     _LoadScriptAwait,
     // 创建UUID
-    _CreatUUID,
+    _CreateUUID,
     // 对象拷贝
     _Extend,
     // 个位数补0

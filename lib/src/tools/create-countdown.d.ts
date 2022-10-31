@@ -6,6 +6,7 @@ interface Option {
     finishCallback?: Function;
     start?: Boolean;
 }
+declare const calcSecondSymbol: unique symbol;
 declare class Countdown {
     private secondNum;
     private curTime;
@@ -15,7 +16,7 @@ declare class Countdown {
     private result;
     options: Option;
     constructor(options: Option);
-    _calcSecond(): void;
+    [calcSecondSymbol](): void;
     /**
      * @Description: 开始
      * @return {*}
