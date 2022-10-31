@@ -2,7 +2,7 @@
  * @Author: ch cwl_ch@163.com
  * @Date: 2022-10-16 21:05:00
  * @LastEditors: ch
- * @LastEditTime: 2022-10-26 09:08:55
+ * @LastEditTime: 2022-10-31 12:13:18
  * @Description: file content
 -->
 <!DOCTYPE html>
@@ -16,7 +16,7 @@
 
 
 <div class="ctx">
-    <h1>创建一个倒计时：_CreateCountDown</h1>
+    <h1>创建一个倒计时：_CreateCountdown</h1>
     <h2>初始化与开始分开</h2>
     <p>
         结束时间：<input id="input" value="2022/10/17 22:24:00" placeholder="请输入正确时间格式"/>
@@ -55,7 +55,7 @@
         if(countDown){
             alert('请先销毁正在执行的计时器')
         }
-        countDown = jsutil._CreateCountDown({
+        countDown = jsutil._CreateCountdown({
             endTime: time,
             format : 'hh时ii分ss秒',
             fill : true,
@@ -99,7 +99,7 @@
         if(countDown2){
             alert('请先销毁正在执行的计时器')
         }
-        countDown2 = jsutil._CreateCountDown({
+        countDown2 = jsutil._CreateCountdown({
             endTime: time,
             format : 'hh时ii分ss秒',
             fill : true,
