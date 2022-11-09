@@ -1,0 +1,77 @@
+<!--
+ * @Author: ch cwl_ch@163.com
+ * @Date: 2022-10-16 21:05:00
+ * @LastEditors: ch
+ * @LastEditTime: 2022-11-09 00:04:38
+ * @Description: file content
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/jsutil-umd.js"></script>
+</head>
+<body>
+
+
+<div class="ctx">
+    <h1>创建一个倒计时：_CreateCountdown</h1>
+    <h2>初始化与开始分开</h2>
+    <p>
+        结束时间：<input id="input" value="2022/10/17 22:24:00" placeholder="请输入正确时间格式"/>
+    </p>
+    <button  id="btn" class="btn">初始化</button>
+    <button  id="start" class="btn">开始</button>
+    <button  id="stop" class="btn">暂停</button>
+    <button  id="destroy" class="btn">销毁</button>
+    <p>
+        <b id="con1" >--</b><br>
+    </p>
+    <h2>自动开始</h2>
+    <p>
+        结束时间：<input id="input2" value="2022/10/17 22:24:00" placeholder="请输入正确时间格式"/>
+    </p>
+    <button  id="btn2" class="btn">初始化并开始</button>
+    <button  id="stop2" class="btn">暂停</button>
+    <button  id="restart" class="btn">重新开始</button>
+    <button  id="destroy2" class="btn">销毁</button>
+    <p>
+        <b id="con2" >--</b><br>
+    </p>
+     
+</div>
+<script>
+    let em = jsutil._CreateEnum({
+        await : '1',
+        cc : '2',
+        process : 'xx',
+        finish : {
+            code : 'dsfa'
+        }
+    });
+    em.xxxxx = '000'
+    console.log(  jsutil._GetVarType(em))
+    console.log( Object.keys(em));
+    console.log( Object.values(em));
+    console.log( em)
+    for(let key in em){
+        console.log(key)
+    }
+    console.log( em.getOriginalObject())
+</script>
+<style>
+    .ctx{
+        height:150px;
+        text-align:center; color: #353e56;font-size:16px;
+    }
+    .btn{
+        border:0;
+        background: #44c843; color: #353e56;
+        cursor: pointer;
+        height: 36px;
+        font-size: 16px;
+    }
+</style>
+</body>
+</html>

@@ -1,10 +1,18 @@
+/*
+ * @Author: ch cwl_ch@163.com
+ * @Date: 2022-09-19 11:01:14
+ * @LastEditors: ch
+ * @LastEditTime: 2022-11-08 22:02:34
+ * @Description: file content
+ */
 // 引入http内置模块
 const http = require('http')
 
 // 引入chalk 用于美化后台打印
 
 const path = require('path')
-const fs = require('fs')
+const fs = require('fs');
+const shell = require('shelljs');
 // 引入基本配置
 const conf = {
     // 主机名称
@@ -49,11 +57,23 @@ const server = http.createServer((rep, res) => {
         }
     })
 })
+console.log(`正在监听`);
 
+fs.watch('./src/',{recursive:true},(event,filename)=>{
+    
+     if (filename){
+          console.log(`${filename}文件发生更新`)
+        shell.exec("npm run build");
+    
+     }
+
+    });
+//      function (f, curr, prev) {
+//     console.log('---')
+//     shell.exec("npm run build");
+// });
 // 监听 server 实例
-
 server.listen(conf.port, conf.hostname, () => {
     const addr = `http:// ${conf.hostname}:${conf.port}`
-
     console.info(`server startd at ${addr}`)
 })

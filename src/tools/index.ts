@@ -46,6 +46,7 @@ import _Debounce from './debounce';
 import _Throttle from './throttle';
 import _FormatNumTime from './format-num-time';
 import _CreateCountdown from './create-countdown';
+import _CreateEnum from './create-enum';
 
 export {
     // 验证是否为空
@@ -131,5 +132,7 @@ export {
     // 节流
     _Throttle,
     // 创建一个倒计时
-    _CreateCountdown
+    _CreateCountdown,
+    // 创建一个枚举
+    _CreateEnum
 };

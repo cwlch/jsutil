@@ -4,7 +4,7 @@ import _FormatNumTime from "./format-num-time"
  * @Author: ch cwl_ch@163.com
  * @Date: 2022-10-12 21:22:58
  * @LastEditors: ch
- * @LastEditTime: 2022-10-27 21:14:05
+ * @LastEditTime: 2022-11-08 22:02:49
  * @Description: file content
  */
 interface Option {
@@ -112,6 +112,7 @@ const _CreateCountdown = ({
     callback,
     finishCallback,
     start = true
+    
 
 }:Option)=>{
     return new Countdown({
@@ -177,5 +178,8 @@ const _CreateCountdown = ({
 //     calcSecond();
 //     return fn;
     
+
 // }
+
+
 export default _CreateCountdown
