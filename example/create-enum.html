@@ -2,7 +2,7 @@
  * @Author: ch cwl_ch@163.com
  * @Date: 2022-10-16 21:05:00
  * @LastEditors: ch
- * @LastEditTime: 2022-11-09 00:04:38
+ * @LastEditTime: 2022-11-13 00:31:57
  * @Description: file content
 -->
 <!DOCTYPE html>
@@ -46,11 +46,9 @@
         await : '1',
         cc : '2',
         process : 'xx',
-        finish : {
-            code : 'dsfa'
-        }
     });
-    em.xxxxx = '000'
+    // 不会改变em对象
+    em.kkkkk = '000'
     console.log(  jsutil._GetVarType(em))
     console.log( Object.keys(em));
     console.log( Object.values(em));
@@ -59,6 +57,35 @@
         console.log(key)
     }
     console.log( em.getOriginalObject())
+    let obj = em.getEnumObject();
+    obj.ggg= 'gg'
+    console.log( obj);
+    let arr = em.getEnumArray();
+
+    arr[0].x ='c'
+    console.log( arr);
+
+
+    let em3 = jsutil._CreateEnum({
+        await : { code : 1, name : '等待'},
+        process : { code : 2, name : '进行中' },
+        finish : { code : 3,name : '已完成' }
+    });
+    console.log('em3[1].name---',em3[1].name); 
+    console.log('em3[1].key---',em3[1].key);
+    console.log("em3['await'].name----",em3['await'].name);
+    console.log("em3['await'].code---",em3['await'].code);
+    console.log('em3.getEnumArray()',em3.getEnumArray());
+    console.log('em3.getEnumObject()',em3.getEnumObject());
+
+    
+
+    // (em.getEnumObject()).xxxxxxsss = 'sxsxsx';
+    // console.log( em.getEnumObject());
+    // console.log( em.getEnumArray(), '--')
+    // em.getEnumArray().push({x:'x'})
+    // (em.getEnumArray())[0].ll = 'll';
+    // console.log(em.getEnumArray(),'+++')
 </script>
 <style>
     .ctx{
