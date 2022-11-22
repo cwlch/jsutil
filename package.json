@@ -1,6 +1,6 @@
 {
   "name": "@gykeji/jsutil",
-  "version": "2.0.2",
+  "version": "2.0.3-beta-1",
   "description": "js工具类",
   "main": "lib/jsutil-cjs.js",
   "module": "lib/jsutil-esm.js",
@@ -10,7 +10,8 @@
     "build": "rollup -c",
     "start": "node server.js",
     "test": "jest",
-    "npmpush": "npm run build & npm publish",
+    "npmpush:beta": "npm publish --tag beta",
+    "npmpush": "npm publish",
     "prepare": "husky install"
   },
   "repository": {

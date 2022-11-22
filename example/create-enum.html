@@ -2,7 +2,7 @@
  * @Author: ch cwl_ch@163.com
  * @Date: 2022-10-16 21:05:00
  * @LastEditors: ch
- * @LastEditTime: 2022-11-13 00:31:57
+ * @LastEditTime: 2022-11-20 11:35:18
  * @Description: file content
 -->
 <!DOCTYPE html>
@@ -66,19 +66,27 @@
     console.log( arr);
 
 
+    let em2 = jsutil._CreateEnum({
+        women : 1,
+        men : 2
+    })
+    console.log(em2.women) // 1
+    console.log(em2.men) // 2
+    console.log(em2.getEnumArray()); // [{key:'women',value:1},{key:'man',value:2}]
+
     let em3 = jsutil._CreateEnum({
         await : { code : 1, name : '等待'},
         process : { code : 2, name : '进行中' },
         finish : { code : 3,name : '已完成' }
     });
-    console.log('em3[1].name---',em3[1].name); 
-    console.log('em3[1].key---',em3[1].key);
-    console.log("em3['await'].name----",em3['await'].name);
-    console.log("em3['await'].code---",em3['await'].code);
-    console.log('em3.getEnumArray()',em3.getEnumArray());
-    console.log('em3.getEnumObject()',em3.getEnumObject());
 
-    
+    console.log(em3[1].name); //等待
+    console.log(em3[1].key); //await
+    console.log(em3['await'].name);  //等待
+    console.log(em3['await'].code); // 1
+    console.log(em3.getEnumArray());// [{ code : 1, name : '等待', key: 'await'},{ code : 2, name : '等待', key: 'process'}]
+
+
 
     // (em.getEnumObject()).xxxxxxsss = 'sxsxsx';
     // console.log( em.getEnumObject());
@@ -86,6 +94,27 @@
     // em.getEnumArray().push({x:'x'})
     // (em.getEnumArray())[0].ll = 'll';
     // console.log(em.getEnumArray(),'+++')
+
+
+    var a = _CreateEnum( {
+        uploading : [100, '上传中',{ label : 'sdf',name : 'dsaf'}],
+        examine : [200, '审核中', 'name:哈哈','age:29'],
+        finish : [300, '审核完成']
+    })
+
+    a[100].value // 100
+    a[100].key // uploading
+    a[100].label  // 上传中
+
+    a.uploading.value // 100
+    a.uploading.label  //上传中
+    a.uploading.key //uploading
+
+    a.getEnumArray() // [{key:uploading,value:100,label:上传中}]
+
+    
+    
+
 </script>
 <style>
     .ctx{
