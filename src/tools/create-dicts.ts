@@ -3,7 +3,7 @@
  * @Author: ch cwl_ch@163.com
  * @Date: 2022-09-09 10:30:30
  * @LastEditors: ch
- * @LastEditTime: 2022-11-21 23:01:20
+ * @LastEditTime: 2022-11-22 22:32:37
  * @Description:
  * 创建的枚举类，返回一个（通过object对象伪造的）key，value可以相互访问的实例，
  * 实例属性中包含了getEnumObject方法获取到的整个对象。且打印出来能看到实例的私有属性，但他只能看到，是不能直接获取的
@@ -50,8 +50,9 @@ class Dicts {
             };
             if(itemType === 'Array'){
                 resultObj.value = item[0];
-                if(item[0]){
-                    throw new Error(`${key}的value不能是${item[0]}`)
+                const itemOneType = _GetVarType(item[0])
+                if(['Null','Undefined'].includes(itemOneType)){
+                    throw new Error(`${key}的value不能是${itemOneType}`)
                 }
                 const itemTwo = item[1];
                 const itemTowType = _GetVarType(itemTwo);
@@ -68,6 +69,10 @@ class Dicts {
                     }
                 }
             }else if(itemType === 'Object'){
+                const itemOneType = _GetVarType(item.values);
+                if(['Null','Undefined'].includes(itemOneType)){
+                    throw new Error(`${key}的value不能是${itemOneType}`)
+                }
                 resultObj = {...resultObj, ...item}
             }else{
                 throw new Error('对象成员只支持Array,Object类型')

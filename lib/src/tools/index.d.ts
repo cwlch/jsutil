@@ -40,5 +40,5 @@ import _Debounce from './debounce';
 import _Throttle from './throttle';
 import _FormatNumTime from './format-num-time';
 import _CreateCountdown from './create-countdown';
-import _CreateEnum from './create-enum';
-export { _IsEmpty, _IsName, _IsPhone, _IsTel, _IsEmail, _IsIdCard, _IsMoney, _SetCookie, _SetSessionStorage, _SetLocalStorage, _GetCookie, _GetSessionStorage, _GetLocalStorage, _GetVarType, _GetUaInfo, _GetIdCardSex, _GetIdCardBrithDay, _FormatDate, _FormatNumTime, _FormatMoneySymbol, _FormatMoneyNumCapital, _FormatBlobUrl, _FormatJsonSearch, _FormatSearchJson, _LimitInt, _LimitIntFloat, _LimitPNInt, _LimitPNIntFloat, _LimitMoney, _LoadScript, _LoadScriptAwait, _CreateUUID, _Extend, _FillZero, _DownBlobFile, _LoactionReplace, _CopyText, _ToAsyncAwait, _Calc, _Debounce, _Throttle, _CreateCountdown, _CreateEnum };
+import _CreateDicts from './create-dicts';
+export { _IsEmpty, _IsName, _IsPhone, _IsTel, _IsEmail, _IsIdCard, _IsMoney, _SetCookie, _SetSessionStorage, _SetLocalStorage, _GetCookie, _GetSessionStorage, _GetLocalStorage, _GetVarType, _GetUaInfo, _GetIdCardSex, _GetIdCardBrithDay, _FormatDate, _FormatNumTime, _FormatMoneySymbol, _FormatMoneyNumCapital, _FormatBlobUrl, _FormatJsonSearch, _FormatSearchJson, _LimitInt, _LimitIntFloat, _LimitPNInt, _LimitPNIntFloat, _LimitMoney, _LoadScript, _LoadScriptAwait, _CreateUUID, _Extend, _FillZero, _DownBlobFile, _LoactionReplace, _CopyText, _ToAsyncAwait, _Calc, _Debounce, _Throttle, _CreateCountdown, _CreateDicts };

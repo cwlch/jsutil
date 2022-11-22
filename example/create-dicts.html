@@ -1,11 +1,10 @@
 <!--
  * @Author: ch cwl_ch@163.com
- * @Date: 2022-11-20 11:19:10
+ * @Date: 2022-10-16 21:05:00
  * @LastEditors: ch
- * @LastEditTime: 2022-11-20 11:21:04
+ * @LastEditTime: 2022-11-22 22:34:34
  * @Description: file content
 -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,3 +13,47 @@
     <script src="../lib/jsutil-umd.js"></script>
 </head>
 <body>
+
+
+<div class="ctx">
+    <h1>创建一个字典表：_CreateDicts</h1>
+     
+</div>
+<script>
+
+
+    var a = jsutil._CreateDicts( {
+        uploading : [100, '上传中',{ name : 'dsaf'}],
+        examine : [200, '审核中'],
+        finish : [300, '审核完成']
+    })
+
+    console.log(a[100].value) // 100
+    console.log(a[100].key) // uploading
+    console.log(a[100].label)  // 上传中
+
+    console.log(a.uploading.value) // 100
+    console.log(a.uploading.label)  //上传中
+    console.log(a.uploading.key) //uploading
+
+    console.log(a.getArray()) // [{key:uploading,value:100,label:上传中}]
+
+    
+    
+
+</script>
+<style>
+    .ctx{
+        height:150px;
+        text-align:center; color: #353e56;font-size:16px;
+    }
+    .btn{
+        border:0;
+        background: #44c843; color: #353e56;
+        cursor: pointer;
+        height: 36px;
+        font-size: 16px;
+    }
+</style>
+</body>
+</html>

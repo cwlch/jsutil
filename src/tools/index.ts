@@ -46,7 +46,7 @@ import _Debounce from './debounce';
 import _Throttle from './throttle';
 import _FormatNumTime from './format-num-time';
 import _CreateCountdown from './create-countdown';
-import _CreeteDicts from './create-dicts';
+import _CreateDicts from './create-dicts';
 
 export {
     // 验证是否为空
@@ -134,5 +134,5 @@ export {
     // 创建一个倒计时
     _CreateCountdown,
     // 创建一个字典表
-    _CreeteDicts
+    _CreateDicts
 };
