@@ -18,12 +18,12 @@ const _Throttle = (fn: (args: any) => void, delay: number = 500, type: number = 
     if (_GetVarType(fn) !== 'Function') {
         throw new Error('第一个参数，需要为函数哦~');
     }
-    return (args: any) => {
+    return (...args: Parameters<typeof fn>) => {
         if (type === 1 || type === 3) {
             let now = Date.now()
             // 当前时间-先前时间 > 延迟时间
             if (now - previous > delay) {
-                fn(args)
+                fn(...args)
                 previous = now
             }
         }
@@ -32,7 +32,7 @@ const _Throttle = (fn: (args: any) => void, delay: number = 500, type: number = 
                 timer = setTimeout(() => {
                     clearTimeout(timer)
                     timer = null
-                    fn(args)
+                    fn(...args)
                 }, delay)
             }
 

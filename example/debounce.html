@@ -2,7 +2,7 @@
  * @Author: ch cwl_ch@163.com
  * @Date: 2022-09-18 21:30:36
  * @LastEditors: ch
- * @LastEditTime: 2022-09-18 22:27:09
+ * @LastEditTime: 2022-12-05 15:42:17
  * @Description: file content
 -->
 <!DOCTYPE html>
@@ -46,13 +46,13 @@
     let num2 = 1;
     const $content2 = document.getElementById('content2');
     const $count2 = document.getElementById('count2');
-    function count2(val) {
-        console.log(val);
+    function count2(a,b) {
+        console.log(a,b);
         $count2.innerHTML = num2++;
     };
     let debounceCount2 = jsutil._Debounce(count2, 500)
     $content2.onclick = () =>{
-        debounceCount2(222222222222222)
+        debounceCount2(222222222222222,33)
     }
 </script>
 <style>

@@ -17,7 +17,7 @@ const _Debounce = (fn: (args: any) => void, delay: number, immediate?: boolean) 
     if (_GetVarType(fn) !== 'Function') {
         throw new Error('第一个参数，需要为函数哦~');
     }
-    return (args: any) => {
+    return (...args:Parameters<typeof fn>) => {
         if (timer) clearTimeout(timer)
         // 立即执行
         if (immediate) {
@@ -26,11 +26,12 @@ const _Debounce = (fn: (args: any) => void, delay: number, immediate?: boolean) 
                 timer = null;
             }, delay)
             if (callNow) {
-                fn(args);
+                fn(...args);
+
             }
         } else {
             timer = setTimeout(() => {
-                fn(args);
+                fn(...args);
             }, delay)
         }
     }

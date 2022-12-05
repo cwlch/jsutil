@@ -1,6 +1,6 @@
 {
   "name": "@gykeji/jsutil",
-  "version": "2.0.3-beta-3",
+  "version": "2.0.3-beta-4",
   "description": "js工具类",
   "main": "lib/jsutil-cjs.js",
   "module": "lib/jsutil-esm.js",
