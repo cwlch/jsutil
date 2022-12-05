@@ -3,20 +3,8 @@
  * @Author: ch cwl_ch@163.com
  * @Date: 2022-09-09 10:30:30
  * @LastEditors: ch
- * @LastEditTime: 2022-11-22 22:32:37
+ * @LastEditTime: 2022-12-05 14:43:53
  * @Description:
- * 创建的枚举类，返回一个（通过object对象伪造的）key，value可以相互访问的实例，
- * 实例属性中包含了getEnumObject方法获取到的整个对象。且打印出来能看到实例的私有属性，但他只能看到，是不能直接获取的
- * 特性
- * -不能有相同的key或值，
- * -不能有不同数据类型的值
- * -值只能是String, Number, Boolean, Object4种类型
- * -Object的枚举值，其属性只能是String,Number,Boolean
- * 
- * 实例提供了三个方法
- * getOriginalObject 获取你创建枚举是的原始对象数据 
- * getEnumArray 获取生成的数组数据 
- * getEnumObject 获取生成的对象数据 
  * 
  * 
  */
@@ -75,7 +63,7 @@ class Dicts {
                 }
                 resultObj = {...resultObj, ...item}
             }else{
-                throw new Error('对象成员只支持Array,Object类型')
+                throw new Error('成员只支持Array,Object类型')
             }
             this[objectSymbol][key] = this[exampleSymbol][key] = resultObj;
             this[exampleSymbol][resultObj.value as string] = resultObj;
