@@ -3,7 +3,7 @@
  * @Author: ch cwl_ch@163.com
  * @Date: 2022-09-09 10:30:30
  * @LastEditors: ch
- * @LastEditTime: 2022-12-05 14:43:53
+ * @LastEditTime: 2023-02-03 16:49:41
  * @Description:
  * 
  * 
@@ -31,7 +31,7 @@ class Dicts {
         }
 
         for(let key in params){
-            const item = <Array<ParamType|Number|String|Boolean>>params[key];
+            const item = <any>params[key];
             const itemType = _GetVarType(item);
             let resultObj:ParamType = {
                 key,
@@ -57,7 +57,7 @@ class Dicts {
                     }
                 }
             }else if(itemType === 'Object'){
-                const itemOneType = _GetVarType(item.values);
+                const itemOneType = _GetVarType(item.value);
                 if(['Null','Undefined'].includes(itemOneType)){
                     throw new Error(`${key}的value不能是${itemOneType}`)
                 }
